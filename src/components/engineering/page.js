@@ -36,14 +36,14 @@ const Engineering = () => {
     <main className="w-full mt-16 sm:mt-24 md:mt-32 px-5 sm:px-10 md:px-24 lg:px-32 flex flex-col items-center justify-center">
       {/* Adding dynamic Open Graph meta tags */}
       <Head>
-        <title>online Courses |Engineering</title>
+        <title>Best online courses & Blogs related to Energy optimization |Engineering</title>
         <meta
           name="description"
           content="Explore new courses"
         />
 
         {/* Open Graph tags */}
-        <meta property="og:title" content="Online Courses| Epics solution" />
+        <meta property="og:title" content="Best online courses & Blogs related to Energy optimization| Epics solution" />
         <meta
           property="og:description"
           content="Explore Courses and their detailed information on Epics solution."
@@ -56,14 +56,14 @@ const Engineering = () => {
           property="og:url"
           content="https://www.epicssolution.com/university"
         />
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="Best online courses & Blogs related to Energy optimization" />
 
         {/* Twitter Card tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Universities | Galaxy Education" />
         <meta
           name="twitter:description"
-          content="Explore universities and their detailed information."
+          content="Best online courses & Blogs related to Energy optimization."
         />
         <meta
           name="twitter:image"
