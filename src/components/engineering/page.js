@@ -36,17 +36,17 @@ const Engineering = () => {
     <main className="w-full mt-16 sm:mt-24 md:mt-32 px-5 sm:px-10 md:px-24 lg:px-32 flex flex-col items-center justify-center">
       {/* Adding dynamic Open Graph meta tags */}
       <Head>
-        <title>Best online courses & Blogs related to Energy optimization |Engineering</title>
+        <title>Best online courses & Blogs related to Energy optimization |Energy Engineering</title>
         <meta
           name="description"
-          content="Explore new courses"
+          content="Educational websites help students read informative blogs  and enroll in the best online courses related to use of Artificial intelligence for Energy optimization in HVAC AND PLUMBING"
         />
 
         {/* Open Graph tags */}
         <meta property="og:title" content="Best online courses & Blogs related to Energy optimization| Epics solution" />
         <meta
           property="og:description"
-          content="Explore Courses and their detailed information on Epics solution."
+          content="Educational websites help students read informative blogs  and enroll in the best online courses related to use of Artificial intelligence for Energy optimization in HVAC AND PLUMBING."
         />
         <meta
           property="og:image"
@@ -60,7 +60,7 @@ const Engineering = () => {
 
         {/* Twitter Card tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Universities | Galaxy Education" />
+        <meta name="twitter:title" content="Best online courses & Blogs related to Energy optimizatio | Epics solution" />
         <meta
           name="twitter:description"
           content="Best online courses & Blogs related to Energy optimization."
