@@ -68,6 +68,8 @@ export default function RootLayout({ children }) {
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-D50XE9PL55"
         />
+         <meta name="viewport" content="width=device-width, initial-scale=1" />
+
         <Script id="gtag-init" strategy="afterInteractive">
           {`window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
