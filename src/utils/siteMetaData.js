@@ -1,5 +1,5 @@
 const siteMetadata = {
-  title: 'courses',
+  title: 'Best online Courses & Blogs | Use of AI in Engineering & Development',
   author: 'Epics',
   headerTitle: 'Blog',
   description: 'Educational websites help students gain enroll in the best courses.',
