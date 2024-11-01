@@ -11,7 +11,7 @@ const siteMetadata = {
   facebook: 'https://www.facebook.com/EPICS256',
   youtube: 'https://www.youtube.com/@Dharti-256',
   linkedin: 'https://www.linkedin.com/company/mhp-design-engineering',
-  instagram: 'https://www.linkedin.com/company/mhp-design-engineering',
+  instagram: 'https://www.instagram.com/epics0256',
   locale: 'en-US',
 
   fbAppID: 'your-facebook-app-id', 
