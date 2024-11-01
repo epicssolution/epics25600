@@ -7,7 +7,7 @@ const siteMetadata = {
   theme: 'dark', // system, dark or light
   siteUrl: 'https://www.epicssolution.com/', // your website URL
   siteLogo: '/logo.png',
-  email: 'galaxyconsultant25600@gmail.com',
+  email: 'abdulghaffar25600@epicssolution.com',
   facebook: 'https://www.facebook.com/EPICS256',
   youtube: 'https://www.youtube.com/@Dharti-256',
   linkedin: 'https://www.linkedin.com/company/mhp-design-engineering',
