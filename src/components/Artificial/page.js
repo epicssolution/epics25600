@@ -54,7 +54,7 @@ const Artificial = () => {
         />
         <meta
           property="og:url"
-          content="https://www.epicssolution.com/university"
+          content="https://www.epicssolution.com/artificiali"
         />
         <meta property="og:type" content="website" />
 
