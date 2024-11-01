@@ -120,16 +120,16 @@ const Header = () => {
         
         {/* Social Media Icons */}
         <div className="hidden sm:flex items-center space-x-4">
-          <a href={siteMetadata.linkedin} rel="noopener noreferrer" target="_blank">
+          <a href={siteMetadata.linkedin} aria-label="Reach out to me via LinkedIn" rel="noopener noreferrer" target="_blank">
             <LinkedinIcon className="w-6 h-6 hover:scale-125 transition-all ease duration-200" />
           </a>
-          <a href={siteMetadata.facebook} rel="noopener noreferrer" target="_blank">
+          <a href={siteMetadata.facebook} aria-label="Reach out to me via facebook" rel="noopener noreferrer" target="_blank">
             <FacebookIcon className="w-6 h-6 hover:scale-125 transition-all ease duration-200" />
           </a>
-          <a href={siteMetadata.youtube} rel="noopener noreferrer" target="_blank">
+          <a href={siteMetadata.youtube} aria-label="Reach out to me via youtube" rel="noopener noreferrer" target="_blank">
             <YoutubeIcon className="w-6 h-6 hover:scale-125 transition-all ease duration-200" />
           </a>
-          <a href={siteMetadata.instagram} rel="noopener noreferrer" target="_blank">
+          <a href={siteMetadata.instagram} aria-label="Reach out to me via instagram" rel="noopener noreferrer" target="_blank">
             <InstagramIcon className="w-6 h-6 hover:scale-125 transition-all ease duration-200" />
           </a>
         </div>
