@@ -7,11 +7,11 @@ export default function Artif() {
     <>
       {/* Adding the Head component for Open Graph and Twitter meta tags */}
       <Head>
-        <title>Development courses</title>
-        <meta property="og:title" content="online courses" />
+        <title>Artificial Intelligence Blogs & courses</title>
+        <meta property="og:title" content="Artificial Intelligence Blogs & courses" />
         <meta
           property="og:description"
-          content="Educational websites help students gain admission to top uonline courses  and enroll in the best courses."
+          content="read informative blogs  and enroll in the best online courses related to use of Artificial intelligence in Mechanical,HVAC,Energy and web Development"
         />
         <meta property="og:image" content="https://www.epicssolution.com/social-banner.png" />
         <meta property="og:url" content="https://www.epicssolution.com/" />
@@ -19,10 +19,10 @@ export default function Artif() {
         
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Study Visa Consultant" />
+        <meta name="twitter:title" content="Artificial Intelligence Blogs & courses" />
         <meta
           name="twitter:description"
-          content="Educational websites help students gain admission to top universities and enroll in the best courses."
+          content="Educational websites help students to read informative blogs  and enroll in the best online courses related to use of Artificial intelligence in Mechanical,HVAC,Energy and web Development"
         />
         <meta name="twitter:image" content="https://www.epicssolution.com/social-banner.png" />
       </Head>
