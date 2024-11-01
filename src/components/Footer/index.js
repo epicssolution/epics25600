@@ -20,7 +20,8 @@ const Footer = () => {
        Online Courses | udemy | Courses
       </h1>
       <h3>
-Educational Website help to read informative blogs and enroll in the best online courses related to use of Energy and web Development      </h3>
+        Educational Website help to read informative blogs and enroll in the best online courses related to use of Energy and web Development  
+     </h3>
 
       <form
         onSubmit={handleSubmit(onSubmit)}
