@@ -36,7 +36,7 @@ const Artificial = () => {
     <main className="w-full mt-16 sm:mt-24 md:mt-32 px-5 sm:px-10 md:px-24 lg:px-32 flex flex-col items-center justify-center">
       {/* Adding dynamic Open Graph meta tags */}
       <Head>
-        <title>online Courses |Development</title>
+        <title>online Courses & Blogs|Artificial Intelligence</title>
         <meta
           name="description"
           content="Explore new courses"
@@ -46,7 +46,7 @@ const Artificial = () => {
         <meta property="og:title" content="Online Courses| Epics solution" />
         <meta
           property="og:description"
-          content="Explore Courses and their detailed information on Epics solution."
+          content="read informative blogs and enroll in the best online courses related to use of Artificial intelligence in Mechanical,HVAC,Energy and web Development."
         />
         <meta
           property="og:image"
@@ -60,10 +60,10 @@ const Artificial = () => {
 
         {/* Twitter Card tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Universities | Galaxy Education" />
+        <meta name="twitter:title" content="ONLINE COURSES | Epics Solution" />
         <meta
           name="twitter:description"
-          content="Explore universities and their detailed information."
+          content="read informative blogs and enroll in the best online courses related to use of Artificial intelligence in Mechanical,HVAC,Energy and web Development."
         />
         <meta
           name="twitter:image"
