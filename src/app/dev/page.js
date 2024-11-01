@@ -7,8 +7,8 @@ export default function Developmentf() {
     <>
       {/* Adding the Head component for Open Graph and Twitter meta tags */}
       <Head>
-        <title>Development courses</title>
-        <meta property="og:title" content="online courses" />
+        <title> web Development courses & Blogs</title>
+        <meta property="og:title" content="web Development courses & Blogs" />
         <meta
           property="og:description"
           content="Educational websites help students gain admission to top uonline courses  and enroll in the best courses."
@@ -19,7 +19,7 @@ export default function Developmentf() {
         
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Study Visa Consultant" />
+        <meta name="twitter:title" content="web Development courses & Blogs" />
         <meta
           name="twitter:description"
           content="Educational websites help students gain admission to top universities and enroll in the best courses."
