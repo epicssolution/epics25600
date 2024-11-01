@@ -39,14 +39,14 @@ const UniComponent1 = () => {
         <title>Online Courses | Epics solution</title>
         <meta
           name="description"
-          content="Explore Courses and their detailed information."
+          content="Best Online courses & Blogs related to use of Artificial Intelligence in SEO &  marketing  ."
         />
 
         {/* Open Graph tags */}
-        <meta property="og:title" content="Online Courses | Epics solution" />
+        <meta property="og:title" content="Best Online courses & Blogs related to use of AI in SEO &  marketing   | Epics Solution" />
         <meta
           property="og:description"
-          content="Explore universities and their detailed information on Galaxy Education."
+          content="Best Online courses & Blogs related to use of AI in SEO &  marketing  ."
         />
         <meta
           property="og:image"
@@ -59,11 +59,11 @@ const UniComponent1 = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Universities | Galaxy Education"
+          content="Best Online courses & Blogs related to use of AI in SEO &  marketing   | Epics Solution"
         />
         <meta
           name="twitter:description"
-          content="Explore universities and their detailed information."
+          content="Best Online courses & Blogs related to use of Artificial Intelligence in SEO &  marketing."
         />
         <meta
           name="twitter:image"
