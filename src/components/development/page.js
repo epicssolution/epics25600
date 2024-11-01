@@ -47,10 +47,10 @@ const Development = () => {
         />
 
         {/* Open Graph tags */}
-        <meta property="og:title" content="Online Courses| Epics solution" />
+        <meta property="og:title" content="Best Online Courses and related to web| Epics solution" />
         <meta
           property="og:description"
-          content="Explore Courses and their detailed information on Epics solution."
+          content="Educational websites help students read informative blogs  and enroll in the best online courses related to use of Artificial intelligence in  web Development."
         />
         <meta
           property="og:image"
@@ -67,7 +67,7 @@ const Development = () => {
         <meta name="twitter:title" content="Universities | Galaxy Education" />
         <meta
           name="twitter:description"
-          content="Explore universities and their detailed information."
+          content="Educational websites help students read informative blogs  and enroll in the best online courses related to use of Artificial intelligence in  web Development."
         />
         <meta
           name="twitter:image"
