@@ -7,11 +7,11 @@ export default function Mar() {
     <>
       {/* Adding the Head component for Open Graph and Twitter meta tags */}
       <Head>
-        <title>Best Online  marketing  Courses</title>
-        <meta property="og:title" content="online marketing Consultant" />
+        <title>Best Online courses & Blogs related to use of AI in SEO &  marketing  </title>
+        <meta property="og:title" content="Best Online courses & Blogs related to use of AI in SEO &  marketing  " />
         <meta
           property="og:description"
-          content="Best Online  marketing  Courses."
+          content="Best Online courses & Blogs related to use of AI in SEO &  marketing  ."
         />
         <meta property="og:image" content="https://your-site-url.com/social-banner.png" />
         <meta property="og:url" content="https://your-site-url.com" />
@@ -19,10 +19,10 @@ export default function Mar() {
         
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Best Online  marketing  Courses" />
+        <meta name="twitter:title" content="Best Online courses & Blogs related to use of AI in SEO &  marketing  " />
         <meta
           name="twitter:description"
-          content="Best Online  marketing  Courses."
+          content="Best Online courses & Blogs related to use of AI in SEO &  marketing  ."
         />
         <meta name="twitter:image" content="https://your-site-url.com/social-banner.png" />
       </Head>
