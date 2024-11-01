@@ -8,10 +8,10 @@ export default function Eng() {
       {/* Adding the Head component for Open Graph and Twitter meta tags */}
       <Head>
         <title>Engineering courses</title>
-        <meta property="og:title" content="online courses" />
+        <meta property="og:title" content="Best online courses & Blogs related to Energy optimization" />
         <meta
           property="og:description"
-          content="Educational websites help students gain admission to top uonline courses  and enroll in the best courses."
+          content="Educational websites help students read informative blogs  and enroll in the best online courses related to use of Artificial intelligence for Energy optimization in HVAC AND PLUMBING."
         />
         <meta property="og:image" content="https://www.epicssolution.com/social-banner.png" />
         <meta property="og:url" content="https://www.epicssolution.com/" />
@@ -19,10 +19,10 @@ export default function Eng() {
         
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Study Visa Consultant" />
+        <meta name="twitter:title" content="Best online courses & Blogs related to Energy optimization" />
         <meta
           name="twitter:description"
-          content="Educational websites help students gain admission to top universities and enroll in the best courses."
+          content="Educational websites help students read informative blogs  and enroll in the best online courses related to use of Artificial intelligence for Energy optimization in HVAC AND PLUMBING."
         />
         <meta name="twitter:image" content="https://www.epicssolution.com/social-banner.png" />
       </Head>
