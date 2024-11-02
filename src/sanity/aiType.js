@@ -57,12 +57,13 @@ export const aiType = defineType({
     }),
 
     // Main content block
-      defineField({
+    defineField({
       title: 'Content',
       name: 'content',
       type: 'array',
       of: [{ type: 'block' }],
-    })
+    }), // Added comma here to fix syntax error
+
     // Tags for categorization
     defineField({
       name: 'tags',
