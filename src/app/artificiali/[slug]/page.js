@@ -190,7 +190,7 @@ export default async function BlogPage({ params }) {
               image: ({ value }) => (
                 <div className="my-4">
                   <img
-                    src={value.asset.url}
+                    src={urlFor(value).url()}
                     alt={value.alt || 'Blog image'}
                     className="w-full h-auto rounded"
                   />
@@ -219,8 +219,16 @@ export default async function BlogPage({ params }) {
               h3: ({ children }) => (
                 <h3 className="text-2xl font-medium my-3">{children}</h3>
               ),
-              normal: ({ children }) => (
-                <p className="my-2">{children}</p>
+              normal: ({ children }) => <p className="my-2">{children}</p>,
+              bullet: ({ children }) => (
+                <ul className="list-disc list-inside my-2">
+                  <li>{children}</li>
+                </ul>
+              ),
+              number: ({ children }) => (
+                <ol className="list-decimal list-inside my-2">
+                  <li>{children}</li>
+                </ol>
               ),
             },
           }}
