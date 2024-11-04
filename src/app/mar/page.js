@@ -7,11 +7,11 @@ export default function Mar() {
     <>
       {/* Adding the Head component for Open Graph and Twitter meta tags */}
       <Head>
-        <title>Best Online courses & Blogs related to use of AI in SEO &  marketing  </title>
-        <meta property="og:title" content="Best Online courses & Blogs related to use of AI in SEO &  marketing  " />
+        <title>Best Online courses & Blogs related to use of AI in HVAC Devices  </title>
+        <meta property="og:title" content="Best Online courses & Blogs related to use of AI in HVAC " />
         <meta
           property="og:description"
-          content="Best Online courses & Blogs related to use of AI in SEO &  marketing  ."
+          content="Best Online courses & Blogs related to use of AI in HVAC ."
         />
         <meta property="og:image" content="https://your-site-url.com/social-banner.png" />
         <meta property="og:url" content="https://your-site-url.com" />
