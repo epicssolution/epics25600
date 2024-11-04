@@ -25,6 +25,8 @@ export default function Artif() {
           content="Educational websites help students to read informative blogs  and enroll in the best online courses related to use of Artificial intelligence in Mechanical,HVAC,Energy and web Development"
         />
         <meta name="twitter:image" content="https://www.epicssolution.com/social-banner.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
       </Head>
       
       <div className="mt-8">
