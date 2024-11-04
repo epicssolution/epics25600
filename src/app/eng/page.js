@@ -7,7 +7,7 @@ export default function Eng() {
     <>
       {/* Adding the Head component for Open Graph and Twitter meta tags */}
       <Head>
-        <title>Engineering courses</title>
+        <title>HVAC Designing </title>
         <meta property="og:title" content="Best online courses & Blogs related to Energy optimization" />
         <meta
           property="og:description"
@@ -30,7 +30,7 @@ export default function Eng() {
       <div className="mt-8">
         {/* Second component */}
         <div className="flex justify-center align-middle font-semibold text-2xl border-[1px] border-solid border-dark dark:border-light text-black dark:text-light rounded-lg p-4 sticky top-6 max-h-[80vh]" >
-       Engineering Courses
+       HVAC Designing 
 
         </div>
        <div className=" mt-6 "> <article  style={{ minHeight: '300px', width: '100%' }}>
