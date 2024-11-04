@@ -81,9 +81,9 @@ const Header = () => {
         >
           <ul className="flex flex-col items-center space-y-4">
             <li><Link href="/" onClick={toggle}>Home</Link></li>
-            <li><Link href="/dev" onClick={toggle}>Development</Link></li>
-            <li><Link href="/eng" onClick={toggle}>Engineering</Link></li>
-            <li><Link href="/mar" onClick={toggle}>Marketing</Link></li>
+            <li><Link href="/dev" onClick={toggle}>Equipment</Link></li>
+            <li><Link href="/eng" onClick={toggle}>Designing</Link></li>
+            <li><Link href="/mar" onClick={toggle}>Software</Link></li>
             <li><Link href="/ai" onClick={toggle}>Artificial Intelligence</Link></li>
           </ul>
           <button
