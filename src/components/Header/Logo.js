@@ -14,6 +14,7 @@ const Logo = () => {
           height={64} 
            />
       </div>
+             <div>HVAC</div>
      
     </Link>
   );
