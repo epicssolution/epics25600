@@ -8,10 +8,10 @@ export default function Developmentf() {
       {/* Adding the Head component for Open Graph and Twitter meta tags */}
       <Head>
         <title> web Development courses & Blogs</title>
-        <meta property="og:title" content="web Development courses & Blogs" />
+        <meta property="og:title" content=" HVAC Equipment and Devices courses & Blogs" />
         <meta
           property="og:description"
-          content="Educational websites help students read informative blogs  and enroll in the best online courses related to use of Artificial intelligence in  web Development."
+          content="Educational websites help students read informative blogs  and enroll in the best online courses related to use of Artificial intelligence in   HVAC Equipment and Devices."
         />
         <meta property="og:image" content="https://www.epicssolution.com/social-banner.png" />
         <meta property="og:url" content="https://www.epicssolution.com/" />
@@ -19,10 +19,10 @@ export default function Developmentf() {
         
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="web Development courses & Blogs" />
+        <meta name="twitter:title" content=" HVAC Equipment and Devicescourses & Blogs" />
         <meta
           name="twitter:description"
-          content="Educational websites help students read informative blogs  and enroll in the best online courses related to use of Artificial intelligence in  web Development."
+          content="Educational websites help students read informative blogs  and enroll in the best online courses related to use of Artificial intelligence in   HVAC Equipment and Devices."
         />
         <meta name="twitter:image" content="https://www.epicssolution.com/social-banner.png" />
       </Head>
@@ -30,7 +30,7 @@ export default function Developmentf() {
       <div className="mt-8">
         {/* Second component */}
         <div className="flex justify-center align-middle font-semibold text-2xl border-[1px] border-solid border-dark dark:border-light text-black dark:text-light rounded-lg p-4 sticky top-6 max-h-[80vh]" >
-       Development Courses
+       HVAC Equipment and Devices
 
         </div>
        <div className=" mt-6 "> <article  style={{ minHeight: '300px', width: '100%' }}>
