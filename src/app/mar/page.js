@@ -7,7 +7,7 @@ export default function Mar() {
     <>
       {/* Adding the Head component for Open Graph and Twitter meta tags */}
       <Head>
-        <title>Best Online courses & Blogs related to use of AI in HVAC Devices  </title>
+        <title>Best Online courses & Blogs related to use of AI in HVAC Softwares  </title>
         <meta property="og:title" content="Best Online courses & Blogs related to use of AI in HVAC " />
         <meta
           property="og:description"
@@ -19,10 +19,10 @@ export default function Mar() {
         
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Best Online courses & Blogs related to use of AI in SEO &  marketing  " />
+        <meta name="twitter:title" content="Best Online courses & Blogs related to use of AI in Revit  " />
         <meta
           name="twitter:description"
-          content="Best Online courses & Blogs related to use of AI in SEO &  marketing  ."
+          content="Best Online courses & Blogs related to use of AI in Revit   ."
         />
         <meta name="twitter:image" content="https://your-site-url.com/social-banner.png" />
       </Head>
@@ -30,7 +30,7 @@ export default function Mar() {
       <div className="mt-8">
         {/* Second component */}
         <div className="flex justify-center items-center font-semibold text-2xl border-[1px] border-solid border-dark dark:border-light text-black dark:text-light rounded-lg p-4 sticky top-6 max-h-[80vh]">
-          Marketing Courses
+          HVAC Software Tuotorials
         </div>
         
         <div className="mt-6">
