@@ -102,9 +102,9 @@ const Header = () => {
           className="hidden sm:flex items-center space-x-6 bg-light dark:bg-dark text-dark dark:text-light py-3 px-8 rounded-full border border-solid border-dark dark:border-light"
         >
           <Link href="/">Home</Link>
-          <Link href="/dev">Development</Link>
-          <Link href="/eng">Engineering</Link>
-          <Link href="/mar">Marketing</Link>
+          <Link href="/dev">EQUPMENT</Link>
+          <Link href="/eng">Designing</Link>
+          <Link href="/mar">software</Link>
           <Link href="/ai">Artificial Intelligence</Link>
           <button
             onClick={() => setMode(mode === "light" ? "dark" : "light")}
