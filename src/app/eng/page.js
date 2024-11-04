@@ -8,10 +8,10 @@ export default function Eng() {
       {/* Adding the Head component for Open Graph and Twitter meta tags */}
       <Head>
         <title>HVAC Designing </title>
-        <meta property="og:title" content="Best online courses & Blogs related to Energy optimization" />
+        <meta property="og:title" content="Best online courses & Blogs related to HVAC optimization" />
         <meta
           property="og:description"
-          content="Educational websites help students read informative blogs  and enroll in the best online courses related to use of Artificial intelligence for Energy optimization in HVAC AND PLUMBING."
+          content="Educational websites help students read informative blogs  and enroll in the best HVAC  courses related to use of Artificial intelligence for Energy optimization in HVAC AND PLUMBING."
         />
         <meta property="og:image" content="https://www.epicssolution.com/social-banner.png" />
         <meta property="og:url" content="https://www.epicssolution.com/" />
