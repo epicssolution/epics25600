@@ -8,7 +8,7 @@ const Logo = () => {
       <div  className="w-16 rounded-full overflow-hidden border border-solid  border-dark mr-4 ">
         <Image 
           src={profileImg} 
-          alt="Profile image of the Education Consultant" 
+          alt="Profile image of the HVAC Consultant" 
          className="w-full h-auto rounded-full  "
          width={64} 
           height={64} 
