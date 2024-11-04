@@ -7,7 +7,7 @@ export default function Developmentf() {
     <>
       {/* Adding the Head component for Open Graph and Twitter meta tags */}
       <Head>
-        <title> web Development courses & Blogs</title>
+        <title> HVAC Equipment and Devices  courses & Blogs</title>
         <meta property="og:title" content=" HVAC Equipment and Devices courses & Blogs" />
         <meta
           property="og:description"
