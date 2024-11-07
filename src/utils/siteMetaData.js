@@ -1,8 +1,8 @@
 const siteMetadata = {
-  title: 'Best online Courses & Blogs | Use of AI in Engineering & Development',
+  title: Epics Solution | Use of AI in HVAC, Energy & Development',
   author: 'Epics',
   headerTitle: 'Blog',
-  description: 'Educational websites help students gain enroll in the best courses.',
+  description: 'Educational websites help students get Knowledge  Use of AI in HVAC, Energy & Development.',
   language: 'en-us',
   theme: 'dark', // system, dark or light
   siteUrl: 'https://www.epicssolution.com/', // your website URL
