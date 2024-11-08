@@ -36,17 +36,19 @@ const Artificial = () => {
     <main className="w-full mt-16 sm:mt-24 md:mt-32 px-5 sm:px-10 md:px-24 lg:px-32 flex flex-col items-center justify-center">
       {/* Adding dynamic Open Graph meta tags */}
       <Head>
-        <title>online Courses & Blogs|Artificial Intelligence</title>
+        <title>online Courses & Blogs|Artificial Intelligence Application in Different fields</title>
         <meta
           name="description"
-          content="Explore new courses"
+          content="In this, you’ll learn about how Artificial Intelligence (AI) is used in different areas and how it impacts various fields.
+We’ll look at how Artificial Intelligence (AI) Helps improve work,Changes daily life and Solves problems  "
         />
 
         {/* Open Graph tags */}
         <meta property="og:title" content="Online Courses| Epics solution" />
         <meta
           property="og:description"
-          content="read informative blogs and enroll in the best online courses related to use of Artificial intelligence in Mechanical,HVAC,Energy and web Development."
+          content="In this, you’ll learn about how Artificial Intelligence (AI) is used in different areas and how it impacts various fields.
+We’ll look at how Artificial Intelligence (AI) Helps improve work,Changes daily life and Solves problems "
         />
         <meta
           property="og:image"
@@ -63,7 +65,8 @@ const Artificial = () => {
         <meta name="twitter:title" content="ONLINE COURSES | Epics Solution" />
         <meta
           name="twitter:description"
-          content="read informative blogs and enroll in the best online courses related to use of Artificial intelligence in Mechanical,HVAC,Energy and web Development."
+          content="In this, you’ll learn about how Artificial Intelligence (AI) is used in different areas and how it impacts various fields.
+We’ll look at how Artificial Intelligence (AI) Helps improve work,Changes daily life and Solves problems "
         />
         <meta
           name="twitter:image"
