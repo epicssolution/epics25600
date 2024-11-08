@@ -28,14 +28,14 @@ export default function Artif() {
         
         {/* Add Structured Data */}
         <script type='application/ld+json'>{`{
-          '@context': 'https://schema.org',
-          '@type': 'Course',
-          'name': 'Artificial Intelligence Courses',
-          'description': 'Discover the best AI courses and enhance your skills.',
-          'provider': {
-            '@type': 'Organization',
-            'name': 'Epic Solutions',
-            'url': 'https://www.epicssolution.com/'
+          "@context": "https://schema.org",
+          "@type": "Course",
+          "name": "Artificial Intelligence Courses",
+          "description": "Discover the best AI courses and enhance your skills.",
+          "provider": {
+            "@type": "Organization",
+            "name": "Epic Solutions",
+            "url": "https://www.epicssolution.com/"
           }
         }`}</script>
       </Head>
