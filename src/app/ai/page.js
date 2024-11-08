@@ -30,15 +30,15 @@ export default function Artif() {
       
       <div className="mt-8">
         {/* Second component */}
-     <div className="flex flex-col items-center font-semibold text-2xl border border-solid border-dark dark:border-light text-black dark:text-light rounded-lg p-6 sticky top-6 max-h-[80vh] space-y-4">
-       <h1 className="text-3xl mb-2">Application of Artificial Intelligence</h1>
-        <h2 className="text-xl font-normal">
-         <strong>Introduction:</strong> Artificial Intelligence, or AI, is a smart technology that lets computers act and think like humans. It can do things like understand what we say, make decisions, and learn from experiences. Imagine giving computers a 'brain' to solve problems and get smarter over time—just like people do!
-        </h2>
-       <h2 className="text-xl font-normal">
-        <strong>How AI Helps:</strong> AI analyzes huge amounts of data to become faster and better at tasks, making life easier and more efficient. For example, AI can recommend movies based on your tastes or even assist doctors in diagnosing illnesses.
-      </h2>
-    </div>
+          <div className="flex flex-col items-center font-semibold text-2xl border border-solid border-dark dark:border-light text-black dark:text-light rounded-lg p-6 sticky top-6 max-h-[80vh] space-y-4">
+           <h1 className="text-3xl mb-2">Application of Artificial Intelligence</h1>
+           <h2 className="text-xl font-normal">
+             <strong>Introduction:</strong> Artificial Intelligence, or AI, is a smart technology that lets computers act and think like humans. It can do things like understand what we say, make decisions, and learn from experiences. Imagine giving computers a 'brain' to solve problems and get smarter over time—just like people do!
+           </h2>
+           <h2 className="text-xl font-normal">
+            <strong>How AI Helps:</strong> AI analyzes huge amounts of data to become faster and better at tasks, making life easier and more efficient. For example, AI can recommend movies based on your tastes or even assist doctors in diagnosing illnesses.
+           </h2>
+      </div>
        <div className=" mt-6 "> <article  style={{ minHeight: '300px', width: '100%' }}>
           <Artificial />
         </article></div>
