@@ -3,7 +3,7 @@ import React from "react";
 import Equipment from "@/components/Equipment/page";
 import Head from 'next/head'; // Importing Head component for adding meta tags
 
-export default function Eng() {
+export default function equipment() {
   return (
     <>
       {/* Adding the Head component for Open Graph and Twitter meta tags */}
