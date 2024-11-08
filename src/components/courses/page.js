@@ -36,7 +36,7 @@ const UniComponent1 = () => {
     <main className="w-full mt-16 sm:mt-24 md:mt-32 px-5 sm:px-10 md:px-24 lg:px-32 flex flex-col items-center justify-center">
       {/* Adding dynamic Open Graph meta tags */}
       <Head>
-        <title>Online Courses | Epics solution</title>
+        <title>Best Online Courses | Revit MEP 2025</title>
         <meta
           name="description"
           content="Check out simple blogs and top online courses to learn REVIT MEP 2025. Get easy tips and clear steps on using REVIT MEP 2025 to design HVAC systems with REVIT 2025 ."
