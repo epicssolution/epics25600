@@ -39,14 +39,14 @@ const UniComponent1 = () => {
         <title>Online Courses | Epics solution</title>
         <meta
           name="description"
-          content="Best Online courses & Blogs related to use of Artificial Intelligence in SEO &  marketing  ."
+          content="Check out simple blogs and top online courses to learn REVIT MEP 2025. Get easy tips and clear steps on using REVIT MEP 2025 to design HVAC systems with REVIT 2025 ."
         />
 
         {/* Open Graph tags */}
-        <meta property="og:title" content="Best Online courses & Blogs related to use of AI in SEO &  marketing   | Epics Solution" />
+        <meta property="og:title" content="Check out simple blogs and top online courses to learn REVIT MEP 2025. Get easy tips and clear steps on using REVIT MEP 2025 to design HVAC systems with REVIT 2025   | Epics Solution" />
         <meta
           property="og:description"
-          content="Best Online courses & Blogs related to use of AI in SEO &  marketing  ."
+          content="Check out simple blogs and top online courses to learn REVIT MEP 2025. Get easy tips and clear steps on using REVIT MEP 2025 to design HVAC systems with REVIT 2025 ."
         />
         <meta
           property="og:image"
@@ -59,11 +59,11 @@ const UniComponent1 = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Best Online courses & Blogs related to use of AI in SEO &  marketing   | Epics Solution"
+          content="Check out simple blogs and top online courses to learn REVIT MEP 2025. Get easy tips and clear steps on using REVIT MEP 2025 to design HVAC systems with REVIT 2025 | Epics Solution"
         />
         <meta
           name="twitter:description"
-          content="Best Online courses & Blogs related to use of Artificial Intelligence in SEO &  marketing."
+          content="Check out simple blogs and top online courses to learn REVIT MEP 2025. Get easy tips and clear steps on using REVIT MEP 2025 to design HVAC systems with REVIT 2025."
         />
         <meta
           name="twitter:image"
