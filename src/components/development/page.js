@@ -58,13 +58,13 @@ const Development = () => {
         />
         <meta
           property="og:url"
-          content="https://www.epicssolution.com/university"
+          content="https://www.epicssolution.com/dev"
         />
         <meta property="og:type" content="website" />
 
         {/* Twitter Card tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Universities | Galaxy Education" />
+        <meta name="twitter:title" content="Best Online Courses and related to web| Epics solution" />
         <meta
           name="twitter:description"
           content="Educational websites help students read informative blogs  and enroll in the best online courses related to use of Artificial intelligence in  web Development."
