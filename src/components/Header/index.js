@@ -104,7 +104,7 @@ const Header = () => {
         >
           <Link href="/">Home</Link>
           <Link href="/dev">Equipment</Link>
-          <Link><Link href="/equipment" >Equipment</Link></Link>
+          <Link href="/equipment" >Equipment</Link>
           <Link href="/eng">Designing</Link>
           <Link href="/mar">software</Link>
           <Link href="/ai">Artificial Intelligence</Link>
