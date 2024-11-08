@@ -1,3 +1,4 @@
+
 import React from "react";
 import Head from 'next/head'; // Importing Head component for adding meta tags
 import Artificial from "@/components/Artificial/page";
