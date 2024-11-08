@@ -39,7 +39,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: blog.title,
       description: blog.description,
-      url: `https://www.epicssolution.com/Engineering/${slug}`,
+      url: `https://www.epicssolution.com/equipment/${slug}`,
       images: imageUrl ? [{ url: imageUrl }] : [],
       type: 'article',
     },
