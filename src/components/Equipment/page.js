@@ -37,17 +37,17 @@ const Equipment = () => {
     <main className="w-full mt-16 sm:mt-24 md:mt-32 px-5 sm:px-10 md:px-24 lg:px-32 flex flex-col items-center justify-center">
       {/* Adding dynamic Open Graph meta tags */}
       <Head>
-        <title>online Courses & Blogs|Artificial Intelligence</title>
+        <title>Best online Courses & Blogs|HVAC eQUIPMENT</title>
         <meta
           name="description"
           content="Explore new courses"
         />
 
         {/* Open Graph tags */}
-        <meta property="og:title" content="Online Courses| Epics solution" />
+        <meta property="og:title" content="Best Online Courses|  " />
         <meta
           property="og:description"
-          content="read informative blogs and enroll in the best online courses related to use of Artificial intelligence in Mechanical,HVAC,Energy and web Development."
+          content=" Read simple blogs and join top online courses to learn about HVAC equipment, like chillers, fan coil units, and other systems that help with heating, cooling, and ventilation. Get easy-to-understand details about how HVAC equipment works!."
         />
         <meta
           property="og:image"
@@ -61,10 +61,10 @@ const Equipment = () => {
 
         {/* Twitter Card tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="ONLINE COURSES | Epics Solution" />
+        <meta name="twitter:title" content="best ONLINE COURSES | Epics Solution" />
         <meta
           name="twitter:description"
-          content="read informative blogs and enroll in the best online courses related to use of Artificial intelligence in Mechanical,HVAC,Energy and web Development."
+          content="Read simple blogs and join top online courses to learn about HVAC equipment, like chillers, fan coil units, and other systems that help with heating, cooling, and ventilation. Get easy-to-understand details about how HVAC equipment works!."
         />
         <meta
           name="twitter:image"
