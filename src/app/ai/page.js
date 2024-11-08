@@ -7,7 +7,7 @@ export default function Artif() {
     <>
       {/* Adding the Head component for Open Graph and Twitter meta tags */}
       <Head>
-        <title>Development courses</title>
+        <title>Development courses and blogs</title>
         <meta property="og:title" content="online courses" />
         <meta
           property="og:description"
