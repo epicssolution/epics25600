@@ -81,7 +81,8 @@ const Header = () => {
         >
           <ul className="flex flex-col items-center space-y-4">
             <li><Link href="/" onClick={toggle}>Home</Link></li>
-            <li><Link href="/dev" onClick={toggle}>Equipment</Link></li>
+            <li><Link href="/dev" onClick={toggle}>Development</Link></li>
+          <li><Link href="/equipment" onClick={toggle}>Equipment</Link></li>
             <li><Link href="/eng" onClick={toggle}>Designing</Link></li>
             <li><Link href="/mar" onClick={toggle}>Software</Link></li>
             <li><Link href="/ai" onClick={toggle}>Artificial Intelligence</Link></li>
@@ -103,6 +104,7 @@ const Header = () => {
         >
           <Link href="/">Home</Link>
           <Link href="/dev">Equipment</Link>
+          <Link><Link href="/equipment" >Equipment</Link></Link>
           <Link href="/eng">Designing</Link>
           <Link href="/mar">software</Link>
           <Link href="/ai">Artificial Intelligence</Link>
