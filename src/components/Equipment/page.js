@@ -126,4 +126,4 @@ const Equipment = () => {
   );
 };
 
-export default Ertificial;
+export default Equipment;
