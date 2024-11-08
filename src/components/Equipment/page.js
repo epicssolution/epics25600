@@ -55,7 +55,7 @@ const Equipment = () => {
         />
         <meta
           property="og:url"
-          content="https://www.epicssolution.com/artificiali"
+          content="https://www.epicssolution.com/equipment"
         />
         <meta property="og:type" content="website" />
 
