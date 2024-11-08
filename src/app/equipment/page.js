@@ -9,10 +9,10 @@ export default function equipment() {
       {/* Adding the Head component for Open Graph and Twitter meta tags */}
       <Head>
         <title>HVAC Equipment </title>
-        <meta property="og:title" content="Best online courses & Blogs related to HVAC optimization" />
+        <meta property="og:title" content="Best online courses & Blogs related to working of HVAC EQUIPMENT" />
         <meta
           property="og:description"
-          content="Educational websites help students read informative blogs  and enroll in the best HVAC  courses related to use of Artificial intelligence for Energy optimization in HVAC AND PLUMBING."
+          content="Best online courses & Blogs related to working of HVAC EQUIPMENT"
         />
         <meta property="og:image" content="https://www.epicssolution.com/social-banner.png" />
         <meta property="og:url" content="https://www.epicssolution.com/" />
@@ -20,10 +20,10 @@ export default function equipment() {
         
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Best online courses & Blogs related to Energy optimization" />
+        <meta name="twitter:title" content="Best online courses & Blogs related to working of HVAC EQUIPMENT" />
         <meta
           name="twitter:description"
-          content="Educational websites help students read informative blogs  and enroll in the best online courses related to use of Artificial intelligence for Energy optimization in HVAC AND PLUMBING."
+          content="Best online courses & Blogs related to working of HVAC EQUIPMENT"
         />
         <meta name="twitter:image" content="https://www.epicssolution.com/social-banner.png" />
       </Head>
