@@ -11,7 +11,7 @@ export default function Artif() {
         <meta property="og:title" content="Artificial Intelligence Blogs & courses" />
         <meta
           property="og:description"
-          content="read informative blogs  and enroll in the best online courses related to use of Artificial intelligence and application of  Artificial intelligence in Mechanical,HVAC,Energy and web Development"
+          content="read informative blogs  and enroll in the best online courses related to use of Artificial intelligence and application of Artificial intelligence in Mechanical, HVAC, Energy and web Development"
         />
         <meta property="og:image" content="https://www.epicssolution.com/social-banner.png" />
         <meta property="og:url" content="https://www.epicssolution.com/" />
