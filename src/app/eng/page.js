@@ -11,7 +11,7 @@ export default function Eng() {
         <meta property="og:title" content="Best online courses & Blogs related to HVAC optimization" />
         <meta
           property="og:description"
-          content="Educational websites help students read informative blogs  and enroll in the best HVAC  courses related to use of Artificial intelligence for Energy optimization in HVAC AND PLUMBING."
+          content="HVAC Designing calculations, theory  and articles on  how to increase Energy Effiency in HVAC "
         />
         <meta property="og:image" content="https://www.epicssolution.com/social-banner.png" />
         <meta property="og:url" content="https://www.epicssolution.com/" />
@@ -19,10 +19,10 @@ export default function Eng() {
         
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Best online courses & Blogs related to Energy optimization" />
+        <meta name="twitter:title" content="HVAC Designing calculations, theory  and articles on  how to increase Energy Effiency in HVAC" />
         <meta
           name="twitter:description"
-          content="Educational websites help students read informative blogs  and enroll in the best online courses related to use of Artificial intelligence for Energy optimization in HVAC AND PLUMBING."
+          content="HVAC Designing calculations, theory  and articles on  how to increase Energy Effiency in HVAC"
         />
         <meta name="twitter:image" content="https://www.epicssolution.com/social-banner.png" />
       </Head>
