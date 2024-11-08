@@ -11,7 +11,7 @@ export default function Artif() {
         <meta property="og:title" content="Artificial Intelligence Blogs & courses" />
         <meta
           property="og:description"
-          content="read informative blogs  and enroll in the best online courses related to use of Artificial intelligence and application of Artificial intelligence in Mechanical, HVAC, Energy and web Development"
+          content="Read informative blogs and enroll in the best online courses related to the use of Artificial Intelligence and its application in Mechanical, HVAC, Energy, and Web Development."
         />
         <meta property="og:image" content="https://www.epicssolution.com/social-banner.png" />
         <meta property="og:url" content="https://www.epicssolution.com/" />
@@ -22,10 +22,9 @@ export default function Artif() {
         <meta name="twitter:title" content="Artificial Intelligence Blogs & courses" />
         <meta
           name="twitter:description"
-          content="Educational websites help students to read informative blogs  and enroll in the best online courses related to use of Artificial intelligence  and application of Artificial Intelligence in Mechanical,HVAC,Energy and web Development"
+          content="Educational websites help students to read informative blogs and enroll in the best online courses related to the use of Artificial Intelligence and its application in Mechanical, HVAC, Energy, and Web Development."
         />
         <meta name="twitter:image" content="https://www.epicssolution.com/social-banner.png" />
-
       </Head>
       
       <div className="mt-8">
@@ -33,11 +32,11 @@ export default function Artif() {
         <div className="flex justify-center align-middle font-semibold text-2xl border-[1px] border-solid border-dark dark:border-light text-black dark:text-light rounded-lg p-4 sticky top-6 max-h-[80vh]" >
           Artificial Intelligence 
         </div>
-       <div className=" mt-6 ">
-        <article  style={{ minHeight: '300px', width: '100%' }}>
-          <Artificial />
-        </article>
-       </div>
+        <div className="mt-6">
+          <article style={{ minHeight: '300px', width: '100%' }}>
+            <Artificial />
+          </article>
+        </div>
       </div>
     </>
   );
