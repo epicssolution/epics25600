@@ -64,6 +64,9 @@ export async function generateMetadata({ params }) {
       'pinterest:description': blog.description,
       'pinterest:image': imageUrl,
     },
+    alternates: {
+      canonical: `https://www.epicssolution.com/Engineering/${slug}`,
+    },
   };
 }
 
