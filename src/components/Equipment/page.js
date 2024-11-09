@@ -37,14 +37,14 @@ const Equipment = () => {
     <main className="w-full mt-16 sm:mt-24 md:mt-32 px-5 sm:px-10 md:px-24 lg:px-32 flex flex-col items-center justify-center">
       {/* Adding dynamic Open Graph meta tags */}
       <Head>
-        <title>Best online Courses & Blogs|HVAC eQUIPMENT</title>
+        <title>Best online Courses & Blogs|HVAC EQUIPMENT</title>
         <meta
           name="description"
           content="Explore new courses"
         />
 
         {/* Open Graph tags */}
-        <meta property="og:title" content="Best Online Courses|  " />
+        <meta property="og:title" content="Best Online Courses| HVAC EQUIPMENT " />
         <meta
           property="og:description"
           content=" Read simple blogs and join top online courses to learn about HVAC equipment, like chillers, fan coil units, and other systems that help with heating, cooling, and ventilation. Get easy-to-understand details about how HVAC equipment works!."
@@ -61,7 +61,7 @@ const Equipment = () => {
 
         {/* Twitter Card tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="best ONLINE COURSES | Epics Solution" />
+        <meta name="twitter:title" content="best ONLINE COURSES | HVAC EQUIPMENT" />
         <meta
           name="twitter:description"
           content="Read simple blogs and join top online courses to learn about HVAC equipment, like chillers, fan coil units, and other systems that help with heating, cooling, and ventilation. Get easy-to-understand details about how HVAC equipment works!."
