@@ -83,6 +83,8 @@ const Header = () => {
             <li><Link href="/" onClick={toggle}>Home</Link></li>
             <li><Link href="/dev" onClick={toggle}>Development</Link></li>
           <li><Link href="/equipment" onClick={toggle}>Equipment</Link></li>
+          <li><Link href="/ai" onClick={toggle}>Artificial intelligence</Link></li>
+
             <li><Link href="/eng" onClick={toggle}>Designing</Link></li>
             <li><Link href="/mar" onClick={toggle}>Software</Link></li>
           </ul>
@@ -104,6 +106,7 @@ const Header = () => {
           <Link href="/">Home</Link>
           <Link href="/dev">Development</Link>
           <Link href="/equipment" >Equipment</Link>
+          <Link href="/ai" >Artificial intelligence</Link>
           <Link href="/eng">Designing</Link>
           <Link href="/mar">software</Link>
           <button
