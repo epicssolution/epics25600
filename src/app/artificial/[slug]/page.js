@@ -32,13 +32,23 @@ export async function generateMetadata({ params }) {
   // Generate the image URL or fallback to a social banner image
   const imageUrl = blog.image ? urlFor(blog.image).url() : siteMetadata.socialBanner;
 
+    const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": blog.title,
+    "description": blog.description,
+    "image": imageUrl,
+    "datePublished": blog.publishedAt,
+    "url": `https://www.epicssolution.com/artificial/${slug}`,
+  };
+
   return {
     title: blog.title,
     description: blog.description,
     openGraph: {
       title: blog.title,
       description: blog.description,
-      url: `https://www.epicssolution.com/artificialf/${slug}`,
+      url: `https://www.epicssolution.com/artificial/${slug}`,
       images: imageUrl ? [{ url: imageUrl }] : [],
       type: 'article',
     },
@@ -52,6 +62,9 @@ export async function generateMetadata({ params }) {
       'pinterest:title': blog.title,
       'pinterest:description': blog.description,
       'pinterest:image': imageUrl,
+    },
+      alternates: {
+      canonical: `https://www.epicssolution.com/artificial/${slug}`,
     },
   };
 }
