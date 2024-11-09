@@ -7,11 +7,11 @@ export default function Developmentf() {
     <>
       {/* Adding the Head component for Open Graph and Twitter meta tags */}
       <Head>
-        <title> HVAC Equipment and Devices  courses & Blogs</title>
-        <meta property="og:title" content=" HVAC Equipment and Devices courses & Blogs" />
+        <title> web Development using Next Js</title>
+        <meta property="og:title" content="  web Development using Next Js" />
         <meta
           property="og:description"
-          content="Educational websites help students read informative blogs  and enroll in the best online courses related to use of Artificial intelligence in   HVAC Equipment and Devices."
+          content="Educational websites help students read informative blogs  and enroll in the best online courses related to  web Development using Next Js"
         />
         <meta property="og:image" content="https://www.epicssolution.com/social-banner.png" />
         <meta property="og:url" content="https://www.epicssolution.com/" />
@@ -19,10 +19,10 @@ export default function Developmentf() {
         
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content=" HVAC Equipment and Devicescourses & Blogs" />
+        <meta name="twitter:title" content="  web Development using Next Js courses & Blogs" />
         <meta
           name="twitter:description"
-          content="Educational websites help students read informative blogs  and enroll in the best online courses related to use of Artificial intelligence in   HVAC Equipment and Devices."
+          content="Educational websites help students read informative blogs  and enroll in the best online courses related to use of  web Development using Next Js."
         />
         <meta name="twitter:image" content="https://www.epicssolution.com/social-banner.png" />
       </Head>
