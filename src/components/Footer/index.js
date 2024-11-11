@@ -22,7 +22,7 @@ const Footer = () => {
        Best Online  | Blogs | Courses
       </p>
       <p className="mt-5 px-4 text-center w-full sm:w-3/5 font-light dark:font-medium text-sm sm:text-base">
-        Educational Website help to read informative blogs and enroll in the best online courses related to use of Energy and web Development  
+        Educational Website help to read informative blogs and enroll in the best online courses  
       </p>
 
       <form
