@@ -1,5 +1,5 @@
 const siteMetadata = {
-  title: 'Epics Solution | Use of AI in HVAC, Energy & Development',
+  title: 'Epics Solution ',
   author: 'Epics',
   headerTitle: 'Blog',
   description: 'Educational websites help students get Knowledge  Use of AI in HVAC, Energy & Development.',
