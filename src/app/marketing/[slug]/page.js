@@ -31,8 +31,7 @@ export async function generateMetadata({ params }) {
 
   // Generate the image URL or fallback to a social banner image
   const imageUrl = blog.image ? urlFor(blog.image).url() : siteMetadata.socialBanner;
-
-     const structuredData = {
+ const structuredData = {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": blog.title,
@@ -40,6 +39,22 @@ export async function generateMetadata({ params }) {
     "image": imageUrl,
     "datePublished": blog.publishedAt,
     "url": `https://www.epicssolution.com/marketing/${slug}`,
+    "author": {
+      "@type": "Person",
+      "name": "Author Name", // Update with actual author name if available
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Epics Solution",
+      "logo": {
+        "@type": "ImageObject",
+        "url": siteMetadata.logo
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://www.epicssolution.com/marketing/${slug}`
+    }
   };
 
   return {
