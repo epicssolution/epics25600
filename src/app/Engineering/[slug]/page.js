@@ -131,9 +131,9 @@ export default async function BlogPage({ params }) {
     <article>
       <div className="mb-8 text-center relative w-full h-[70vh] bg-gray-800">
         <div className="w-full z-10 flex flex-col items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <h1 className="inline-block mt-6 font-semibold capitalize text-white text-2xl md:text-2xl lg:text-2xl !leading-normal relative w-5/6">
+          <h3 className="inline-block mt-6 font-semibold capitalize text-white text-2xl md:text-2xl lg:text-2xl !leading-normal relative w-5/6">
             <VisitCourseButton href={blog.href} />
-          </h1>
+          </h3>
         </div>
         <div className="absolute top-0 left-0 right-0 bottom-0 h-full bg-gray-800/60" />
         {blog.image && (
