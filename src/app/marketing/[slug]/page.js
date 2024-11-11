@@ -39,7 +39,7 @@ export async function generateMetadata({ params }) {
     "description": blog.description,
     "image": imageUrl,
     "datePublished": blog.publishedAt,
-    "url": `https://www.epicssolution.com/equipment/${slug}`,
+    "url": `https://www.epicssolution.com/marketing/${slug}`,
   };
 
   return {
@@ -64,7 +64,7 @@ export async function generateMetadata({ params }) {
       'pinterest:image': imageUrl,
     },
    alternates: {
-    canonical: `https://www.epicssolution.com/Engineering/${slug}`,
+    canonical: `https://www.epicssolution.com/marketing/${slug}`,
     },
   };
 }
