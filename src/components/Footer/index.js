@@ -16,12 +16,14 @@ const Footer = () => {
 
   return (
     <footer className="mt-16 rounded-2xl bg-dark dark:bg-accentDark/90 m-2 sm:m-10 flex flex-col items-center text-light dark:text-dark">
-      <h1>
-       Online Courses | udemy | Courses
-      </h1>
-      <h3>
+     
+
+    <p className="mt-16 font-medium dark:font-bold text-center capitalize text-2xl sm:text-3xl lg:text-4xl px-4">
+       Best Online  | Blogs | Courses
+      </p>
+      <p className="mt-5 px-4 text-center w-full sm:w-3/5 font-light dark:font-medium text-sm sm:text-base">
         Educational Website help to read informative blogs and enroll in the best online courses related to use of Energy and web Development  
-     </h3>
+      </p>
 
       <form
         onSubmit={handleSubmit(onSubmit)}
