@@ -5,7 +5,6 @@ import Header from "@/components/Header";
 import siteMetadata from "@/utils/siteMetaData";
 import Script from "next/script";
 import Footer from "@/components/Footer";
-import { Analytics } from '@vercel/analytics/react';
 
 
 const inter = Inter({
@@ -101,7 +100,6 @@ export default function RootLayout({ children }) {
         <Header />
         <main>{children}</main>
         <Footer />
-        <Analytics /> {/* Add Analytics here */}
       </body>
       </body>
     </html>
