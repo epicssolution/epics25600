@@ -21,9 +21,9 @@ const Footer = () => {
     <p className="mt-16 font-medium dark:font-bold text-center capitalize text-2xl sm:text-3xl lg:text-4xl px-4">
        Best Online  | Blogs | Courses
       </p>
-      <p className="mt-5 px-4 text-center w-full sm:w-3/5 font-light dark:font-medium text-sm sm:text-base">
+      <h2 className="mt-5 px-4 text-center w-full sm:w-3/5 font-light dark:font-medium text-sm sm:text-base">
         Educational Website help to read informative blogs and enroll in the best online courses  
-      </p>
+      </h2>
 
       <form
         onSubmit={handleSubmit(onSubmit)}
