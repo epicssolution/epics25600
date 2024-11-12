@@ -99,7 +99,7 @@ const HomePage = () => {
           </dev>
           <h2 className='hidden sm:inline-block mt-4 md:text-lg lg:text-xl font-in'>
             {blog.description}
-          h2</p>
+         </ h2>
         </div>
     </div>
   );
