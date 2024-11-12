@@ -64,6 +64,11 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="https://www.epicssolution.com/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
+    {/* SEO Meta Tags */}
+        <meta name="description" content={siteMetadata.description} />
+        <meta name="keywords" content=" Blogs, Courses, HVAC,Development ,web, Artificial Intelligence" />
+        <meta name="author" content="Epic Solutions" />
+
       <meta
           name="google-site-verification"
           content="125c3Cukk3D1INp6HOlRmuvTDPOk-qiR_j30PREvm0I"
