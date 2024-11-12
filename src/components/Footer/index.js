@@ -53,7 +53,7 @@ const Footer = () => {
           &copy;Professional Courses.
         </span>
         <Link
-          href="https://g.co/kgs/mCZEPTi"
+          href="https://maps.app.goo.gl/oNr8NiZbQp1X8Xqv5"
           className="text-center underline my-4 md:my-0"
         >
           Our Location
