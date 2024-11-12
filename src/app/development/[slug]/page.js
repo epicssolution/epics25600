@@ -11,7 +11,7 @@ import { PortableText } from "next-sanity";
 export async function generateMetadata({ params }) {
   const { slug } = params;
 
-  // Fetch the blog data from Sanity for the "dev" type
+  // Fetch the blog data from Sanity for the "development" type
   const query = `
     *[_type == "development" && slug.current == $slug][0]{
       title,
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }) {
   // Generate the image URL or fallback to a social banner image
   const imageUrl = blog.image ? urlFor(blog.image).url() : siteMetadata.socialBanner;
 
-    const structuredData = {
+  const structuredData = {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": blog.title,
@@ -40,6 +40,22 @@ export async function generateMetadata({ params }) {
     "image": imageUrl,
     "datePublished": blog.publishedAt,
     "url": `https://www.epicssolution.com/development/${slug}`,
+    "author": {
+      "@type": "Person",
+      "name": "abdul ghaffar khan", // Update with actual author name if available
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Epics Solution",
+      "logo": {
+        "@type": "ImageObject",
+        "url": siteMetadata.logo
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://www.epicssolution.com/development/${slug}`
+    }
   };
 
   return {
@@ -63,9 +79,10 @@ export async function generateMetadata({ params }) {
       'pinterest:description': blog.description,
       'pinterest:image': imageUrl,
     },
-       alternates: {
+    alternates: {
       canonical: `https://www.epicssolution.com/development/${slug}`,
     },
+    structuredData,
   };
 }
 
@@ -137,14 +154,16 @@ export default async function BlogPage({ params }) {
         </div>
         <div className="absolute top-0 left-0 right-0 bottom-0 h-full bg-gray-800/60" />
         {blog.image && (
-          <Image
-            src={urlFor(blog.image).url()}
-            alt={blog.title}
-            fill
-            className="aspect-square w-full h-full object-cover object-center"
-            loading="lazy" // Enable lazy loading
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // Responsive sizes
-          />
+          <div title={blog.title}>
+            <Image
+              src={urlFor(blog.image).url()}
+              alt={blog.title}
+              fill
+              className="aspect-square w-full h-full object-cover object-center"
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          </div>
         )}
       </div>
 
@@ -194,60 +213,11 @@ export default async function BlogPage({ params }) {
           </details>
         </div>
         <div className="col-span-12 lg:col-span-8 border-dark dark:border-light text-black dark:text-light">
-           {blog.content ? (
-        <PortableText
-          value={blog.content}
-          components={{
-            types: {
-              image: ({ value }) => (
-                <div className="my-4">
-                  <img
-                    src={urlFor(value).url()}
-                    alt={value.alt || 'Blog image'}
-                    className="w-full h-auto rounded"
-                  />
-                </div>
-              ),
-            },
-            marks: {
-              link: ({ value, children }) => (
-                <a
-                  href={value.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 dark:text-blue-400 underline"
-                >
-                  {children}
-                </a>
-              ),
-            },
-            block: {
-              h1: ({ children }) => (
-                <h1 className="text-4xl font-bold my-4">{children}</h1>
-              ),
-              h2: ({ children }) => (
-                <h2 className="text-3xl font-semibold my-4">{children}</h2>
-              ),
-              h3: ({ children }) => (
-                <h3 className="text-2xl font-medium my-3">{children}</h3>
-              ),
-              normal: ({ children }) => <p className="my-2">{children}</p>,
-              bullet: ({ children }) => (
-                <ul className="list-disc list-inside my-2">
-                  <li>{children}</li>
-                </ul>
-              ),
-              number: ({ children }) => (
-                <ol className="list-decimal list-inside my-2">
-                  <li>{children}</li>
-                </ol>
-              ),
-            },
-          }}
-        />
-      ) : (
-        <p>No content available</p>
-      )}
+          {blog.content ? (
+            <PortableText value={blog.content} />
+          ) : (
+            <p>No content available</p>
+          )}
         </div>
       </div>
     </article>
