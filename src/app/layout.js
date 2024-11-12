@@ -62,6 +62,8 @@ export default function RootLayout({ children }) {
         <link rel="sitemap" type="application/xml" href="https://www.epicssolution.com/sitemap.xml" />
         <link rel="canonical" href="https://www.epicssolution.com/" />
         <link rel="icon" href="https://www.epicssolution.com/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
       <meta
           name="google-site-verification"
           content="125c3Cukk3D1INp6HOlRmuvTDPOk-qiR_j30PREvm0I"
