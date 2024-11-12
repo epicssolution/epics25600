@@ -228,6 +228,8 @@ export default async function BlogPage({ params }) {
                     src={urlFor(value).url()}
                     alt={value.alt || 'Blog image'}
                     className="w-full h-auto rounded"
+                     quality={80} // Set image quality for optimization
+                     formats={['image/webp']} // Specify WebP format for modern browsers
                 
                   />
                 </div>
