@@ -27,8 +27,7 @@ const Page = () => {
       <div className="mt-6">
         {/* Second component */}
         <div className="flex justify-center align-middle font-semibold text-2xl border-[1px] border-solid border-dark dark:border-light text-black dark:text-light rounded-lg p-4 sticky top-6 max-h-[80vh]" >
-       Engineering Blogs & Courses 
-
+          <h1>        Engineering Blogs & Courses   </h1>
         </div>
        <div className=" mt-6 "> <article  style={{ minHeight: '300px', width: '100%' }}>
           <Engineering />
