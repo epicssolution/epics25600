@@ -1,34 +1,28 @@
 // Mark the file as a client component
 "use client";
 
-import { useEffect, useState } from 'react';
 import HomePage from '@/components/Homecomponent/page';
 import Engineering from '@/components/engineering/page';
 import { client } from '@/sanity/lib/client';
 
-const Page = () => {
-  const [blogs, setBlogs] = useState([]);
-
+const Page = async () => {
   // Fetch data from Sanity
-  useEffect(() => {
-    const fetchData = async () => {
-      const query = `*[ _type=="blog"]{
-        _id,
-        title,
-        "slug": slug.current,
-        image,
-        description,
-      }`;
-      try {
-        const result = await client.fetch(query);
-        setBlogs(result);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+  const query = `*[ _type=="blog"]{
+    _id,
+    title,
+    "slug": slug.current,
+    image,
+    description,
+    tags
+  }`;
 
-    fetchData();
-  }, []);
+  let blogs = [];
+
+  try {
+    blogs = await client.fetch(query);
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
 
   // Fallback if no blogs are found
   if (!blogs || blogs.length === 0) {
