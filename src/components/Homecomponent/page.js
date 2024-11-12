@@ -68,18 +68,20 @@ const HomePage = () => {
         <div className='absolute top-0 left-0 bottom-0 right-0 h-full bg-gradient-to-b from-transparent from-0% to-dark/90 rounded-3xl z-0' />
 
         {/* Optimized Image */}
-        {blog.image && (
-          <Image
-            src={urlFor(blog.image).url()} // Use Sanity's image URL builder
-            placeholder='blur'
-            blurDataURL={urlFor(blog.image).url()} // Using the image URL for blur effect
-            alt={blog.title}
-            fill // Makes the image fill the parent container
-            className='object-center object-cover rounded-3xl -z-10'
-            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw' // Responsive sizes for optimization
-            priority // Improves LCP by prioritizing the first image load
-          />
-        )}
+      {blog.image && (
+      <div title={blog.title}> {/* Add the title attribute here */}
+       <Image
+         src={urlFor(blog.image).url()} // Use Sanity's image URL builder
+         placeholder='blur'
+         blurDataURL={urlFor(blog.image).url()} // Using the image URL for blur effect
+         alt={blog.title}
+         fill // Makes the image fill the parent container
+         className='object-center object-cover rounded-3xl -z-10'
+         sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw' // Responsive sizes for optimization
+         priority // Improves LCP by prioritizing the first image load
+         />
+         </div>
+       )}
 
         {/* Blog Content */}
         <div className='w-full lg:w-3/4 p-6 sm:p-8 md:p-12 lg:p-16 flex flex-col items-start justify-center z-0 text-light'>
