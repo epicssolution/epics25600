@@ -41,7 +41,7 @@ export async function generateMetadata({ params }) {
     "url": `https://www.epicssolution.com/marketing/${slug}`,
     "author": {
       "@type": "Person",
-      "name": "Author Name", // Update with actual author name if available
+      "name": "abdul ghaffar khan", // Update with actual author name if available
     },
     "publisher": {
       "@type": "Organization",
@@ -81,6 +81,7 @@ export async function generateMetadata({ params }) {
    alternates: {
     canonical: `https://www.epicssolution.com/marketing/${slug}`,
     },
+        structuredData,
   };
 }
 
@@ -221,6 +222,7 @@ export default async function BlogPage({ params }) {
                     src={urlFor(value).url()}
                     alt={value.alt || 'Blog image'}
                     className="w-full h-auto rounded"
+                
                   />
                 </div>
               ),
