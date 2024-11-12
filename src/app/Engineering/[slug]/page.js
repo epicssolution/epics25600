@@ -71,8 +71,7 @@ export async function generateMetadata({ params }) {
       { rel: 'icon', href: 'https://www.epicssolution.com/Engineering/favicon.svg', type: 'image/svg+xml' },
       { rel: 'icon', href: 'https://www.epicssolution.com/Engineering/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
       { rel: 'apple-touch-icon', href: 'https://www.epicssolution.com/Engineering/apple-touch-icon.png' }
-    ],
-    appleMobileWebAppTitle: 'Epic Solution', // Web app title for mobile devices
+    ]
     
   };
 }
