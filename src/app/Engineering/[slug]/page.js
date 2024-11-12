@@ -1,4 +1,3 @@
-"use client";
 
 import BlogDetails from "@/components/blogdetail/page";
 import siteMetadata from "@/utils/siteMetaData";
