@@ -10,6 +10,22 @@ const nextConfig = {
             },
         ],
     },
+
+ async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.epicssolution.com', // WWW version
+          },
+        ],
+        destination: 'https://epicssolution.com/', // non-WWW version
+        permanent: true,
+      },
+    ];
+  },
   };
   
   export default nextConfig;
