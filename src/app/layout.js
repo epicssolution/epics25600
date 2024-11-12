@@ -61,7 +61,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="sitemap" type="application/xml" href="https://www.epicssolution.com/sitemap.xml" />
         <link rel="canonical" href="https://www.epicssolution.com/" />
-        <link rel="icon" href="URL to favicon" />
+        <link rel="icon" href="https://www.epicssolution.com/favicon.ico" />
       <meta
           name="google-site-verification"
           content="125c3Cukk3D1INp6HOlRmuvTDPOk-qiR_j30PREvm0I"
