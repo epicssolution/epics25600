@@ -40,6 +40,21 @@ export async function generateMetadata({ params }) {
     "image": imageUrl,
     "datePublished": blog.publishedAt,
     "url": `https://www.epicssolution.com/Engineering/${slug}`,
+      "author": {
+      "@type": "Person",
+      "name": "abdul ghaffar khan", // Update with actual author name if available
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Epics Solution",
+      "logo": {
+        "@type": "ImageObject",
+        "url": siteMetadata.logo
+      },
+      "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://www.epicssolution.com/Engineering/${slug}`
+    }
   };
 
   return {
@@ -63,10 +78,7 @@ export async function generateMetadata({ params }) {
       'pinterest:description': blog.description,
       'pinterest:image': imageUrl,
     },
-    alternates: {
-      canonical: `https://www.epicssolution.com/Engineering/${slug}`,
-    },
-    
+         structuredData,
   };
 }
 
@@ -137,16 +149,21 @@ export default async function BlogPage({ params }) {
           </h3>
         </div>
         <div className="absolute top-0 left-0 right-0 bottom-0 h-full bg-gray-800/60" />
-        {blog.image && (
-          <Image
-            src={urlFor(blog.image).url()}
-            alt={blog.title}
-            fill
-            className="aspect-square w-full h-full object-cover object-center"
-            priority
-            sizes="100vw"
-          />
-        )}
+    {blog.image && (
+  <div title={blog.title}>
+    <Image
+      src={urlFor(blog.image).url()}
+      alt={blog.title}
+      fill
+      className="aspect-square w-full h-full object-cover object-center"
+      loading="lazy"
+      priority={false}
+      sizes="(max-width: 640px) 100vw, (max-width: 768px) 75vw, (max-width: 1024px) 50vw, 33vw" // Adjust responsive sizes for common screen breakpoints
+      quality={80} // Set image quality for optimization
+      formats={['image/webp']} // Specify WebP format for modern browsers
+    />
+  </div>
+)}
       </div>
 
       <BlogDetails blog={blog} slug={params.slug} toc={headings} />
@@ -206,6 +223,8 @@ export default async function BlogPage({ params }) {
                     src={urlFor(value).url()}
                     alt={value.alt || 'Blog image'}
                     className="w-full h-auto rounded"
+                     quality={80} // Set image quality for optimization
+                    formats={['image/webp']} // Specify WebP format for modern browsers
                   />
                 </div>
               ),
