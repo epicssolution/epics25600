@@ -163,6 +163,8 @@ export default async function BlogPage({ params }) {
               priority={false}
               sizes="(max-width: 640px) 100vw, (max-width: 768px) 75vw, (max-width: 1024px) 50vw, 33vw" // Adjust responsive sizes for common screen breakpoints
               quality={80} // Set image quality for optimization
+               formats={['image/webp']} // Specify WebP format for modern browsers
+
             />
           </div>
         )}
@@ -225,8 +227,9 @@ export default async function BlogPage({ params }) {
                         src={urlFor(value).url()}
                         alt={value.alt || 'Blog image'}
                         className="w-full h-auto rounded"
-                        loading="lazy"
                         quality={80}
+                        formats={['image/webp']} // Specify WebP format for modern browsers
+
                       />
                     </div>
                   ),
