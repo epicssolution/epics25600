@@ -1,3 +1,6 @@
+// Mark the file as a client component
+"use client";
+
 import { useEffect, useState } from 'react';
 import HomePage from '@/components/Homecomponent/page';
 import Engineering from '@/components/engineering/page';
