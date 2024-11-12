@@ -1,17 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-        remotePatterns: [
-            {
-                protocol: 'https',
-                hostname: 'cdn.sanity.io',
-                port: '', // Optional, leave empty for default ports (80 for http and 443 for https)
-                pathname: '/**', // Allow all paths under this domain
-            },
-        ],
-    },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+        port: '', // Optional, leave empty for default ports (80 for http and 443 for https)
+        pathname: '/**', // Allow all paths under this domain
+      },
+    ],
+  },
 
- async redirects() {
+  async redirects() {
     return [
       {
         source: '/:path*',
@@ -21,12 +21,11 @@ const nextConfig = {
             value: 'www.epicssolution.com', // WWW version
           },
         ],
-        destination: 'https://epicssolution.com/', // non-WWW version
+        destination: 'https://epicssolution.com/:path*', // non-WWW version
         permanent: true,
       },
     ];
   },
-  };
-  
-  export default nextConfig;
-  
+};
+
+export default nextConfig;
