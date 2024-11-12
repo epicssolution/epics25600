@@ -1,64 +1,40 @@
-// Mark the file as a client component
-"use client";
+import dynamic from 'next/dynamic';
 
-import HomePage from '@/components/Homecomponent/page';
-import Engineering from '@/components/engineering/page';
-import { client } from '@/sanity/lib/client';
+// Lazy load components
+const HomePage = dynamic(() => import('@/components/Homecomponent/page'), {
+  loading: () => <p>Loading Home Page...</p>, // Optional loading fallback
+  ssr: false, // Disable SSR for this component to load only on the client
+});
 
-const Page = async () => {
-  // Fetch data from Sanity
-  const query = `*[ _type=="blog"]{
-    _id,
-    title,
-    "slug": slug.current,
-    image,
-    description,
-    tags
-  }`;
+const Engineering = dynamic(() => import('@/components/engineering/page'), {
+  loading: () => <p>Loading Engineering Section...</p>, // Optional loading fallback
+  ssr: false, // Disable SSR to enable client-side loading
+});
 
-  let blogs = [];
-
-  try {
-    blogs = await client.fetch(query);
-  } catch (error) {
-    console.error("Error fetching data:", error);
-  }
-
-  // Fallback if no blogs are found
-  if (!blogs || blogs.length === 0) {
-    return <div>No blogs available</div>;
-  }
-
-  // Using the first blog for the cover section
-  const blog = blogs[0];
-
+const Page = () => {
   return (
-    <div className="flex flex-col items-center justify-center">
+    <main className="flex flex-col items-center justify-center w-full">
       {/* Home Page Section */}
-      <div style={{ minHeight: '300px', width: '100%' }}>
+      <section
+        className="min-h-[300px] w-full flex items-center justify-center bg-gray-100"
+        aria-label="Home Page Section"
+      >
         <HomePage />
-      </div>
-
-      {/* Blog Detail Section */}
-      <div className="w-full lg:w-3/4 p-6 sm:p-8 md:p-12 lg:p-16 flex flex-col items-start justify-center z-0 text-light">
-        {blog.tags && blog.tags.length > 0 && (
-          <span className="mt-2 text-sm text-gray-300">{blog.tags[0]}</span>
-        )}
-        <h1 className="font-bold capitalize text-lg sm:text-xl md:text-3xl lg:text-4xl">
-          <span className="bg-gradient-to-r from-accent to-accent dark:from-accentDark/50 dark:to-accentDark/50 bg-[length:0px_6px] hover:bg-[length:100%_6px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500">
-            {blog.title}
-          </span>
-        </h1>
-        <h2 className="hidden sm:inline-block mt-4 md:text-lg lg:text-xl font-in">
-          {blog.description}
-        </h2>
-      </div>
+        
+      </section>
 
       {/* Engineering Section */}
-      <div style={{ minHeight: '300px', width: '100%' }}>
-        <Engineering />
+      <div className="mt-6">
+        {/* Second component */}
+        <div className="flex justify-center align-middle font-semibold text-2xl border-[1px] border-solid border-dark dark:border-light text-black dark:text-light rounded-lg p-4 sticky top-6 max-h-[80vh]" >
+       Engineering Blogs & Courses 
+
+        </div>
+       <div className=" mt-6 "> <article  style={{ minHeight: '300px', width: '100%' }}>
+          <Engineering />
+        </article></div>
       </div>
-    </div>
+    </main>
   );
 };
 
