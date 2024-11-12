@@ -48,7 +48,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: blog.title,
       description: blog.description,
-      url: `https://www.epicssolution.com//development/${slug}`,
+      url: `https://www.epicssolution.com/development/${slug}`,
       images: imageUrl ? [{ url: imageUrl }] : [],
       type: 'article',
     },
@@ -142,8 +142,8 @@ export default async function BlogPage({ params }) {
             alt={blog.title}
             fill
             className="aspect-square w-full h-full object-cover object-center"
-            priority
-            sizes="100vw"
+            loading="lazy" // Enable lazy loading
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // Responsive sizes
           />
         )}
       </div>
