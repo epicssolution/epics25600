@@ -59,6 +59,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link rel="sitemap" type="application/xml" href="https://www.epicssolution.com/sitemap.xml" />
+        <link rel="canonical" href="https://www.epicssolution.com/" />
+
         
       <meta
           name="google-site-verification"
