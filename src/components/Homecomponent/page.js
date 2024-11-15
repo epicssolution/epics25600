@@ -43,14 +43,14 @@ const HomePage = () => {
     <div className='w-full inline-block'>
       {/* Adding Head for SEO and Open Graph meta tags */}
       <Head>
-        <title>{blog.title} | Galaxy Blogs</title>
+        <title>{blog.title} | Epics Solution Blogs</title>
         <meta name="description" content={blog.description} />
 
         {/* Open Graph tags for social sharing (Facebook, LinkedIn, etc.) */}
         <meta property="og:title" content={blog.title} />
         <meta property="og:description" content={blog.description} />
         <meta property="og:image" content={urlFor(blog.image).url()} />
-        <meta property="og:url" content={`https://www.galaxyeducation.org/blogs/${blog.slug}`} />
+        <meta property="og:url" content={`https://www.epicssolution.com/${blog.slug}`} />
         <meta property="og:type" content="website" />
 
         {/* Twitter Card tags for social sharing on Twitter */}
