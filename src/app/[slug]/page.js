@@ -15,7 +15,7 @@ export async function generateMetadata({ params }) {
 
   // Fetch the blog data from Sanity for the "dev" type
   const query = `
-    *[type in ["AI", "Eng"]  && slug.current == $slug][0]{
+    *[type in ["AI", "Eng" , "equipment" , "development" , "dev" ]  && slug.current == $slug][0]{
       title,
       description,
       "slug": slug.current,
@@ -90,7 +90,7 @@ export default async function BlogPage({ params }) {
 
   // Fetch the blog data from Sanity
   const query = `
-    *[_type == "Eng" && slug.current == $slug][0]{
+    *[type in ["AI", "Eng" , "equipment" , "development" , "dev" ]  && slug.current == $slug][0]{
       title,
       description,
       "slug": slug.current,
