@@ -43,7 +43,7 @@ export async function generateMetadata({ params }) {
     "description": blog.description,
     "image": imageUrl,
     "datePublished": blog.publishedAt,
-    "url": `https://www.epicssolution.com/Engineering/${slug}`,
+    "url": `https://www.epicssolution.com/${slug}`,
     "author": {
       "@type": "Person",
       "name": "abdul ghaffar khan", // Update with actual author name if available
@@ -58,7 +58,7 @@ export async function generateMetadata({ params }) {
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://www.epicssolution.com/Engineering/${slug}`
+      "@id": `https://www.epicssolution.com/${slug}`
     }
   };
 
@@ -68,7 +68,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: blog.title,
       description: blog.description,
-      url: `https://www.epicssolution.com/Engineering/${slug}`,
+      url: `https://www.epicssolution.com/${slug}`,
       images: imageUrl ? [{ url: imageUrl }] : [],
       type: 'article',
     },
