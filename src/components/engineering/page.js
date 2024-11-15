@@ -79,7 +79,7 @@ const Engineering = () => {
             className="group flex flex-col items-center text-dark dark:text-light mb-8"
           >
             <Link
-      href={`/Engineering/${uni.slug}`}
+      href={`/${uni.slug}`}
       className="h-full rounded-xl overflow-hidden"
     >
       {uni.image && (
@@ -103,7 +103,7 @@ const Engineering = () => {
                   {uni.tags[0]}
                 </span>
               )}
-              <Link href={`/Engineering/${uni.slug}`} className="inline-block my-1">
+              <Link href={`/${uni.slug}`} className="inline-block my-1">
                 <h2 className="font-semibold capitalize text-base sm:text-lg">
                   <span
                     className="bg-gradient-to-r from-accent/50 to-accent/50 dark:from-accentDark/50 dark:to-accentDark/50
