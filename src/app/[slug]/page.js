@@ -10,12 +10,14 @@ import VisitCourseButton from "@/components/buttons/page";
 import { PortableText } from "next-sanity";
 
 // Use the Metadata API for handling meta tags and SEO
+
+
 export async function generateMetadata({ params }) {
   const { slug } = params;
 
-  // Fetch the blog data from Sanity for the "dev" type
+  // Fetch the blog data from Sanity for multiple types using `_type in`
   const query = `
-    *[type in ["AI", "Eng" , "equipment" , "development" , "dev" ]  && slug.current == $slug][0]{
+    *[_type in ["AI", "Eng", "equipment", "development", "dev"] && slug.current == $slug][0]{
       title,
       description,
       "slug": slug.current,
@@ -90,7 +92,7 @@ export default async function BlogPage({ params }) {
 
   // Fetch the blog data from Sanity
   const query = `
-    *[type in ["AI", "Eng" , "equipment" , "development" , "dev" ]  && slug.current == $slug][0]{
+    *[_type in ["AI", "Eng", "equipment", "development", "dev"] && slug.current == $slug][0]{
       title,
       description,
       "slug": slug.current,
@@ -141,7 +143,6 @@ export default async function BlogPage({ params }) {
         });
       });
   }
-
   // Render the page content
   return (
     <article>
