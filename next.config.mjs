@@ -71,6 +71,11 @@ const nextConfig = {
         source: '/Engineering/room-heating-by-perforated-solar-air-collector',
         destination: '/room-heating-by-perforated-solar-air-collector',
         permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/Engineering/hvac-load-calculation',
+        destination: '/hvac-load-calculation',
+        permanent: true, // 301 Permanent Redirect
       }
     ];
   },
