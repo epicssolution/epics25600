@@ -136,6 +136,11 @@ const nextConfig = {
         source: '/Engineering/energy-engineering',
         destination: '/revit-2025-hvac-load-calculation-tutorial-1',
         permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/Engineering/role-of-ai-in-mep-indutry',
+        destination: '/role-of-artificial-intelligence-in-healthcare',
+        permanent: true, // 301 Permanent Redirect
       }
     ];
   },
