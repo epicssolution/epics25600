@@ -68,7 +68,7 @@ const nextConfig = {
         permanent: true, // 301 Permanent Redirect
       },
          {
-        source: 'Engineering/room-heating-by-perforated-solar-air-collector',
+        source: '/Engineering/room-heating-by-perforated-solar-air-collector',
         destination: '/room-heating-by-perforated-solar-air-collector',
         permanent: true, // 301 Permanent Redirect
       }
