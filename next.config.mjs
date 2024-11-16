@@ -146,6 +146,16 @@ const nextConfig = {
         source: '/artificial/applications-of-ai-in-healthcare',
         destination: '/role-of-artificial-intelligence-in-healthcare',
         permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/Engineering/hvac-cooling-load-calculation',
+        destination: '/hvac-load-calculation',
+        permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/Engineering/chiller-operation-and-maintenance',
+        destination: '/how-chillers-work-operation-and-maintenance-tips',
+        permanent: true, // 301 Permanent Redirect
       }
     ];
   },
