@@ -121,6 +121,21 @@ const nextConfig = {
         source: '/marketing/revit-mep-2025-cooling-and-heating-load-calculation-p-1',
         destination: '/revit-2025-hvac-load-calculation-tutorial-1',
         permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/marketing/tailwind-css-a-game-changer-in-web-development',
+        destination: '/dev',
+        permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/artificiali/ai',
+        destination: '/ai',
+        permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/Engineering/energy-engineering',
+        destination: '/revit-2025-hvac-load-calculation-tutorial-1',
+        permanent: true, // 301 Permanent Redirect
       }
     ];
   },
