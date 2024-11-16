@@ -76,6 +76,16 @@ const nextConfig = {
         source: '/Engineering/hvac-load-calculation',
         destination: '/hvac-load-calculation',
         permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/Engineering/hvac-and-indoor-air-quality',
+        destination: '/hvac-and-indoor-air-quality',
+        permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/equipment/how-chiller-work',
+        destination: '/how-chillers-work-operation-and-maintenance-tips',
+        permanent: true, // 301 Permanent Redirect
       }
     ];
   },
