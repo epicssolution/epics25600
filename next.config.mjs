@@ -21,7 +21,37 @@ const nextConfig = {
         source: '/artificial/building-management-systems-bms',
         destination: '/building-management-systems-bms',
         permanent: true, // 301 Permanent Redirect
+      }, 
+      {
+        source: '/Engineering/fundamentals-of-energy-engineering',
+        destination: '/fundamentals-of-energy-engineering',
+        permanent: true, // 301 Permanent Redirect
       },
+       {
+        source: '/marketing/image-optimization-in-next-js',
+        destination: '/image-optimization-in-next-js',
+        permanent: true, // 301 Permanent Redirect
+      },
+          {
+        source: '/development/next-js-a-full-stack-developer',
+        destination: '/next-js-a-full-stack-developer',
+        permanent: true, // 301 Permanent Redirect
+      },
+     {
+        source: '/development/tailwind-css-revolutionize-web-development',
+        destination: '/tailwind-css-revolutionize-web-development',
+        permanent: true, // 301 Permanent Redirect
+      },
+        {
+        source: '/development/supercharge-your-web-performance',
+        destination: '/supercharge-your-web-performance',
+        permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/development/next-js-a-full-stack-developer',
+        destination: '/next-js-a-full-stack-developer',
+        permanent: true, // 301 Permanent Redirect
+      }
     ];
   },
   
