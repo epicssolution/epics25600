@@ -51,6 +51,26 @@ const nextConfig = {
         source: '/development/next-js-a-full-stack-developer',
         destination: '/next-js-a-full-stack-developer',
         permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/artificiali/applications-of-ai-in-healthcare',
+        destination: '/applications-of-ai-in-healthcare',
+        permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/Engineering/tunnel-ventilation',
+        destination: '/tunnels-ventilation',
+        permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/Engineering/hospital-hvac-system',
+        destination: '/hospital-hvac-system',
+        permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: 'Engineering/room-heating-by-perforated-solar-air-collector',
+        destination: '/room-heating-by-perforated-solar-air-collector',
+        permanent: true, // 301 Permanent Redirect
       }
     ];
   },
