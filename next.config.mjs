@@ -86,6 +86,16 @@ const nextConfig = {
         source: '/equipment/how-chiller-work',
         destination: '/how-chillers-work-operation-and-maintenance-tips',
         permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/Engineering/hvac-system-designing-for-hospitals',
+        destination: '/hospital-hvac-system',
+        permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/Engineering/hvac-system-designing-for-hospitals',
+        destination: '/hospital-hvac-system',
+        permanent: true, // 301 Permanent Redirect
       }
     ];
   },
