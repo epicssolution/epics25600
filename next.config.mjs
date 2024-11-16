@@ -96,6 +96,31 @@ const nextConfig = {
         source: '/Engineering/hvac-system-designing-for-hospitals',
         destination: '/hospital-hvac-system',
         permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/artificialf/ai',
+        destination: '/ai',
+        permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/artificialf/building-management-systems-bms',
+        destination: '/building-management-systems-bms',
+        permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/Engineering/centrifugal-liquid-chiller-operation-and-maintenance',
+        destination: '/equipment',
+        permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/marketing/saifullah',
+        destination: '/equipment',
+        permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/marketing/revit-mep-2025-cooling-and-heating-load-calculation-p-1',
+        destination: '/revit-2025-hvac-load-calculation-tutorial-1',
+        permanent: true, // 301 Permanent Redirect
       }
     ];
   },
