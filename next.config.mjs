@@ -141,6 +141,11 @@ const nextConfig = {
         source: '/Engineering/role-of-ai-in-mep-indutry',
         destination: '/role-of-artificial-intelligence-in-healthcare',
         permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/artificial/applications-of-ai-in-healthcare',
+        destination: '/role-of-artificial-intelligence-in-healthcare',
+        permanent: true, // 301 Permanent Redirect
       }
     ];
   },
