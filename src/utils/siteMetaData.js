@@ -9,7 +9,7 @@ const siteMetadata = {
   siteLogo: '/logo.png',
   email: 'abdulghaffar25600@epicssolution.com',
   facebook: 'https://www.facebook.com/EPICS256',
-  youtube: 'https://www.youtube.com/@Dharti-256',
+  youtube: 'https://www.youtube.com/@epicssolution',
   linkedin: 'https://www.linkedin.com/company/mhp-design-engineering',
   instagram: 'https://www.instagram.com/epics0256',
   locale: 'en-US',
