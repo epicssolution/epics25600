@@ -54,7 +54,7 @@ const nextConfig = {
       },
          {
         source: '/artificiali/applications-of-ai-in-healthcare',
-        destination: '/applications-of-ai-in-healthcare',
+        destination: '/role-of-artificial-intelligence-in-healthcare',
         permanent: true, // 301 Permanent Redirect
       },
          {
