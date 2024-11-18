@@ -201,6 +201,46 @@ const nextConfig = {
         source: '/development/tailwind-css-a-game-changer-in-web-development',
         destination: '/tailwind-css-revolutionize-web-development',
         permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/Engineering/centrifugal-liquid-chiller',
+        destination: '/how-chillers-work-operation-and-maintenance-tips',
+        permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/marketing/building-management-systems-bms',
+        destination: '//building-management-systems-bms',
+        permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/Engineering/centrifugal-liquid-chiller',
+        destination: '/how-chillers-work-operation-and-maintenance-tips',
+        permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/marketing/building-management-systems-bms',
+        destination: '/building-management-systems-bms',
+        permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/equipment/how-chiller-works',
+        destination: '/how-chillers-work-operation-and-maintenance-tips',
+        permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/Engineering/plumbing-design-for-people-with-disability',
+        destination: '/how-chillers-work-operation-and-maintenance-tips',
+        permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/Engineering/chiller-system-greater-than-types-working-o-and-m',
+        destination: '/how-chillers-work-operation-and-maintenance-tips',
+        permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/Engineering/chiller-details',
+        destination: '/how-chillers-work-operation-and-maintenance-tips',
+        permanent: true, // 301 Permanent Redirect
       }
     ];
   },
