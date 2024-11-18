@@ -241,6 +241,11 @@ const nextConfig = {
         source: '/Engineering/chiller-details',
         destination: '/how-chillers-work-operation-and-maintenance-tips',
         permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/marketing/use-of-ai-in-digital-marketing-details',
+        destination: '/role-of-artificial-intelligence-in-healthcare',
+        permanent: true, // 301 Permanent Redirect
       }
     ];
   },
