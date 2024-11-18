@@ -196,6 +196,11 @@ const nextConfig = {
         source: '/Engineering/tunnels-ventilation',
         destination: '/tunnels-ventilation',
         permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/development/tailwind-css-a-game-changer-in-web-development',
+        destination: '/tailwind-css-revolutionize-web-development',
+        permanent: true, // 301 Permanent Redirect
       }
     ];
   },
