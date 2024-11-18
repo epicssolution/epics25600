@@ -156,6 +156,46 @@ const nextConfig = {
         source: '/Engineering/chiller-operation-and-maintenance',
         destination: '/how-chillers-work-operation-and-maintenance-tips',
         permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/Engineering/centrifugal-liquid-chiller',
+        destination: '/how-chillers-work-operation-and-maintenance-tips',
+        permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/tunnel-ventilation',
+        destination: '/tunnels-ventilation',
+        permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/Engineering/hvac-',
+        destination: '/tunnels-ventilation',
+        permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/hvac-cooling-load-calculation',
+        destination: '/hvac-load-calculation',
+        permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/Engineering/tunnels-',
+        destination: '/tunnels-ventilation',
+        permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/Engineering/concepts-of-chiller-in-hvac',
+        destination: '/how-chillers-work-operation-and-maintenance-tips',
+        permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/marketing/revit-mep-2025-tutorial-1-hvac-load-calculationRevit',
+        destination: '/revit-2025-hvac-load-calculation-tutorial-1',
+        permanent: true, // 301 Permanent Redirect
+      },
+         {
+        source: '/Engineering/tunnels-ventilation',
+        destination: '/tunnels-ventilation',
+        permanent: true, // 301 Permanent Redirect
       }
     ];
   },
