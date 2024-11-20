@@ -6,7 +6,6 @@ import siteMetadata from "@/utils/siteMetaData";
 import Script from "next/script";
 import Footer from "@/components/Footer";
 
-
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
@@ -63,17 +62,22 @@ export default function RootLayout({ children }) {
         <link rel="canonical" href="https://www.epicssolution.com/" />
         <link rel="icon" href="https://www.epicssolution.com/favicon.ico" />
 
-    {/* SEO Meta Tags */}
+        {/* SEO Meta Tags */}
         <meta name="description" content={siteMetadata.description} />
-        <meta name="keywords" content=" Blogs, Courses, HVAC,Development ,web, Artificial Intelligence" />
+        <meta name="keywords" content=" Blogs, Courses, HVAC, Development, web, Artificial Intelligence" />
         <meta name="author" content="Epic Solutions" />
 
-      <meta
+        {/* Google Verification and Viewport */}
+        <meta
           name="google-site-verification"
           content="125c3Cukk3D1INp6HOlRmuvTDPOk-qiR_j30PREvm0I"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/* Google tag (gtag.js) */}
+
+        {/* Google AdSense Account */}
+        <meta name="google-adsense-account" content="ca-pub-6106733128223559" />
+
+        {/* Google Tag Manager */}
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-D50XE9PL55"
@@ -84,6 +88,13 @@ export default function RootLayout({ children }) {
           gtag('js', new Date());
           gtag('config', 'G-D50XE9PL55');`}
         </Script>
+
+        {/* Google AdSense Script */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6106733128223559"
+          crossOrigin="anonymous"
+        ></Script>
       </head>
       <body
         className={cx(
@@ -102,11 +113,9 @@ export default function RootLayout({ children }) {
         </Script>
 
         {/* Header and Footer are included around children */}
-          <body>
         <Header />
         <main>{children}</main>
         <Footer />
-      </body>
       </body>
     </html>
   );
