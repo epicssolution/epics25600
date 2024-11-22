@@ -118,7 +118,7 @@ const Artificial = () => {
       ? `${uni.description.slice(0, 70)}...` 
       : uni.description}
   </p>
-  <Link href={`/blog/${uni.slug}`}>
+  <Link href={`/${uni.slug}`}>
     <button
       className="w-full py-2 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-dark font-semibold rounded-lg transition-colors duration-300 mt-2"
       aria-label={`Read more about ${uni.title || "this university"}`}
