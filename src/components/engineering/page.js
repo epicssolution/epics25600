@@ -103,16 +103,31 @@ const Engineering = () => {
                   {uni.tags[0]}
                 </span>
               )}
-              <Link href={`/${uni.slug}`} className="inline-block my-1">
-                <h2 className="font-semibold capitalize text-base sm:text-lg">
-                  <span
-                    className="bg-gradient-to-r from-accent/50 to-accent/50 dark:from-accentDark/50 dark:to-accentDark/50
-                    bg-[length:0px_4px] group-hover:bg-[length:100%_4px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500"
-                  >
-                    {uni.title}
-                  </span>
-                </h2>
-              </Link>
+
+
+ <Link href={`/${uni.slug}`} className="inline-block my-1">
+  <h2 className="font-semibold capitalize text-base sm:text-lg">
+    <span
+      className="bg-gradient-to-r from-accent/50 to-accent/50 dark:from-accentDark/50 dark:to-accentDark/50
+      bg-[length:0px_4px] group-hover:bg-[length:100%_4px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500"
+    >
+      {uni.title}
+    </span>
+  </h2>
+  <p className="text-sm text-gray-700 dark:text-gray-300 mt-2">
+    {uni.description.length > 70 
+      ? `${uni.description.slice(0, 70)}...` 
+      : uni.description}
+  </p>
+  <Link href={`/${uni.slug}`}>
+    <button
+      className="w-full py-2 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-dark font-semibold rounded-lg transition-colors duration-300 mt-2"
+      aria-label={`Read more about ${uni.title || "this university"}`}
+    >
+      Read More
+    </button>
+  </Link>
+</Link>
 
               <span className="capitalize text-gray dark:text-light/50 font-semibold text-sm sm:text-base mt-2">
                 {uni.publishedAt
