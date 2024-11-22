@@ -115,8 +115,8 @@ const Engineering = () => {
     </span>
   </h2>
   <p className="text-sm text-gray-700 dark:text-gray-300 mt-2">
-    {uni.description.length > 70 
-      ? `${uni.description.slice(0, 70)}...` 
+    {uni.description.length > 150 
+      ? `${uni.description.slice(0, 150)}...` 
       : uni.description}
   </p>
   <Link href={`/${uni.slug}`}>
