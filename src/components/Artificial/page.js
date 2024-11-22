@@ -112,6 +112,14 @@ const Artificial = () => {
                   >
                     {uni.title}
                   </span>
+                  Link href={`/blog/${uni.slug}`}>
+                    <button
+                      className="w-full py-2 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-dark font-semibold rounded-lg transition-colors duration-300"
+                      aria-label={`Read more about ${course.title || "this course"}`}
+                    >
+                      Read More
+                    </button>
+                  </Link>
                 </h2>
               </Link>
 
