@@ -1,15 +1,10 @@
+// app/contact/page.js (or pages/contact.js depending on your folder structure)
 "use client"; // Ensure this is the first line in the file
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 
 export default function Contact() {
-  const [faqOpen, setFaqOpen] = useState(null);
-
-  const toggleFaq = (index) => {
-    setFaqOpen(faqOpen === index ? null : index);
-  };
-
   const faqs = [
     {
       question: "What courses does Epics Solution offer?",
@@ -146,15 +141,10 @@ export default function Contact() {
           <div className="space-y-4">
             {faqs.map((faq, index) => (
               <div key={index} className="border rounded-lg p-4">
-                <h4
-                  onClick={() => toggleFaq(index)}
-                  className="font-medium text-lg cursor-pointer text-blue-600"
-                >
+                <h4 className="font-medium text-lg text-blue-600">
                   {faq.question}
                 </h4>
-                {faqOpen === index && (
-                  <p className="mt-2 text-gray-600">{faq.answer}</p>
-                )}
+                <p className="mt-2 text-gray-600">{faq.answer}</p>
               </div>
             ))}
           </div>
