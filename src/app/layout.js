@@ -114,6 +114,15 @@ export default function RootLayout({ children }) {
         )}
       >
         {/* Theme switcher script for dark/light mode */}
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-D50XE9PL55"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-D50XE9PL55');
+        </script>
         <Script id="theme-switcher" strategy="beforeInteractive">
           {`
             if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
