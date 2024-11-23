@@ -61,6 +61,9 @@ export default function RootLayout({ children }) {
         <link rel="sitemap" type="application/xml" href="https://www.epicssolution.com/sitemap.xml" />
         <link rel="canonical" href="https://www.epicssolution.com/" />
         <link rel="icon" href="https://www.epicssolution.com/favicon.ico" />
+        <link rel="preload" href="/css/main.css" as="style">
+         <link rel="preload" href="/fonts/CustomFont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
 
         {/* SEO Meta Tags */}
         <meta name="description" content={siteMetadata.description} />
