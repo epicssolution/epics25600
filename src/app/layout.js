@@ -85,7 +85,21 @@ export default function RootLayout({ children }) {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        {/* Google Tag Manager */}
+        {/* Open Graph Tags */}
+        <meta property="og:title" content={siteMetadata.title} />
+        <meta property="og:description" content={siteMetadata.description} />
+        <meta property="og:url" content={siteMetadata.siteUrl} />
+        <meta property="og:site_name" content={siteMetadata.title} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={siteMetadata.socialBanner} />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={siteMetadata.title} />
+        <meta name="twitter:description" content={siteMetadata.description} />
+        <meta name="twitter:image" content={siteMetadata.socialBanner} />
+
+        {/* Google Analytics */}
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-D50XE9PL55"
@@ -99,12 +113,12 @@ export default function RootLayout({ children }) {
           `}
         </Script>
 
-        {/* Google AdSense Script */}
+        {/* Google AdSense */}
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6106733128223559"
           crossOrigin="anonymous"
-        ></Script>
+        />
       </head>
       <body
         className={cx(
@@ -113,16 +127,7 @@ export default function RootLayout({ children }) {
           "font-mr bg-light dark:bg-dark"
         )}
       >
-        {/* Theme switcher script for dark/light mode */}
-
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-D50XE9PL55"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-D50XE9PL55');
-        </script>
+        {/* Theme Switcher */}
         <Script id="theme-switcher" strategy="beforeInteractive">
           {`
             if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
