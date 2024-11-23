@@ -1,4 +1,4 @@
-"use client";
+"use client"; // Add this directive to enable client-side rendering
 
 import Head from "next/head";
 import Link from "next/link";
@@ -14,7 +14,6 @@ import {
 import siteMetadata from "@/utils/siteMetaData";
 import { useThemeSwitch } from "../Hooks/useThemeSwitch";
 import { useState } from "react";
-import { cx } from "@/utils";
 
 const Header = () => {
   const [mode, setMode] = useThemeSwitch();
@@ -33,18 +32,27 @@ const Header = () => {
           name="description"
           content="Help students enroll in the best courses globally and improve their skills."
         />
-        <meta property="og:title" content="Epics solution | Online courses and blogs" />
-        <meta property="og:description" content="Help students enroll in the best courses globally and improve their skills." />
+        <meta
+          property="og:title"
+          content="Epics solution | Online courses and blogs"
+        />
+        <meta
+          property="og:description"
+          content="Help students enroll in the best courses globally and improve their skills."
+        />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Epics solution | Online courses and blogs" />
+        <meta
+          name="twitter:title"
+          content="Epics solution | Online courses and blogs"
+        />
       </Head>
 
       <header className="w-full p-4 px-5 sm:px-10 flex items-center justify-between relative z-50">
         {/* Logo Section */}
         <div className="flex items-center justify-between w-full sm:w-auto">
           <Logo />
-          
+
           {/* Hamburger Menu for Mobile */}
           <button
             className="inline-block sm:hidden z-50"
@@ -80,15 +88,42 @@ const Header = () => {
           } w-full sm:w-auto py-7 px-6 sm:px-8 font-medium capitalize fixed sm:hidden left-0 right-0 bg-light dark:bg-dark text-dark dark:text-light transition-all ease duration-300 z-40`}
         >
           <ul className="flex flex-col items-center space-y-4">
-            <li><Link href="/" onClick={toggle}>Home</Link></li>
-            <li><Link href="/dev" onClick={toggle}>Development</Link></li>
-          <li><Link href="/equipment" onClick={toggle}>Equipment</Link></li>
-          <li><Link href="/ai" onClick={toggle}>Artificial intelligence</Link></li>
+            <li>
+              <Link href="/" onClick={toggle}>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/dev" onClick={toggle}>
+                Development
+              </Link>
+            </li>
+            <li>
+              <Link href="/equipment" onClick={toggle}>
+                Equipment
+              </Link>
+            </li>
+            <li>
+              <Link href="/ai" onClick={toggle}>
+                Artificial intelligence
+              </Link>
+            </li>
 
-            <li><Link href="/eng" onClick={toggle}>Designing</Link></li>
-            <li><Link href="/mar" onClick={toggle}>Software</Link></li>
-            <li><Link href="/contact" onClick={toggle}>Contact</Link></li>
-
+            <li>
+              <Link href="/eng" onClick={toggle}>
+                Designing
+              </Link>
+            </li>
+            <li>
+              <Link href="/mar" onClick={toggle}>
+                Software
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" onClick={toggle}>
+                Contact
+              </Link>
+            </li>
           </ul>
           <button
             onClick={() => setMode(mode === "light" ? "dark" : "light")}
@@ -102,15 +137,13 @@ const Header = () => {
         </nav>
 
         {/* Navigation Menu for Desktop */}
-        <nav
-          className="hidden sm:flex items-center space-x-6 bg-light dark:bg-dark text-dark dark:text-light py-3 px-8 rounded-full border border-solid border-dark dark:border-light"
-        >
+        <nav className="hidden sm:flex items-center space-x-6 bg-light dark:bg-dark text-dark dark:text-light py-3 px-8 rounded-full border border-solid border-dark dark:border-light">
           <Link href="/">Home</Link>
           <Link href="/dev">Development</Link>
-          <Link href="/equipment" >Equipment</Link>
-          <Link href="/ai" >Artificial intelligence</Link>
+          <Link href="/equipment">Equipment</Link>
+          <Link href="/ai">Artificial intelligence</Link>
           <Link href="/eng">Designing</Link>
-          <Link href="/mar">software</Link>
+          <Link href="/mar">Software</Link>
           <Link href="/contact">Contact</Link>
 
           <button
@@ -122,21 +155,40 @@ const Header = () => {
           >
             {mode === "light" ? <MoonIcon /> : <SunIcon />}
           </button>
-          
         </nav>
-        
+
         {/* Social Media Icons */}
         <div className="hidden sm:flex items-center space-x-4">
-          <a href={siteMetadata.linkedin} aria-label="Reach out to me via LinkedIn" rel="noopener noreferrer" target="_blank">
+          <a
+            href={siteMetadata.linkedin}
+            aria-label="Reach out to me via LinkedIn"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             <LinkedinIcon className="w-6 h-6 hover:scale-125 transition-all ease duration-200" />
           </a>
-          <a href={siteMetadata.facebook} aria-label="Reach out to me via facebook" rel="noopener noreferrer" target="_blank">
+          <a
+            href={siteMetadata.facebook}
+            aria-label="Reach out to me via Facebook"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             <FacebookIcon className="w-6 h-6 hover:scale-125 transition-all ease duration-200" />
           </a>
-          <a href={siteMetadata.youtube} aria-label="Reach out to me via youtube" rel="noopener noreferrer" target="_blank">
+          <a
+            href={siteMetadata.youtube}
+            aria-label="Reach out to me via YouTube"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             <YoutubeIcon className="w-6 h-6 hover:scale-125 transition-all ease duration-200" />
           </a>
-          <a href={siteMetadata.instagram} aria-label="Reach out to me via instagram" rel="noopener noreferrer" target="_blank">
+          <a
+            href={siteMetadata.instagram}
+            aria-label="Reach out to me via Instagram"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             <InstagramIcon className="w-6 h-6 hover:scale-125 transition-all ease duration-200" />
           </a>
         </div>
