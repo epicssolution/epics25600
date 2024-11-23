@@ -1,4 +1,4 @@
-"use client"; // Ensure this is the first statement in your file
+"use client"; // Ensure this is the first line in the file
 
 import React, { useState } from "react";
 import Link from "next/link";
