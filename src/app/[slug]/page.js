@@ -1,5 +1,3 @@
-
-
 import BlogDetails from "@/components/blogdetail/page";
 import siteMetadata from "@/utils/siteMetaData";
 import { client } from "@/sanity/lib/client";
@@ -10,8 +8,6 @@ import VisitCourseButton from "@/components/buttons/page";
 import { PortableText } from "next-sanity";
 
 // Use the Metadata API for handling meta tags and SEO
-
-
 export async function generateMetadata({ params }) {
   const { slug } = params;
 
@@ -36,6 +32,7 @@ export async function generateMetadata({ params }) {
   // Generate the image URL or fallback to a social banner image
   const imageUrl = blog.image ? urlFor(blog.image).url() : siteMetadata.socialBanner;
 
+  // Structured data for better SEO
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -46,11 +43,11 @@ export async function generateMetadata({ params }) {
     "url": `https://www.epicssolution.com/${slug}`,
     "author": {
       "@type": "Person",
-      "name": "abdul ghaffar khan", // Update with actual author name if available
+      "name": "Abdul Ghaffar Khan" // Update with actual author name if available
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Epics Solution",
+      "name": "EPICS Solution",
       "logo": {
         "@type": "ImageObject",
         "url": siteMetadata.logo
@@ -70,18 +67,18 @@ export async function generateMetadata({ params }) {
       description: blog.description,
       url: `https://www.epicssolution.com/${slug}`,
       images: imageUrl ? [{ url: imageUrl }] : [],
-      type: 'article',
+      type: "article",
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title: blog.title,
       description: blog.description,
       images: imageUrl ? [imageUrl] : [],
     },
     other: {
-      'pinterest:title': blog.title,
-      'pinterest:description': blog.description,
-      'pinterest:image': imageUrl,
+      "pinterest:title": blog.title,
+      "pinterest:description": blog.description,
+      "pinterest:image": imageUrl,
     },
     structuredData,
   };
@@ -134,7 +131,7 @@ export default async function BlogPage({ params }) {
     blog.content
       .filter((block) => block.style && block.style.match(/^h[1-6]$/))
       .forEach((heading, index) => {
-        const level = heading.style.replace('h', ''); // Extract the heading level
+        const level = heading.style.replace("h", ""); // Extract the heading level
         const text = heading.children.map((child) => child.text).join("");
         headings.push({
           text,
@@ -143,6 +140,7 @@ export default async function BlogPage({ params }) {
         });
       });
   }
+
   // Render the page content
   return (
     <article>
@@ -162,10 +160,8 @@ export default async function BlogPage({ params }) {
               className="aspect-square w-full h-full object-cover object-center"
               loading="lazy"
               priority={false}
-              sizes="(max-width: 640px) 100vw, (max-width: 768px) 75vw, (max-width: 1024px) 50vw, 33vw" // Adjust responsive sizes for common screen breakpoints
-              quality={80} // Set image quality for optimization
-               formats={['image/webp']} // Specify WebP format for modern browsers
-
+              sizes="(max-width: 640px) 100vw, (max-width: 768px) 75vw, (max-width: 1024px) 50vw, 33vw"
+              quality={80}
             />
           </div>
         )}
@@ -196,16 +192,6 @@ export default async function BlogPage({ params }) {
                                   flex items-center justify-start
                                   hover:text-blue-500`}
                     >
-                      {heading.level === "3" && (
-                        <span className="flex w-1 h-1 rounded-full bg-dark dark:bg-light mr-2">
-                          &nbsp;
-                        </span>
-                      )}
-                      {heading.level === "4" && (
-                        <span className="flex w-1 h-1 rounded-full bg-dark dark:bg-light mr-3">
-                          &nbsp;
-                        </span>
-                      )}
                       <span className="hover:underline">{heading.text}</span>
                     </a>
                   </li>
@@ -226,11 +212,8 @@ export default async function BlogPage({ params }) {
                     <div className="my-4">
                       <img
                         src={urlFor(value).url()}
-                        alt={value.alt || 'Blog image'}
+                        alt={value.alt || "Blog image"}
                         className="w-full h-auto rounded"
-                        quality={80}
-                        formats={['image/webp']} // Specify WebP format for modern browsers
-
                       />
                     </div>
                   ),
@@ -260,12 +243,12 @@ export default async function BlogPage({ params }) {
                   normal: ({ children }) => <p className="my-2">{children}</p>,
                   bullet: ({ children }) => (
                     <ul className="list-disc list-inside my-2">
-                      <li>{children}</li>
+                      {children}
                     </ul>
                   ),
                   number: ({ children }) => (
                     <ol className="list-decimal list-inside my-2">
-                      <li>{children}</li>
+                      {children}
                     </ol>
                   ),
                 },
