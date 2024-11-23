@@ -22,7 +22,7 @@ const manrope = Manrope({
 export const metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),
   title: {
-    template: %s | ${siteMetadata.title},
+    template: `%s | ${siteMetadata.title}`,
     default: siteMetadata.title,
   },
   description: siteMetadata.description,
@@ -58,16 +58,24 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="sitemap" type="application/xml" href="https://www.epicssolution.com/sitemap.xml" />
+        <link
+          rel="sitemap"
+          type="application/xml"
+          href="https://www.epicssolution.com/sitemap.xml"
+        />
         <link rel="canonical" href="https://www.epicssolution.com/" />
         <link rel="icon" href="https://www.epicssolution.com/favicon.ico" />
-        <link rel="preload" href="/css/main.css" as="style">
-         <link rel="preload" href="/fonts/CustomFont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-
+        <link rel="preload" href="/css/main.css" as="style" />
+        <link
+          rel="preload"
+          href="/fonts/CustomFont.woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin="anonymous"
+        />
 
         {/* SEO Meta Tags */}
         <meta name="description" content={siteMetadata.description} />
-        <meta name="keywords" content=" Blogs, Courses, HVAC, Development, web, Artificial Intelligence" />
         <meta name="author" content="Epic Solutions" />
 
         {/* Google Verification and Viewport */}
@@ -77,19 +85,18 @@ export default function RootLayout({ children }) {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        {/* Google AdSense Account */}
-        <meta name="google-adsense-account" content="ca-pub-6106733128223559" />
-
         {/* Google Tag Manager */}
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-D50XE9PL55"
         />
         <Script id="gtag-init" strategy="afterInteractive">
-          {window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-D50XE9PL55');}
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-D50XE9PL55');
+          `}
         </Script>
 
         {/* Google AdSense Script */}
@@ -108,14 +115,16 @@ export default function RootLayout({ children }) {
       >
         {/* Theme switcher script for dark/light mode */}
         <Script id="theme-switcher" strategy="beforeInteractive">
-          {if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark')
-          } else {
-            document.documentElement.classList.remove('dark')
-          }}
+          {`
+            if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+              document.documentElement.classList.add('dark');
+            } else {
+              document.documentElement.classList.remove('dark');
+            }
+          `}
         </Script>
 
-        {/* Header and Footer are included around children */}
+        {/* Layout Components */}
         <Header />
         <main>{children}</main>
         <Footer />
