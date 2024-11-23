@@ -1,11 +1,13 @@
-import "./globals.css";
-import { cx } from "@/utils";
-import { Inter, Manrope } from "next/font/google";
-import Header from "@/components/Header";
+"use client";
+
+import React from "react";
 import Head from "next/head";
+import { Inter, Manrope } from "next/font/google";
+import { cx } from "@/utils";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import siteMetadata from "@/utils/siteMetaData";
 import Script from "next/script";
-import Footer from "@/components/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -19,68 +21,49 @@ const manrope = Manrope({
   variable: "--font-mr",
 });
 
-// Define metadata with Open Graph and Twitter settings
-export const metadata = {
-  metadataBase: new URL(siteMetadata.siteUrl),
-  title: {
-    template: `%s | ${siteMetadata.title}`,
-    default: siteMetadata.title,
-  },
-  description: siteMetadata.description,
-  openGraph: {
-    title: siteMetadata.title,
-    description: siteMetadata.description,
-    url: siteMetadata.siteUrl,
-    siteName: siteMetadata.title,
-    images: [siteMetadata.socialBanner],
-    locale: "en_US",
-    type: "website",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      noimageindex: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: siteMetadata.title,
-    images: [siteMetadata.socialBanner],
-  },
-};
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="sitemap" type="application/xml" href="https://www.epicssolution.com/sitemap.xml" />
-        <link rel="canonical" href="https://www.epicssolution.com/" />
-        <link rel="icon" href="https://www.epicssolution.com/favicon.ico" />
-        <link rel="preload" href="/css/main.css" as="style">
-         <link rel="preload" href="/fonts/CustomFont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-
-
-        {/* SEO Meta Tags */}
+      <Head>
+        {/* General SEO Metadata */}
+        <title>{siteMetadata.title}</title>
         <meta name="description" content={siteMetadata.description} />
-        <meta name="keywords" content=" Blogs, Courses, HVAC, Development, web, Artificial Intelligence" />
         <meta name="author" content="Epic Solutions" />
-
-        {/* Google Verification and Viewport */}
         <meta
-          name="google-site-verification"
-          content="125c3Cukk3D1INp6HOlRmuvTDPOk-qiR_j30PREvm0I"
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        {/* Google AdSense Account */}
-        <meta name="google-adsense-account" content="ca-pub-6106733128223559" />
+        {/* Canonical URL */}
+        <link rel="canonical" href={siteMetadata.siteUrl} />
 
+        {/* Favicon */}
+        <link rel="icon" href="/favicon.ico" />
+
+        {/* Open Graph Metadata */}
+        <meta property="og:title" content={siteMetadata.title} />
+        <meta property="og:description" content={siteMetadata.description} />
+        <meta property="og:url" content={siteMetadata.siteUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={siteMetadata.socialBanner} />
+
+        {/* Twitter Card Metadata */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={siteMetadata.title} />
+        <meta name="twitter:description" content={siteMetadata.description} />
+        <meta name="twitter:image" content={siteMetadata.socialBanner} />
+
+        {/* Preloading Critical Resources */}
+        <link rel="preload" href="/css/main.css" as="style" />
+        <link rel="preload" href="/fonts/CustomFont.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+      </Head>
+      <body
+        className={cx(
+          inter.variable,
+          manrope.variable,
+          "font-mr bg-light dark:bg-dark"
+        )}
+      >
         {/* Google Tag Manager */}
         <Script
           async
@@ -93,21 +76,14 @@ export default function RootLayout({ children }) {
           gtag('config', 'G-D50XE9PL55');`}
         </Script>
 
-        {/* Google AdSense Script */}
+        {/* Google AdSense */}
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6106733128223559"
           crossOrigin="anonymous"
         ></Script>
-      </head>
-      <body
-        className={cx(
-          inter.variable,
-          manrope.variable,
-          "font-mr bg-light dark:bg-dark"
-        )}
-      >
-        {/* Theme switcher script for dark/light mode */}
+
+        {/* Dark Mode Fallback */}
         <Script id="theme-switcher" strategy="beforeInteractive">
           {`if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark')
@@ -116,7 +92,7 @@ export default function RootLayout({ children }) {
           }`}
         </Script>
 
-        {/* Header and Footer are included around children */}
+        {/* Layout */}
         <Header />
         <main>{children}</main>
         <Footer />
