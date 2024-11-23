@@ -18,7 +18,7 @@ export default function Contact() {
     },
     {
       question: "Where is your company located?",
-      answer: "We are based at Epics Solution, Your Address Here.",
+      answer: "We are based at Epics Solution, farimond house barking, UNITED KINGDOM, .",
     },
   ];
 
@@ -72,14 +72,7 @@ export default function Contact() {
         <section className="mb-12">
           <h3 className="text-xl font-semibold mb-4">Our Location</h3>
           <div className="relative w-full h-64 rounded-lg overflow-hidden shadow-lg">
-            <iframe
-              src="https://g.co/kgs/nVWofPL"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-            ></iframe>
+           <h1>farimond house barking, UNITED KINGDOM</h1>
           </div>
         </section>
 
