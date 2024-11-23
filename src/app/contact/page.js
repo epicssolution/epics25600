@@ -1,7 +1,8 @@
 // app/contact/page.js (or pages/contact.js depending on your folder structure)
+"use client";
+
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Contact() {
   const [faqOpen, setFaqOpen] = useState(null);
