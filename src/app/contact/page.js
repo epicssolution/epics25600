@@ -1,5 +1,4 @@
-// app/contact/page.js (or pages/contact.js depending on your folder structure)
-"use client";
+"use client"; // Ensure this is at the top of your file
 
 import React, { useState } from "react";
 import Link from "next/link";
