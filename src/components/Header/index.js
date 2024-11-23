@@ -87,6 +87,8 @@ const Header = () => {
 
             <li><Link href="/eng" onClick={toggle}>Designing</Link></li>
             <li><Link href="/mar" onClick={toggle}>Software</Link></li>
+            <li><Link href="/contact" onClick={toggle}>Contact</Link></li>
+
           </ul>
           <button
             onClick={() => setMode(mode === "light" ? "dark" : "light")}
@@ -109,6 +111,8 @@ const Header = () => {
           <Link href="/ai" >Artificial intelligence</Link>
           <Link href="/eng">Designing</Link>
           <Link href="/mar">software</Link>
+          <Link href="/contact">Contact</Link>
+
           <button
             onClick={() => setMode(mode === "light" ? "dark" : "light")}
             className={`w-6 h-6 rounded-full transition-colors ease ${
