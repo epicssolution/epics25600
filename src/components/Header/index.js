@@ -32,7 +32,7 @@ const Header = () => {
           name="description"
           content="Help students enroll in the best courses globally and improve their skills."
         />
-       /Head>
+       </Head>
 
       <header className="w-full p-4 px-5 sm:px-10 flex items-center justify-between relative z-50">
         {/* Logo Section */}
