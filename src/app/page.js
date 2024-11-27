@@ -1,68 +1,36 @@
-import dynamic from 'next/dynamic';
-import Head from 'next/head';
-
-// Lazy load components
-const HomePage = dynamic(() => import('@/components/Homecomponent/page'), {
-  loading: () => <p>Loading Home Page...</p>,
-  ssr: false,
-});
-
-const Engineering = dynamic(() => import('@/components/engineering/page'), {
-  loading: () => <p>Loading Engineering Section...</p>,
-  ssr: false,
-});
+import HomePage from '@/components/Homecomponent/page';
 
 const Page = () => {
   return (
-    <>
-      <Head>
-        {/* Add JSON-LD structured data here */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebPage",
-              "name": "Home Page",
-              "description": "Homepage showcasing engineering blogs and courses.",
-              "mainEntity": [
-                {
-                  "@type": "CreativeWork",
-                  "name": "Engineering Blogs & Courses",
-                  "description": "Find the latest engineering blogs and courses.",
-                  "author": {
-                    "@type": "Organization",
-                    "name": "Your Site Name"
-                  }
-                }
-              ]
-            })
-          }}
-        />
-      </Head>
+    <div className="flex flex-col items-center justify-center">
+      {/* Home Page Section */}
+      <div style={{ minHeight: '300px', width: '100%' }}>
+        <HomePage />
+      </div>
 
-      <main className="flex flex-col items-center justify-center w-full">
-        {/* Home Page Section */}
-        <section
-          className="min-h-[300px] w-full flex items-center justify-center bg-gray-100"
-          aria-label="Home Page Section"
-        >
-          <HomePage />
-        </section>
-
-        {/* Engineering Section */}
-        <div className="mt-6">
-          <div className="flex justify-center align-middle font-semibold text-2xl border-[1px] border-solid border-dark dark:border-light text-black dark:text-light rounded-lg p-4 sticky top-6 max-h-[80vh]" >
-            <h1>Engineering Blogs & Courses</h1>
-          </div>
-          <div className="mt-6">
-            <article style={{ minHeight: '300px', width: '100%' }}>
-              <Engineering />
-            </article>
-          </div>
-        </div>
-      </main>
-    </>
+      {/* About Us Section */}
+      <div
+        id="about"
+        className="flex flex-col items-start justify-start px-6 py-10 max-w-4xl"
+        style={{ width: '100%' }}
+      >
+        <h2 className="text-2xl font-bold mb-4 text-center">About Us</h2>
+        <p className="text-base text-gray-700 leading-relaxed">
+          Welcome to Epic Solutions! We are here to make learning easy and
+          enjoyable for everyone. At Epic Solutions, we offer online blogs and
+          courses on a variety of topics such as HVAC design, Revit MEP, HVAC
+          equipment, web development, AI, Python, Next.js, BMS systems, energy
+          audits, and much more. Whether you are a beginner or a professional,
+          our content is created with simple and clear language to help you
+          understand quickly. Our goal is to empower students, workers, and
+          anyone curious about learning new skills. We believe that knowledge
+          should be available to all, and we strive to make our resources easy
+          to access. With Epic Solutions, you can grow your skills, explore new
+          opportunities, and achieve your goals. Join us on this journey of
+          learning and discover how simple it is to gain valuable knowledge!
+        </p>
+      </div>
+    </div>
   );
 };
 
