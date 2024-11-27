@@ -10,7 +10,7 @@ const HomePage = () => {
     {
       id: 1,
       title: "best  online Blogs & courses",
-      slug: "epic solution",
+      slug: "epic solutions",
       description: "Epic Solutions offers the best online blogs and courses in HVAC design, Revit MEP, HVAC equipment, web development, AI, Python, Next.js, BMS systems, energy audits, and more.",
       image: "/epics.jpg", // Path to the image in the public folder
     },
