@@ -85,22 +85,7 @@ export default function RootLayout({ children }) {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-     {/* Open Graph Tags */}
-        <meta property="og:title" content={siteMetadata.title} />
-        <meta property="og:description" content={siteMetadata.description} />
-        <meta
-          property="og:url"
-          content={`${siteMetadata.siteUrl}${typeof window !== "undefined" ? window.location.pathname : ""}`}
-        />
-        <meta property="og:image" content={siteMetadata.socialBanner} />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content={siteMetadata.title} />
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={siteMetadata.title} />
-        <meta name="twitter:description" content={siteMetadata.description} />
-        <meta name="twitter:image" content={siteMetadata.socialBanner} />
+       
 
         {/* Google Analytics */}
         <Script
