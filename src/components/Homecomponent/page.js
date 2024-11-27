@@ -1,4 +1,31 @@
-<div>
+"use client";
+
+import React from "react";
+import Head from "next/head"; // Importing Head for meta tags
+import Image from "next/image";
+
+const HomePage = () => {
+  // Static data for blogs
+  const blogs = [
+    {
+      id: 1,
+      title: "best  online Blogs & courses",
+      slug: "epic solution",
+      description: "Epic Solutions offers the best online blogs and courses in HVAC design, Revit MEP, HVAC equipment, web development, AI, Python, Next.js, BMS systems, energy audits, and more.",
+      image: "/epics.jpg", // Path to the image in the public folder
+    },
+    // Add more static blogs here if needed
+  ];
+
+  // Fallback if no blogs are found
+  if (!blogs || blogs.length === 0) {
+    return <div>No blogs available</div>;
+  }
+
+  // Using the first blog for the cover section
+  const blog = blogs[0];
+
+  return (<div>
   <Head>
     <title>{blog.title} | Epic Solutions Blogs</title>
     <meta
@@ -65,4 +92,8 @@
       priority
     />
   </article>
-</div>
+</div> );
+};
+
+export default HomePage;
+
