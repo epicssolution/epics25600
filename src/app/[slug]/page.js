@@ -184,49 +184,49 @@ export default async function BlogPage({ params }) {
         {/* Blog Content */}
         <div className="col-span-12 lg:col-span-8 text-black">
           {blog.content ? (
-          <PortableText
-            value={blog.content}
-            components={{
-              types: {
-                image: ({ value }) => (
-                  <div className="my-4">
-                    <img
-                      src={urlFor(value).url()}
-                      alt={value.alt || "Blog image"}
-                      className="w-full h-auto rounded"
-                    />
-                  </div>
-                ),
-              },
-              marks: {
-                link: ({ value, children }) => (
-                  <a
-                    href={value.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 underline"
-                  >
-                    {children}
-                  </a>
-                ),
-              },
-              block: {
-                h1: ({ children }) => (
-                  <h1 className="text-4xl font-bold my-4">{children}</h1>
-                ),
-                h2: ({ children }) => (
-                  <h2 className="text-3xl font-semibold my-4">{children}</h2>
-                ),
-                h3: ({ children }) => (
-                  <h3 className="text-2xl font-medium my-3">{children}</h3>
-                ),
-                normal: ({ children }) => <p className="my-2">{children}</p>,
-              },
-            }}
-          />
-        ) : (
-          <p>No content available</p>
-        )}
+            <PortableText
+              value={blog.content}
+              components={{
+                types: {
+                  image: ({ value }) => (
+                    <div className="my-4">
+                      <Image
+                        src={urlFor(value).url()}
+                        alt={value.alt || "Blog image"}
+                        className="w-full h-auto rounded"
+                      />
+                    </div>
+                  ),
+                },
+                marks: {
+                  link: ({ value, children }) => (
+                    <a
+                      href={value.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 underline"
+                    >
+                      {children}
+                    </a>
+                  ),
+                },
+                block: {
+                  h1: ({ children }) => (
+                    <h1 className="text-4xl font-bold my-4">{children}</h1>
+                  ),
+                  h2: ({ children }) => (
+                    <h2 className="text-3xl font-semibold my-4">{children}</h2>
+                  ),
+                  h3: ({ children }) => (
+                    <h3 className="text-2xl font-medium my-3">{children}</h3>
+                  ),
+                  normal: ({ children }) => <p className="my-2">{children}</p>,
+                },
+              }}
+            />
+          ) : (
+            <p>No content available</p>
+          )}
         </div>
       </div>
     </article>
