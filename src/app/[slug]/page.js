@@ -34,7 +34,7 @@ export async function generateMetadata({ params }) {
     return null;
   }
 
-  const imageUrl = blog.image ? urlFor(blog.image).url() : siteMetadata.socialBanner;
+const imageUrl = blog.image ? urlFor(blog.image).url() : "https://www.epicssolution.com/default-banner.jpg";
 
   return {
     title: blog.title,
@@ -123,20 +123,22 @@ export default async function BlogPage({ params }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         {/* Open Graph Tags */}
-        <meta property="og:title" content={blog.title} />
-        <meta property="og:description" content={blog.description} />
-        <meta property="og:url" content={`https://www.epicssolution.com/${slug}`} />
-        <meta property="og:image" content={imageUrl} />
-        <meta property="og:type" content="article" />
-        <meta property="og:site_name" content="Epic Solution Blog" />
-        <meta property="og:locale" content="en_US" />
-        <meta property="og:updated_time" content={new Date().toISOString()} />
+    <meta property="og:title" content={blog.title} />
+    <meta property="og:description" content={blog.description} />
+    <meta property="og:url" content={`https://www.epicssolution.com/${slug}`} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Epic Solution Blog" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:updated_time" content={new Date().toISOString()} />
 
-        {/* Twitter Card Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={blog.title} />
-        <meta name="twitter:description" content={blog.description} />
-        <meta name="twitter:image" content={imageUrl} />
+    {/* Twitter Card Tags */}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={blog.title} />
+    <meta name="twitter:description" content={blog.description} />
+    <meta name="twitter:image" content={imageUrl} />
       </Head>
 
       <div className="relative w-full h-[70vh] bg-gray-800">
