@@ -25,14 +25,7 @@ const Header = () => {
 
   return (
     <>
-      {/* Meta tags for SEO */}
-      <Head>
-        <title>Epics solution | Online courses and blogs</title>
-        <meta
-          name="description"
-          content="Help students enroll in the best courses globally and improve their skills."
-        />
-       </Head>
+    
 
       <header className="w-full p-4 px-5 sm:px-10 flex items-center justify-between relative z-50">
         {/* Logo Section */}
