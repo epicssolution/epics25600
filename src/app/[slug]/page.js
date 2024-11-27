@@ -1,3 +1,78 @@
+import Head from "next/head";
+import BlogDetails from "@/components/blogdetail/page";
+import siteMetadata from "@/utils/siteMetaData";
+import { client } from "@/sanity/lib/client";
+import { urlFor } from "@/sanity/lib/image";
+import Image from "next/image";
+import { notFound } from "next/navigation";
+import VisitCourseButton from "@/components/buttons/page";
+import { PortableText } from "next-sanity";
+
+// Utility to escape JSON-LD values
+function escapeJsonLd(value) {
+  if (!value) return "";
+  return value.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
+}
+
+export async function generateMetadata({ params }) {
+  const { slug } = params;
+
+  const query = `
+    *[_type in ["AI", "Eng", "equipment", "development", "dev"] && slug.current == $slug][0]{
+      title,
+      description,
+      "slug": slug.current,
+      image,
+      publishedAt
+    }
+  `;
+
+  const blog = await client.fetch(query, { slug });
+
+  if (!blog) {
+    notFound();
+    return null;
+  }
+
+  const imageUrl = blog.image ? urlFor(blog.image).url() : siteMetadata.socialBanner;
+
+  return {
+    title: blog.title,
+    description: blog.description,
+    openGraph: {
+      title: blog.title,
+      description: blog.description,
+      url: `https://www.epicssolution.com/${slug}`,
+      images: imageUrl ? [{ url: imageUrl }] : [],
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: blog.title,
+      description: blog.description,
+      images: imageUrl ? [imageUrl] : [],
+    },
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: blog.title,
+      description: blog.description,
+      image: imageUrl,
+      datePublished: blog.publishedAt,
+      url: `https://www.epicssolution.com/${slug}`,
+      author: { "@type": "Person", name: "Epic Solution Team" },
+      publisher: {
+        "@type": "Organization",
+        name: "EPICS Solution",
+        logo: { "@type": "ImageObject", url: siteMetadata.logo },
+      },
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": `https://www.epicssolution.com/${slug}`,
+      },
+    },
+  };
+}
 export default async function BlogPage({ params }) {
   const { slug } = params;
 
