@@ -194,7 +194,7 @@ export default async function BlogPage({ params }) {
           <VisitCourseButton href={blog.href} />
         </div>
       </div>
-
+      <BlogDetails blog={blog} slug={params.slug} toc={headings} />
       <div className="grid grid-cols-12 gap-8 mt-8 px-5 md:px-10">
         {/* Table of Contents - Hidden on Mobile */}
         <div className="col-span-12 lg:col-span-4 hidden lg:block">
