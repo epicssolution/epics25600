@@ -8,10 +8,10 @@ import { notFound } from "next/navigation";
 import VisitCourseButton from "@/components/buttons/page";
 import { PortableText } from "next-sanity";
 
+// Utility to escape JSON-LD values
 function escapeJsonLd(value) {
-  return value
-    .replace(/\\/g, '\\\\') // Escape backslashes
-    .replace(/"/g, '\\"');  // Escape quotes
+  if (!value) return "";
+  return value.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
 }
 
 export async function generateMetadata({ params }) {
@@ -36,26 +36,6 @@ export async function generateMetadata({ params }) {
 
   const imageUrl = blog.image ? urlFor(blog.image).url() : siteMetadata.socialBanner;
 
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: blog.title,
-    description: blog.description,
-    image: imageUrl,
-    datePublished: blog.publishedAt,
-    url: `https://www.epicssolution.com/${slug}`,
-    author: { "@type": "Person", name: "Epic Solution Team" },
-    publisher: {
-      "@type": "Organization",
-      name: "EPICS Solution",
-      logo: { "@type": "ImageObject", url: siteMetadata.logo },
-    },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": `https://www.epicssolution.com/${slug}`,
-    },
-  };
-
   return {
     title: blog.title,
     description: blog.description,
@@ -72,7 +52,25 @@ export async function generateMetadata({ params }) {
       description: blog.description,
       images: imageUrl ? [imageUrl] : [],
     },
-    structuredData,
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: blog.title,
+      description: blog.description,
+      image: imageUrl,
+      datePublished: blog.publishedAt,
+      url: `https://www.epicssolution.com/${slug}`,
+      author: { "@type": "Person", name: "Epic Solution Team" },
+      publisher: {
+        "@type": "Organization",
+        name: "EPICS Solution",
+        logo: { "@type": "ImageObject", url: siteMetadata.logo },
+      },
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": `https://www.epicssolution.com/${slug}`,
+      },
+    },
   };
 }
 
@@ -101,6 +99,18 @@ export default async function BlogPage({ params }) {
     notFound();
     return null;
   }
+
+  // Extract headings for Table of Contents
+  const headings = [];
+  ["heading1", "heading2", "heading3", "heading4"].forEach((headingKey, index) => {
+    if (blog[headingKey]) {
+      headings.push({
+        text: blog[headingKey],
+        slug: `heading-${index + 1}`,
+        level: index + 1,
+      });
+    }
+  });
 
   const imageUrl = blog.image ? urlFor(blog.image).url() : siteMetadata.socialBanner;
 
@@ -131,11 +141,6 @@ export default async function BlogPage({ params }) {
         <meta name="twitter:description" content={blog.description} />
         <meta name="twitter:image" content={imageUrl} />
 
-        {/* Pinterest Tags */}
-        <meta property="pinterest:title" content={blog.title} />
-        <meta property="pinterest:description" content={blog.description} />
-        <meta property="pinterest:image" content={imageUrl} />
-
         {/* Structured Data (JSON-LD) */}
         <script
           type="application/ld+json"
@@ -152,7 +157,7 @@ export default async function BlogPage({ params }) {
                 },
                 "publisher": {
                   "@type": "Organization",
-                  "name": "Epic Solution",
+                  "name": "EPICS Solution",
                   "logo": {
                     "@type": "ImageObject",
                     "url": "${siteMetadata.logo}"
@@ -171,19 +176,16 @@ export default async function BlogPage({ params }) {
         />
       </Head>
 
-
       <div className="relative w-full h-[70vh] bg-gray-800">
-        {/* Image Section */}
         {blog.image && (
           <div title={blog.title}>
             <Image
-              src={urlFor(blog.image).url()}
+              src={imageUrl}
               alt={blog.title}
               fill
               className="aspect-square w-full h-full object-cover object-center"
               loading="lazy"
               sizes="(max-width: 640px) 100vw, (max-width: 768px) 75vw, 50vw"
-              priority={false}
             />
           </div>
         )}
@@ -192,8 +194,6 @@ export default async function BlogPage({ params }) {
           <VisitCourseButton href={blog.href} />
         </div>
       </div>
-
-      <BlogDetails blog={blog} slug={params.slug} toc={headings} />
 
       <div className="grid grid-cols-12 gap-8 mt-8 px-5 md:px-10">
         {/* Table of Contents - Hidden on Mobile */}
