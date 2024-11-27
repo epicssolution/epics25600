@@ -119,20 +119,16 @@ export default async function BlogPage({ params }) {
         <meta name="description" content={blog.description} />
         <meta property="og:title" content={blog.title} />
         <meta property="og:description" content={blog.description} />
-        <meta property="og:image" content={imageUrl} />
+        <meta property="og:image" content={urlFor(blog.image).url()} />
         <meta property="og:url" content={`https://www.epicssolution.com/${slug}`} />
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="EPICS Solution" />
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:title" content={blog.title} />
         <meta property="twitter:description" content={blog.description} />
-        <meta property="twitter:image" content={imageUrl} />
+        <meta property="twitter:image" content={urlFor(blog.image).url()} />
       </Head>
 
-      <div className="relative w-full h-[70vh] bg-gray-800">
-        {/* Image Section */}
-        {blog.image && (
-          <div 
       <div className="relative w-full h-[70vh] bg-gray-800">
         {/* Image Section */}
         {blog.image && (
