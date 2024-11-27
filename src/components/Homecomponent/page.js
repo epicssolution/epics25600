@@ -39,7 +39,7 @@ const HomePage = () => {
   const blog = blogs[0];
 
   return (
-    <div className="w-full inline-block">
+    <div >
       {/* Adding Head for SEO and Open Graph meta tags */}
       <Head>
         <title>{blog.title} | Epics Solution Blogs</title>
