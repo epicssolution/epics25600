@@ -115,20 +115,69 @@ export default async function BlogPage({ params }) {
   return (
     <article>
       <Head>
-        <title>{blog.title}</title>
-        <meta name="description" content={blog.description} />
+        <meta name="keywords" content={`${blog.title}, AI, Epic Solution, Blog`} />
+        <link rel="canonical" href={`https://www.epicssolution.com/${slug}`} />
+        <meta name="author" content="Epic Solution Team" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        {/* Open Graph Tags */}
         <meta property="og:title" content={blog.title} />
         <meta property="og:description" content={blog.description} />
-        <meta property="og:image" content={urlFor(blog.image).url()} />
         <meta property="og:url" content={`https://www.epicssolution.com/${slug}`} />
-        <meta property="og:image:alt" content={blog.title} />
+        <meta property="og:image" content={imageUrl} />
         <meta property="og:type" content="article" />
-        <meta property="og:site_name" content="EPICS Solution" />
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:title" content={blog.title} />
-        <meta property="twitter:description" content={blog.description} />
-        <meta property="twitter:image" content={urlFor(blog.image).url()} />
+        <meta property="og:site_name" content="Epic Solution Blog" />
+        <meta property="og:locale" content="en_US" /> {/* Added og:locale */}
+        <meta property="og:updated_time" content={new Date().toISOString()} /> {/* Added og:updated_time */}
+
+
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={blog.title} />
+        <meta name="twitter:description" content={blog.description} />
+        <meta name="twitter:image" content={imageUrl} />
+
+        {/* Pinterest Tags */}
+        <meta property="pinterest:title" content={blog.title} />
+        <meta property="pinterest:description" content={blog.description} />
+        <meta property="pinterest:image" content={imageUrl} />
+
+        {/* Structured Data (JSON-LD) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: `
+              {
+                "@context": "https://schema.org",
+                "@type": "BlogPosting",
+                "headline": "${blog.title}",
+                "image": "${imageUrl}",
+                "author": {
+                  "@type": "Person",
+                  "name": "Epic Solution Team"
+                },
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "Epic Solution",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "${siteMetadata.logo}"
+                  }
+                },
+                "datePublished": "${blog.publishedAt}",
+                "dateModified": "${new Date().toISOString()}",
+                "description": "${blog.description}",
+                "mainEntityOfPage": {
+                  "@type": "WebPage",
+                  "@id": "https://www.epicssolution.com/${slug}"
+                }
+              }
+            `,
+          }}
+        />
       </Head>
+
 
       <div className="relative w-full h-[70vh] bg-gray-800">
         {/* Image Section */}
