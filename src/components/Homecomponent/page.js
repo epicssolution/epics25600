@@ -1,21 +1,20 @@
 "use client";
 
 import React from "react";
-import Head from "next/head";
+import Head from "next/head"; // Importing Head for meta tags
 import Image from "next/image";
-import Script from "next/script"; // Import Script for structured data
 
 const HomePage = () => {
   // Static data for blogs
   const blogs = [
     {
       id: 1,
-      title: "Best Online Blogs & Courses",
-      slug: "epic-solution", // Fixed URL-safe slug
-      description:
-        "Epic Solutions offers the best online blogs and courses in HVAC design, Revit MEP, HVAC equipment, web development, AI, Python, Next.js, BMS systems, energy audits, and more.",
+      title: "best  online Blogs & courses",
+      slug: "epic solution",
+      description: "Epic Solutions offers the best online blogs and courses in HVAC design, Revit MEP, HVAC equipment, web development, AI, Python, Next.js, BMS systems, energy audits, and more.",
       image: "/epics.jpg", // Path to the image in the public folder
     },
+    // Add more static blogs here if needed
   ];
 
   // Fallback if no blogs are found
@@ -27,72 +26,46 @@ const HomePage = () => {
   const blog = blogs[0];
 
   return (
-    <div>
+    <div className="w-full inline-block">
+      {/* Adding Head for SEO and Open Graph meta tags */}
       <Head>
-        <title>{blog.title} | Epic Solutions Blogs</title>
-        <meta
-          name="description"
-          content="Explore industry-leading blogs and online courses in HVAC, Revit MEP, Python, AI, energy audits, and more at Epic Solutions."
-        />
-        <meta
-          name="keywords"
-          content="HVAC, AI, Python, Next.js, web development, energy audits, BMS systems"
-        />
-        <link
-          rel="canonical"
-          href={`https://www.epicssolution.com/${blog.slug}`}
-        />
+        <title>{blog.title} | Epics Solution Blogs</title>
+        <meta name="description" content={blog.description} />
+
+        {/* Preloading critical assets */}
+        <link rel="preload" href="/path/to/fonts.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+        <link rel="preload" href="/css/styles.css" as="style" />
+
+        {/* Open Graph tags */}
         <meta property="og:title" content={blog.title} />
         <meta property="og:description" content={blog.description} />
-        <meta property="og:image" content={blog.image} />
-        <meta
-          property="og:url"
-          content={`https://www.epicssolution.com/${blog.slug}`}
-        />
-        <meta property="og:type" content="article" />
+        <meta property="og:image" content={urlFor(blog.image).url()} />
+        <meta property="og:url" content={`https://www.epicssolution.com/${blog.slug}`} />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Card tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={blog.title} />
         <meta name="twitter:description" content={blog.description} />
-        <meta name="twitter:image" content={blog.image} />
+        <meta name="twitter:image" content={urlFor(blog.image).url()} />
       </Head>
 
-      {/* Structured Data */}
-      <Script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BlogPosting",
-          headline: blog.title,
-          description: blog.description,
-          image: `https://www.epicssolution.com${blog.image}`,
-          author: {
-            "@type": "Person",
-            name: "Epic Solutions",
-          },
-          publisher: {
-            "@type": "Organization",
-            name: "Epic Solutions",
-            logo: {
-              "@type": "ImageObject",
-              url: "https://www.epicssolution.com/logo.png",
-            },
-          },
-          url: `https://www.epicssolution.com/${blog.slug}`,
-        })}
-      </Script>
-
-      <article className="relative h-[60vh] sm:h-[85vh]">
+      <article className="flex flex-col items-start justify-end mx-5 sm:mx-10 relative h-[60vh] sm:h-[85vh]">
         {/* Background Gradient */}
-        <div className="absolute top-0 left-0 bottom-0 right-0 h-full bg-gradient-to-b from-transparent to-black/90 rounded-3xl z-0" />
+        <div className="absolute top-0 left-0 bottom-0 right-0 h-full bg-gradient-to-b from-transparent from-0% to-dark/90 rounded-3xl z-0" />
 
         {/* Static Image */}
         <Image
-          src={blog.image} // Path to the image in the public folder
-          alt={`${blog.title} - Epic Solutions`}
-          fill
-          className="object-center object-cover rounded-3xl -z-10"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          priority
-        />
+  src='/epics.jpg' // Path to the image in the public folder
+  placeholder='blur' // Optional: You can still use placeholder blur
+  blurDataURL='/epics.jpg' // Blur image reference (same as source here)
+  alt={blog.title} // Accessible alternative text
+  fill // Makes the image fill the parent container
+  className='object-center object-cover rounded-3xl -z-10' // Styling classes
+  sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw' // Responsive sizes for optimization
+  priority // Improves LCP by prioritizing the first image load
+/>
+
       </article>
     </div>
   );
