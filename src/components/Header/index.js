@@ -32,21 +32,7 @@ const Header = () => {
           name="description"
           content="Help students enroll in the best courses globally and improve their skills."
         />
-        <meta
-          property="og:title"
-          content="Epics solution | Online courses and blogs"
-        />
-        <meta
-          property="og:description"
-          content="Help students enroll in the best courses globally and improve their skills."
-        />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Epics solution | Online courses and blogs"
-        />
-      </Head>
+       /Head>
 
       <header className="w-full p-4 px-5 sm:px-10 flex items-center justify-between relative z-50">
         {/* Logo Section */}
