@@ -68,38 +68,18 @@ const HomePage = () => {
         <div className="absolute top-0 left-0 bottom-0 right-0 h-full bg-gradient-to-b from-transparent to-dark/90 rounded-3xl z-0" />
 
         {/* Optimized Image */}
-        {blog.image && (
-          <Image
-            src={urlFor(blog.image).url()}
-            placeholder="blur"
-            blurDataURL={urlFor(blog.image).url()}
-            alt={blog.title}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-center object-cover rounded-3xl -z-10"
-            priority // Prioritize above-the-fold image for LCP optimization
-          />
-        )}
+           <Image
+              src='/epics.jpg' // Path to the image in the public folder
+              placeholder='blur' // Optional: You can still use placeholder blur
+              blurDataURL='/epics.jpg' // Blur image reference (same as source here)
+               alt={blog.title} // Accessible alternative text
+               fill // Makes the image fill the parent container
+               className='object-center object-cover rounded-3xl -z-10' // Styling classes
+               sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw' // Responsive sizes for optimization
+               priority // Improves LCP by prioritizing the first image load
+                />
 
-        {/* Blog Content */}
-        <div
-          className="w-full lg:w-3/4 p-6 sm:p-8 md:p-12 lg:p-16 flex flex-col items-start justify-center z-0 text-light"
-          style={{ minHeight: "200px" }} // Reserving space to prevent layout shifts
-        >
-          {blog.tags && blog.tags.length > 0 && (
-            <span className="mt-2 text-sm text-gray-300">{blog.tags[0]}</span>
-          )}
-          <div>
-            <h1 className="font-bold capitalize text-lg sm:text-xl md:text-3xl lg:text-4xl">
-              <span className="bg-gradient-to-r from-accent to-accentDark bg-[length:0px_6px] hover:bg-[length:100%_6px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500">
-                {blog.title}
-              </span>
-            </h1>
-          </div>
-          <p className="hidden sm:inline-block mt-4 md:text-lg lg:text-xl font-in">
-            {blog.description}
-          </p>
-        </div>
+     
       </article>
     </div>
   );
