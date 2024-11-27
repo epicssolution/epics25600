@@ -121,6 +121,7 @@ export default async function BlogPage({ params }) {
         <meta property="og:description" content={blog.description} />
         <meta property="og:image" content={urlFor(blog.image).url()} />
         <meta property="og:url" content={`https://www.epicssolution.com/${slug}`} />
+        <meta property="og:image:alt" content={blog.title} />
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="EPICS Solution" />
         <meta property="twitter:card" content="summary_large_image" />
