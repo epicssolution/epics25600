@@ -8,6 +8,12 @@ import { notFound } from "next/navigation";
 import VisitCourseButton from "@/components/buttons/page";
 import { PortableText } from "next-sanity";
 
+function escapeJsonLd(value) {
+  return value
+    .replace(/\\/g, '\\\\') // Escape backslashes
+    .replace(/"/g, '\\"');  // Escape quotes
+}
+
 export async function generateMetadata({ params }) {
   const { slug } = params;
 
@@ -38,7 +44,7 @@ export async function generateMetadata({ params }) {
     image: imageUrl,
     datePublished: blog.publishedAt,
     url: `https://www.epicssolution.com/${slug}`,
-    author: { "@type": "Person", name: "Abdul Ghaffar Khan" },
+    author: { "@type": "Person", name: "Epic Solution Team" },
     publisher: {
       "@type": "Organization",
       name: "EPICS Solution",
@@ -96,25 +102,13 @@ export default async function BlogPage({ params }) {
     return null;
   }
 
-  const headings = [];
-  if (blog.heading1) headings.push({ text: blog.heading1, slug: "heading-1", level: "1" });
-  if (blog.heading2) headings.push({ text: blog.heading2, slug: "heading-2", level: "2" });
-  if (blog.heading3) headings.push({ text: blog.heading3, slug: "heading-3", level: "3" });
-  if (blog.heading4) headings.push({ text: blog.heading4, slug: "heading-4", level: "4" });
-
-  if (blog.content && Array.isArray(blog.content)) {
-    blog.content
-      .filter((block) => block.style && block.style.match(/^h[1-6]$/))
-      .forEach((heading, index) => {
-        const level = heading.style.replace("h", "");
-        const text = heading.children.map((child) => child.text).join("");
-        headings.push({ text, slug: `content-heading-${index}`, level });
-      });
-  }
+  const imageUrl = blog.image ? urlFor(blog.image).url() : siteMetadata.socialBanner;
 
   return (
     <article>
       <Head>
+        <title>{blog.title}</title>
+        <meta name="description" content={blog.description} />
         <meta name="keywords" content={`${blog.title}, AI, Epic Solution, Blog`} />
         <link rel="canonical" href={`https://www.epicssolution.com/${slug}`} />
         <meta name="author" content="Epic Solution Team" />
@@ -128,9 +122,8 @@ export default async function BlogPage({ params }) {
         <meta property="og:image" content={imageUrl} />
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="Epic Solution Blog" />
-        <meta property="og:locale" content="en_US" /> {/* Added og:locale */}
-        <meta property="og:updated_time" content={new Date().toISOString()} /> {/* Added og:updated_time */}
-
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:updated_time" content={new Date().toISOString()} />
 
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -151,7 +144,7 @@ export default async function BlogPage({ params }) {
               {
                 "@context": "https://schema.org",
                 "@type": "BlogPosting",
-                "headline": "${blog.title}",
+                "headline": "${escapeJsonLd(blog.title)}",
                 "image": "${imageUrl}",
                 "author": {
                   "@type": "Person",
@@ -167,7 +160,7 @@ export default async function BlogPage({ params }) {
                 },
                 "datePublished": "${blog.publishedAt}",
                 "dateModified": "${new Date().toISOString()}",
-                "description": "${blog.description}",
+                "description": "${escapeJsonLd(blog.description)}",
                 "mainEntityOfPage": {
                   "@type": "WebPage",
                   "@id": "https://www.epicssolution.com/${slug}"
