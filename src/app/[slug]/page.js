@@ -1,3 +1,4 @@
+import Head from "next/head";
 import BlogDetails from "@/components/blogdetail/page";
 import siteMetadata from "@/utils/siteMetaData";
 import { client } from "@/sanity/lib/client";
@@ -113,6 +114,25 @@ export default async function BlogPage({ params }) {
 
   return (
     <article>
+      <Head>
+        <title>{blog.title}</title>
+        <meta name="description" content={blog.description} />
+        <meta property="og:title" content={blog.title} />
+        <meta property="og:description" content={blog.description} />
+        <meta property="og:image" content={imageUrl} />
+        <meta property="og:url" content={`https://www.epicssolution.com/${slug}`} />
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="EPICS Solution" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:title" content={blog.title} />
+        <meta property="twitter:description" content={blog.description} />
+        <meta property="twitter:image" content={imageUrl} />
+      </Head>
+
+      <div className="relative w-full h-[70vh] bg-gray-800">
+        {/* Image Section */}
+        {blog.image && (
+          <div 
       <div className="relative w-full h-[70vh] bg-gray-800">
         {/* Image Section */}
         {blog.image && (
