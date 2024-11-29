@@ -189,7 +189,7 @@ export default async function BlogPage({ params }) {
         </div>
 
         {/* Blog Content */}
-        <div className="col-span-12 lg:col-span-8 text-black">
+        <div className="col-span-12 lg:col-span-8 text-black bg-light dark:bg-dark text-dark dark:text-light transition-all ease ">
           {blog.content ? (
             <PortableText
               value={blog.content}
