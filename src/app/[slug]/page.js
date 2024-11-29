@@ -120,7 +120,6 @@ export default async function BlogPage({ params }) {
         <link rel="canonical" href={`https://www.epicssolution.com/${slug}`} />
         <meta name="author" content="Epic Solution Team" />
         <meta name="robots" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         {/* Open Graph Tags */}
          <meta property="og:title" content={blog.title} />
