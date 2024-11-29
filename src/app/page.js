@@ -15,7 +15,7 @@ const Page = () => {
         style={{ width: '100%' }}
       >
         <h2 className="text-2xl font-bold mb-4 text-center">About Us</h2>
-        <p className="text-base text-gray-700 leading-relaxed">
+        <p className="text-base text-gray-700 leading-relaxed  bg-light dark:bg-dark text-dark dark:text-light transition-all ease ">
           Welcome to Epic Solutions! We are here to make learning easy and
           enjoyable for everyone. At Epic Solutions, we offer online blogs and
           courses on a variety of topics such as HVAC design, Revit MEP, HVAC
