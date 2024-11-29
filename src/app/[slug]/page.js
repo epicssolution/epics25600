@@ -116,7 +116,7 @@ export default async function BlogPage({ params }) {
       <Head>
         <title>{blog.title}</title>
         <meta name="description" content={blog.description} />
-        <meta name="keywords" content={`${blog.title}, AI, Epic Solution, Blog`} />
+        <meta name="keywords" content={`${blog.title}`} />
         <link rel="canonical" href={`https://www.epicssolution.com/${slug}`} />
         <meta name="author" content="Epic Solution Team" />
         <meta name="robots" content="index, follow" />
