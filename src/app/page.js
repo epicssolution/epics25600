@@ -14,7 +14,7 @@ const Page = () => {
         className="flex flex-col items-start justify-start px-6 py-10 max-w-4xl"
         style={{ width: '100%' }}
       >
-        <h2 className="text-2xl font-bold mb-4 text-center">About Us</h2>
+        <h1 className="text-2xl font-bold mb-4 text-center  bg-light dark:bg-dark text-dark dark:text-light transition-all ease  ">About Us</h1>
         <p className="text-base text-gray-700 leading-relaxed  bg-light dark:bg-dark text-dark dark:text-light transition-all ease ">
           Welcome to Epic Solutions! We are here to make learning easy and
           enjoyable for everyone. At Epic Solutions, we offer online blogs and
