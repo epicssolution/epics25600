@@ -246,6 +246,11 @@ const nextConfig = {
         source: '/marketing/use-of-ai-in-digital-marketing-details',
         destination: '/role-of-artificial-intelligence-in-healthcare',
         permanent: true, // 301 Permanent Redirect
+      },
+       {
+        source: '/hospital-hvac-system',
+        destination: '/hospital-hvac',
+        permanent: true, // 301 Permanent Redirect
       }
     ];
   },
