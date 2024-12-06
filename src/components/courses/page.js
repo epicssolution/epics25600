@@ -36,17 +36,17 @@ const UniComponent1 = () => {
     <main className="w-full mt-16 sm:mt-24 md:mt-32 px-5 sm:px-10 md:px-24 lg:px-32 flex flex-col items-center justify-center">
       {/* Adding dynamic Open Graph meta tags */}
       <Head>
-        <title>Best Online Courses | Revit MEP 2025</title>
+        <title>Best Online Courses | Revit Tutorial</title>
         <meta
           name="description"
-          content="Check out simple blogs and top online courses to learn REVIT MEP 2025. Get easy tips and clear steps on using REVIT MEP 2025 to design HVAC systems with REVIT 2025 ."
+          content="These Revit tutorials are very student-friendly, simple, and easy to follow, helping students learn Revit step-by-step through detailed guides and blogs"
         />
 
         {/* Open Graph tags */}
         <meta property="og:title" content="Check out simple blogs and top online courses to learn REVIT MEP 2025. Get easy tips and clear steps on using REVIT MEP 2025 to design HVAC systems with REVIT 2025   | Epics Solution" />
         <meta
           property="og:description"
-          content="Check out simple blogs and top online courses to learn REVIT MEP 2025. Get easy tips and clear steps on using REVIT MEP 2025 to design HVAC systems with REVIT 2025 ."
+          content="These Revit tutorials are very student-friendly, simple, and easy to follow, helping students learn Revit step-by-step through detailed guides and blogs."
         />
         <meta
           property="og:image"
@@ -59,11 +59,11 @@ const UniComponent1 = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Check out simple blogs and top online courses to learn REVIT MEP 2025. Get easy tips and clear steps on using REVIT MEP 2025 to design HVAC systems with REVIT 2025 | Epics Solution"
+          content="These Revit tutorials are very student-friendly, simple, and easy to follow, helping students learn Revit step-by-step through detailed guides and blogs| Epics Solution"
         />
         <meta
           name="twitter:description"
-          content="Check out simple blogs and top online courses to learn REVIT MEP 2025. Get easy tips and clear steps on using REVIT MEP 2025 to design HVAC systems with REVIT 2025."
+          content="These Revit tutorials are very student-friendly, simple, and easy to follow, helping students learn Revit step-by-step through detailed guides and blogs."
         />
         <meta
           name="twitter:image"
