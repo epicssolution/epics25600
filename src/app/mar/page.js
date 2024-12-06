@@ -8,10 +8,10 @@ export default function Mar() {
       {/* Adding the Head component for Open Graph and Twitter meta tags */}
       <Head>
         <title> Best Online courses, tuotorials  and Blogs related to Revit MEP 2025  </title>
-        <meta property="og:title" content="Best Online courses, tuotorials  and Blogs related to Revit MEP 2025 " />
+        <meta property="og:title" content="Best Online courses, tuotorials  and Blogs related to Revit MEP  " />
         <meta
           property="og:description"
-          content="Best Online courses, tuotorials  and Blogs related to Revit MEP 2025 "
+          content="Best Online courses, tuotorials  and Blogs related to Revit MEP  "
         />
         <meta property="og:image" content="https://your-site-url.com/social-banner.png" />
         <meta property="og:url" content="https://your-site-url.com" />
@@ -30,7 +30,7 @@ export default function Mar() {
       <div className="mt-8">
         {/* Second component */}
         <div className="flex justify-center items-center font-semibold text-2xl border-[1px] border-solid border-dark dark:border-light text-black dark:text-light rounded-lg p-4 sticky top-6 max-h-[80vh]">
-               <h1> HVAC Software Tuotorials  & courses </h1> 
+               <h1> REVIT MEP Tutorials   </h1> 
 
         </div>
         
