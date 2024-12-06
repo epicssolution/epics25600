@@ -39,14 +39,14 @@ const UniComponent1 = () => {
         <title>Best Online Courses | Revit Tutorial</title>
         <meta
           name="description"
-          content="These Revit tutorials are very student-friendly, simple, and easy to follow, helping students learn Revit step-by-step through detailed guides and blogs"
+          content="These Revit MEP tutorials are very student-friendly, simple, and easy to follow, helping students learn Revit MEP step-by-step through detailed guides and blogs"
         />
 
         {/* Open Graph tags */}
-        <meta property="og:title" content="Check out simple blogs and top online courses to learn REVIT MEP 2025. Get easy tips and clear steps on using REVIT MEP 2025 to design HVAC systems with REVIT 2025   | Epics Solution" />
+        <meta property="og:title" content="Check out simple blogs and top online courses to learn REVIT MEP . Get easy tips and clear steps on using REVIT MEP 2025 to design HVAC systems with REVIT 2025   | Epics Solution" />
         <meta
           property="og:description"
-          content="These Revit tutorials are very student-friendly, simple, and easy to follow, helping students learn Revit step-by-step through detailed guides and blogs."
+          content="These Revit MEP tutorials are very student-friendly, simple, and easy to follow, helping students learn Revit MEP step-by-step through detailed guides and blogs."
         />
         <meta
           property="og:image"
