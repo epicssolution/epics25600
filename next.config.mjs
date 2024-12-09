@@ -257,7 +257,7 @@ const nextConfig = {
   destination: '/revit-mep-hvac-load-calculation-tutorial-1',
   permanent: true, // 301 Permanent Redirect
 }, {
-  source: 'marketing/(revit-mep-2025-tuotorial-1-hvac-load-calculation|revit-mep-2025-cooling-and-heating-load-calculation|asif-khan|marketing-and-ai|revit-mep-2025-tuotorial-1-hvac-load-calculationRevit|revit-mep-2025-tutorial-1-hvac-load-calculationRevit|URL to favicon)',
+  source: '/marketing/(revit-mep-2025-tuotorial-1-hvac-load-calculation|revit-mep-2025-cooling-and-heating-load-calculation|asif-khan|marketing-and-ai|revit-mep-2025-tuotorial-1-hvac-load-calculationRevit|revit-mep-2025-tutorial-1-hvac-load-calculationRevit|URL to favicon)',
   destination: '/revit-mep-hvac-load-calculation-tutorial-1',
   permanent: true, // 301 Permanent Redirect
 },
