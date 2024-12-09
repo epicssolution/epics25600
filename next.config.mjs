@@ -297,6 +297,10 @@ const nextConfig = {
         source: '/marketing/use-of-ai-in-digital-marketing',
         destination: '/dev',
         permanent: true, // 301 Permanent Redirect
+      }, {
+        source: '/artificial-',
+        destination: '/ai',
+        permanent: true, // 301 Permanent Redirect
       },
     ];
   },
