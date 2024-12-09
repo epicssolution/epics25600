@@ -251,7 +251,12 @@ const nextConfig = {
         source: '/hospital-hvac-system',
         destination: '/hospital-hvac',
         permanent: true, // 301 Permanent Redirect
-      }
+      },
+      {
+  source: '/(revit-2025-hvac-|revit-2025-hvac-load-|how-chillers-work-)',
+  destination: '/revit-mep-hvac-load-calculation-tutorial-1',
+  permanent: true, // 301 Permanent Redirect
+}
     ];
   },
   
