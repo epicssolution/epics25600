@@ -253,15 +253,51 @@ const nextConfig = {
         permanent: true, // 301 Permanent Redirect
       },
       {
-  source: '/(revit-2025-hvac-|revit-2025-hvac-load-|how-chillers-work-)',
+  source: '/(revit-2025-hvac-|revit-2025-hvac-load-|how-chillers-work-|Epics)',
   destination: '/revit-mep-hvac-load-calculation-tutorial-1',
   permanent: true, // 301 Permanent Redirect
 }, {
   source: '/marketing/(revit-mep-2025-tuotorial-1-hvac-load-calculation|revit-mep-2025-cooling-and-heating-load-calculation|asif-khan|marketing-and-ai|revit-mep-2025-tuotorial-1-hvac-load-calculationRevit|revit-mep-2025-tutorial-1-hvac-load-calculationRevit|URL to favicon)',
   destination: '/revit-mep-hvac-load-calculation-tutorial-1',
   permanent: true, // 301 Permanent Redirect
-},
-      
+},   {
+        source: '/development/applications-of-ai-in-healthcare',
+        destination: '/role-of-artificial-intelligence-in-healthcare',
+        permanent: true, // 301 Permanent Redirect
+      },
+       {
+        source: '/artificial-intelligence-',
+        destination: '/role-of-artificial-intelligence-in-healthcare',
+        permanent: true, // 301 Permanent Redirect
+      },   {
+        source: '/artificialf/ai',
+        destination: '/ai',
+        permanent: true, // 301 Permanent Redirect
+      }, {
+        source: '/artificialf/building-management-systems-bms ',
+        destination: '/building-management-systems-bms',
+        permanent: true, // 301 Permanent Redirect
+      }, {
+        source: '/equipment/how-chiller-work ',
+        destination: '/equipment',
+        permanent: true, // 301 Permanent Redirect
+      }, {
+        source: '/development/tailwind-css-a-game-changer-in-web-development ',
+        destination: '/tailwind-css-revolutionize-web-development',
+        permanent: true, // 301 Permanent Redirect
+      }, {
+        source: '/Engineering/tunnels-ventilation',
+        destination: '/tunnels-ventilation',
+        permanent: true, // 301 Permanent Redirect
+      }, {
+        source: '/hvac-system-designing-for-hospitals ',
+        destination: '/hospital-hvac',
+        permanent: true, // 301 Permanent Redirect
+      }, {
+        source: '/marketing/use-of-ai-in-digital-marketing',
+        destination: '/dev',
+        permanent: true, // 301 Permanent Redirect
+      },
     ];
   },
   
