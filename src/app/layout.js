@@ -102,11 +102,9 @@ export default function RootLayout({ children }) {
         </Script>
 
         {/* Google AdSense */}
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6106733128223559"
-          crossOrigin="anonymous"
-        />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6106733128223559"
+     crossorigin="anonymous"></script>
+         <meta name="google-adsense-account" content="ca-pub-6106733128223559">
       </head>
       <body
         className={cx(
