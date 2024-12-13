@@ -4,7 +4,7 @@
 import React from 'react';
 import Head from 'next/head';
 
-const PrivacyPolicy = () => {
+const page = () => {
   return (
     <div>
       <Head>
@@ -124,4 +124,4 @@ const PrivacyPolicy = () => {
   );
 };
 
-export default PrivacyPolicy;
+export default page;
