@@ -3,7 +3,7 @@
 import React from 'react';
 import Head from 'next/head';
 
-const Page = () => {
+const PrivacyPolicy = () => {
   return (
     <div className="bg-gray-50 text-gray-800">
       <Head>
@@ -90,4 +90,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default PrivacyPolicy;
