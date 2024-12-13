@@ -47,7 +47,7 @@ const Footer = () => {
       </div>
 
       <div className="mt-8 flex flex-wrap justify-center space-x-4">
-        <Link href="/about-us" className="text-sm hover:underline">
+        <Link href="/about" className="text-sm hover:underline">
           About Us
         </Link>
         <Link  href="/contact" className="text-sm hover:underline">
