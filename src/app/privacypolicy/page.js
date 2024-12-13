@@ -3,16 +3,15 @@
 import React from 'react';
 import Head from 'next/head';
 
-const PrivacyPolicy = () => {
+export default function Page() {
   return (
     <div className="bg-gray-50 text-gray-800">
       <Head>
         <title>Privacy Policy | Epic Solutions</title>
       </Head>
 
-      <main className="p-6 max-w-4xl mx-auto">
+      <main className="p-6 max-w-4xl mx-auto bg-light dark:bg-dark text-dark dark:text-light transition-all">
         <h1 className="text-4xl font-bold mb-6">Privacy Policy</h1>
-        <p className="mb-4">Effective Date: [Insert Date]</p>
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">Welcome to Epic Solution!</h2>
@@ -85,9 +84,20 @@ const PrivacyPolicy = () => {
             We may update this Privacy Policy periodically to reflect changes in our practices, services, or legal requirements. Updates will be posted on this page with a revised "Effective Date."
           </p>
         </section>
+
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Contact Us</h2>
+          <p>
+            If you have any questions or concerns about this Privacy Policy or how we handle your data, please contact us at:
+          </p>
+          <ul className="list-none">
+            <li><strong>Epic Solutions</strong></li>
+            <li>Email: [Insert Contact Email]</li>
+            <li>Website: <a href="https://www.epicssolution.com" className="text-blue-500">https://www.epicssolution.com</a></li>
+          </ul>
+        </section>
       </main>
     </div>
   );
 };
 
-export default PrivacyPolicy;
