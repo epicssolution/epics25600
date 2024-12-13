@@ -10,7 +10,7 @@ export default function Page() {
             <title>Privacy Policy | Epic Solutions</title>
           </Head>
     
-          <main className="p-6 max-w-4xl mx-auto">
+          <main className="p-6 max-w-4xl mx-auto  bg-light dark:bg-dark text-dark dark:text-light transition-all">
             <h1 className="text-4xl font-bold mb-6">Privacy Policy</h1>
             <p className="mb-4">Effective Date: [Insert Date]</p>
     
