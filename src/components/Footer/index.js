@@ -53,7 +53,7 @@ const Footer = () => {
         <Link  href="/contact" className="text-sm hover:underline">
           Contact Us
         </Link>
-        <Link href="/PrivacyPolicy" className="text-sm hover:underline">
+        <Link href="/Privacy" className="text-sm hover:underline">
           Privacy Policy
         </Link>
         <Link href="/terms-and-conditions" className="text-sm hover:underline">
