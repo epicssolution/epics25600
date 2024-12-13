@@ -1,4 +1,3 @@
-// pages/privacy-policy.js
 "use client";
 
 import React from 'react';
@@ -87,15 +86,7 @@ const page = () => {
           </p>
         </section>
 
-        <section>
-          <h2>Contact Us</h2>
-          <p>If you have any questions or concerns about this Privacy Policy or how we handle your data, please contact us at:</p>
-          <address>
-            Epic Solution<br />
-            Email: [Insert Contact Email]<br />
-            Website: <a href="https://www.epicssolution.com" target="_blank">https://www.epicssolution.com</a>
-          </address>
-        </section>
+       
       </main>
 
       <style jsx>{`
