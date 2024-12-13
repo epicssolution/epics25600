@@ -61,7 +61,6 @@ const Header = () => {
           <Link href="/ai">Artificial intelligence</Link>
           <Link href="/eng">Designing</Link>
           <Link href="/mar">Software</Link>
-          <Link href="/contact">Contact</Link>
         </nav>
 
         {/* Search Bar */}
