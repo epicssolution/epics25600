@@ -12,7 +12,6 @@ export default function Page() {
     
           <main className="p-6 max-w-4xl mx-auto  bg-light dark:bg-dark text-dark dark:text-light transition-all">
             <h1 className="text-4xl font-bold mb-6">Privacy Policy</h1>
-            <p className="mb-4">Effective Date: [Insert Date]</p>
     
             <section className="mb-8">
               <h2 className="text-2xl font-semibold mb-4">Welcome to Epic Solution!</h2>
