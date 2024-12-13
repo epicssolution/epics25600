@@ -18,7 +18,7 @@ export default function Termsconditions (){
         <h2 className="text-xl font-semibold mt-6 mb-2">Privacy Policy</h2>
         <p className="mb-4">
           Before you continue using our website, we advise you to read our privacy policy 
-          <a href="#" className="text-blue-500 underline">[link to privacy policy]</a> regarding our user data collection. It will help you better understand our practices.
+          <a href="https://www.epicssolution.com/privacy" className="text-blue-500 underline">privacy policy</a> regarding our user data collection. It will help you better understand our practices.
         </p>
         <h2 className="text-xl font-semibold mt-6 mb-2">Age Restriction</h2>
         <p className="mb-4">
