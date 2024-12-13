@@ -93,7 +93,7 @@ export default function Page() {
               </p>
               <ul className="list-none">
                 <li><strong>Epic Solutions</strong></li>
-                <li>Website: <a href="https://www.epicssolution.com" className="text-blue-500">https://www.epicssolution.com</a></li>
+                <li>Website: <a href="https://www.epicssolution.com/contact" className="text-blue-500">https://www.epicssolution.com/contact</a></li>
           </ul>
         </section>
       </main>
