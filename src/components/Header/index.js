@@ -17,6 +17,8 @@ const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [category, setCategory] = useState("All"); // Category selection state
+  const [dropdownOpen, setDropdownOpen] = useState(false); // Dropdown toggle state
 
   const handleSearch = async (query) => {
     setSearchQuery(query);
@@ -50,10 +52,11 @@ const Header = () => {
       </Head>
 
       <header className="w-full bg-white shadow-md flex flex-col items-center p-4 px-6 relative dark:bg-dark text-dark dark:text-light transition-all ease">
-        {/* Top Row: Logo and Search Icon */}
+        {/* Top Row: Logo and Menu Icon */}
         <div className="flex items-center justify-between w-full">
           <Logo />
           <div className="flex items-center space-x-4">
+            {/* Search Toggle Button */}
             <button
               className="text-black p-2"
               onClick={() => setSearchOpen(!searchOpen)}
@@ -61,6 +64,7 @@ const Header = () => {
             >
               🔍
             </button>
+            {/* Menu Toggle Button */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="sm:hidden text-black p-2"
@@ -98,33 +102,69 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Search Panel */}
+        {/* Search Bar with Dropdown */}
         {searchOpen && (
-          <div className="absolute right-0 top-full mt-2 bg-white border border-gray-300 rounded shadow-lg w-64 z-50 p-2">
+          <div className="flex items-center mt-4 w-full max-w-lg bg-white border border-gray-300 rounded shadow-lg p-2">
+            {/* Dropdown Menu */}
+            <div className="relative">
+              <button
+                className="p-2 border border-gray-300 rounded-l-md bg-gray-100 flex items-center space-x-2  dark:bg-dark text-dark dark:text-light transition-all ease"
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+                aria-label="Toggle Dropdown Menu"
+              >
+                <span>{category}</span>
+                <span>▼</span>
+              </button>
+              {dropdownOpen && (
+                <ul className="absolute left-0 top-full mt-1 w-32 bg-white border border-gray-300 shadow rounded z-50  dark:bg-dark text-dark dark:text-light transition-all ease">
+                  {["All", "Blogs", "Courses", "Revit"].map((cat) => (
+                    <li
+                      key={cat}
+                      className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                      onClick={() => {
+                        setCategory(cat);
+                        setDropdownOpen(false);
+                      }}
+                    >
+                      {cat}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+
+            {/* Search Input */}
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => handleSearch(e.target.value)}
-              placeholder="Search blogs or pages..."
-              className="w-full p-2 border border-gray-300 rounded"
+              placeholder="Search..."
+              className="p-2 border border-gray-300 flex-1"
             />
-            {searchResults.length > 0 ? (
-              <ul className="mt-2">
-                {searchResults.map((result, index) => (
-                  <li key={index} className="py-1">
-                    <Link href={`/${result.slug}`} className="text-blue-500">
-                      {result.title}
-                    </Link>
-                    <p className="text-gray-500 text-sm">{result.description}</p>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p className="text-gray-500 mt-2">
-                {searchQuery ? "No results found." : "Start typing..."}
-              </p>
-            )}
+
+            {/* Search Button */}
+            <button
+              className="p-2 bg-pink-600 text-white rounded-r-md"
+              onClick={() => handleSearch(searchQuery)}
+              aria-label="Search"
+            >
+              🔍
+            </button>
           </div>
+        )}
+
+        {/* Search Results */}
+        {searchResults.length > 0 && (
+          <ul className="mt-2 w-full max-w-lg bg-white border border-gray-300 rounded shadow-lg p-2">
+            {searchResults.map((result, index) => (
+              <li key={index} className="py-1">
+                <Link href={`/${result.slug}`} className="text-blue-500">
+                  {result.title}
+                </Link>
+                <p className="text-gray-500 text-sm">{result.description}</p>
+              </li>
+            ))}
+          </ul>
         )}
       </header>
     </>
