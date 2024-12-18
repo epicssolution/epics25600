@@ -30,7 +30,7 @@ export const coursesType = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'heading4', // Removed space from the field name
+      name: 'heading4',
       type: 'string',
       title: 'Heading 4',
       validation: (Rule) => Rule.required(),
@@ -66,124 +66,50 @@ export const coursesType = defineType({
       type: 'text',
       validation: (Rule) => Rule.required().max(200),
     }),
-   // Main content block
-   defineField({
-  title: 'Main Content',
-  name: 'content',
-  type: 'array',
-  description: 'Add the main content of the post here. You can format it using headings, paragraphs, images, links, etc.',
-  of: [
-    {
-      type: 'block',
-      styles: [
-        { title: 'Normal', value: 'normal' },
-        { title: 'Heading 1', value: 'h1' },
-        { title: 'Heading 2', value: 'h2' },
-        { title: 'Heading 3', value: 'h3' },
-        { title: 'Heading 4', value: 'h4' },
-        { title: 'Heading 5', value: 'h5' },
-        { title: 'Heading 6', value: 'h6' },
-      ],
-      lists: [
-        { title: 'Bullet', value: 'bullet' },
-        { title: 'Numbered', value: 'number' },
-      ],
-      marks: {
-        decorators: [
-          { title: 'Bold', value: 'strong' },
-          { title: 'Italic', value: 'em' },
-          { title: 'Underline', value: 'underline' },
-        ],
-        annotations: [
-          {
-            title: 'URL',
-            name: 'link',
-            type: 'object',
-            fields: [
-              {
-                title: 'URL',
-                name: 'href',
-                type: 'url',
-              },
-              {
-                title: 'Open in New Tab',
-                name: 'blank',
-                type: 'boolean',
-              },
-            ],
-          },
-        ],
-      },
-    },
-    {
-      type: 'image',
-      options: { hotspot: true },
-      fields: [
+    defineField({
+      title: 'Content',
+      name: 'content',
+      type: 'array',
+      of: [
+        { type: 'block' }, // Rich text content
         {
-          title: 'Caption',
-          name: 'caption',
-          type: 'string',
-          options: { isHighlighted: true },
-        },
-        {
-          title: 'Alt Text',
-          name: 'alt',
-          type: 'string',
-          validation: (Rule) => Rule.required().warning('Alt text is important for accessibility.'),
-        },
-        {
-          title: 'Title', // Adding title field for image
-          name: 'title',
-          type: 'string',
-          description: 'Title for the image, displayed on hover.',
-        },
-        {
-          title: 'Image Width', // Adding image width
-          name: 'width',
-          type: 'number',
-          description: 'Width of the image in pixels.',
-        },
-        {
-          title: 'Image Height', // Adding image height
-          name: 'height',
-          type: 'number',
-          description: 'Height of the image in pixels.',
-        },
-        {
-          title: 'Lazy Load', // Adding lazy load option
-          name: 'lazyLoad',
-          type: 'boolean',
-          description: 'Enable lazy loading for this image.',
-          initialValue: true,
-        },
-      ],
-    },
-    {
-      type: 'object',
-      name: 'customEmbed',
-      title: 'Custom Embed',
-      fields: [
-        {
-          title: 'Embed URL',
-          name: 'embedUrl',
-          type: 'url',
-        },
-      ],
-      preview: {
-        select: {
-          title: 'embedUrl',
-        },
-        prepare(selection) {
-          const { title } = selection;
-          return {
-            title: `Embed: ${title}`,
-          };
-        },
-      },
-    },
-  ],
-}),
+          type: 'object', // Custom YouTube Embed
+          name: 'youtube',
+          title: 'YouTube Embed',
+          fields: [
+            {
+              name: 'url',
+              title: 'YouTube URL',
+              type: 'url',
+              validation: (Rule) =>
+                Rule.uri({
+                  scheme: ['http', 'https'],
+                }).required(),
+            },
+          ],
+          preview: {
+            select: { url: 'url' },
+            prepare({ url }) {
+              const videoId = url ? getYouTubeID(url) : null;
 
+              return {
+                title: 'YouTube Embed',
+                subtitle: videoId
+                  ? `Video ID: ${videoId}`
+                  : 'Invalid YouTube URL',
+                media: videoId
+                  ? {
+                      asset: {
+                        url: `https://img.youtube.com/vi/${videoId}/0.jpg`,
+                      },
+                    }
+                  : undefined,
+              };
+            },
+          },
+        },
+      ],
+    }),
     defineField({
       name: 'tags',
       type: 'array',
@@ -194,12 +120,48 @@ export const coursesType = defineType({
       },
     }),
     defineField({
-      title: 'Link',
-      name: 'href',
-      type: 'url',
-      validation: Rule => Rule.uri({
-        scheme: ['http', 'https', 'mailto', 'tel']
-      })
+      title: 'yt',
+      name: 'yt',
+      type: 'array',
+      of: [
+        { type: 'block' }, // Standard block content
+        {
+          type: 'object', // YouTube Embed block
+          name: 'youtube',
+          title: 'YouTube Embed',
+          fields: [
+            {
+              name: 'url',
+              title: 'YouTube URL',
+              type: 'url',
+              validation: (Rule) =>
+                Rule.uri({
+                  scheme: ['http', 'https'],
+                }).required(),
+            },
+          ],
+          preview: {
+            select: { url: 'url' },
+            prepare({ url }) {
+              const videoId = url ? getYouTubeID(url) : null;
+
+              return {
+                title: 'YouTube Embed',
+                subtitle: videoId
+                  ? `Video ID: ${videoId}`
+                  : 'Invalid YouTube URL',
+                media: videoId
+                  ? {
+                      asset: {
+                        url: `https://img.youtube.com/vi/${videoId}/0.jpg`,
+                      },
+                    }
+                  : undefined,
+              };
+            },
+          },
+        },
+      ],
     }),
     defineField({
       name: 'publishedAt',
@@ -208,3 +170,16 @@ export const coursesType = defineType({
     }),
   ],
 });
+
+// Utility function to safely extract YouTube video ID
+function getYouTubeID(url) {
+  try {
+    const regExp =
+      /(?:youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?)\/|.+?[?&]v=)|youtu\.be\/)([^"&?/\\ ]{11})/;
+    const match = url.match(regExp);
+    return match && match[1] ? match[1] : null;
+  } catch (error) {
+    console.error('Failed to parse YouTube URL:', error);
+    return null;
+  }
+}
