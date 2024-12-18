@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import VisitCourseButton from "@/components/buttons/page";
 import { PortableText } from "next-sanity";
 import Sidebar from "@/components/sidebar/page";
+import portableTextComponents from "@/components/yt/page";
 
 // Utility to escape JSON-LD values
 function escapeJsonLd(value) {
@@ -145,48 +146,51 @@ export default async function BlogPage({ params }) {
         <div className="col-span-12 lg:col-span-8 text-black bg-light dark:bg-dark text-dark dark:text-light transition-all ease">
           <h1 className="text-4xl font-bold mb-6">{blog.title}</h1>
           {blog.content ? (
-            <PortableText
-              value={blog.content}
-              components={{
-                types: {
-                  image: ({ value }) => (
-                    <div className="my-4">
-                      <Image
-                        src={urlFor(value).url()}
-                        alt={value.alt || "Blog image"}
-                        width={800}
-                        height={400}
-                        className="w-full h-auto rounded"
-                      />
-                    </div>
-                  ),
-                },
-                marks: {
-                  link: ({ value, children }) => (
-                    <a
-                      href={value.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-600 underline"
-                    >
-                      {children}
-                    </a>
-                  ),
-                },
-                block: {
-                  h1: ({ children }) => (
-                    <h1 className="text-4xl font-bold my-4">{children}</h1>
-                  ),
-                  h2: ({ children }) => (
-                    <h2 className="text-3xl font-semibold my-4">{children}</h2>
-                  ),
-                  h3: ({ children }) => (
-                    <h3 className="text-2xl font-medium my-3">{children}</h3>
-                  ),
-                  normal: ({ children }) => <p className="my-2">{children}</p>,
-                },
-              }}
-            />
+           <PortableText
+           value={blog.content}
+           components={{
+             ...portableTextComponents, // Add custom YouTube embed components
+             types: {
+               ...portableTextComponents.types, // Ensure YouTube stays intact
+               image: ({ value }) => (
+                 <div className="my-4">
+                   <Image
+                     src={urlFor(value).url()}
+                     alt={value.alt || "Blog image"}
+                     width={800}
+                     height={400}
+                     className="w-full h-auto rounded"
+                   />
+                 </div>
+               ),
+             },
+             marks: {
+               link: ({ value, children }) => (
+                 <a
+                   href={value.href}
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="text-blue-600 underline"
+                 >
+                   {children}
+                 </a>
+               ),
+             },
+             block: {
+               h1: ({ children }) => (
+                 <h1 className="text-4xl font-bold my-4">{children}</h1>
+               ),
+               h2: ({ children }) => (
+                 <h2 className="text-3xl font-semibold my-4">{children}</h2>
+               ),
+               h3: ({ children }) => (
+                 <h3 className="text-2xl font-medium my-3">{children}</h3>
+               ),
+               normal: ({ children }) => <p className="my-2">{children}</p>,
+             },
+           }}
+         />
+         
           ) : (
             <p>No content available</p>
           )}
