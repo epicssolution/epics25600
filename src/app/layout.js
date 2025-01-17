@@ -83,6 +83,7 @@ export default function RootLayout({ children }) {
     name="google-site-verification"
     content="125c3Cukk3D1INp6HOlRmuvTDPOk-qiR_j30PREvm0I"
   />
+  <meta name="p:domain_verify" content="be8a436f4e7ce83fbeafd23c184e415b"/>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   {/* Google Analytics */}
@@ -90,6 +91,7 @@ export default function RootLayout({ children }) {
     async
     src="https://www.googletagmanager.com/gtag/js?id=G-D50XE9PL55"
   />
+      
   <Script id="gtag-init" strategy="afterInteractive">
     {`
       window.dataLayer = window.dataLayer || [];
