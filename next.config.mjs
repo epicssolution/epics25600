@@ -301,6 +301,10 @@ const nextConfig = {
         source: '/artificial-',
         destination: '/ai',
         permanent: true, // 301 Permanent Redirect
+      },{
+        source: '/high-income-skills',
+        destination: '/high-income-skill',
+        permanent: true, // 301 Permanent Redirect
       },
     ];
   },
