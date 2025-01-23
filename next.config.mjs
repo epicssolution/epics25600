@@ -306,6 +306,11 @@ const nextConfig = {
         destination: '/high-income-skill',
         permanent: true, // 301 Permanent Redirect
       },
+      {
+        source: '/(data-analyses|data-visualization)',
+        destination: '/data-visualization1',
+        permanent: true, // 301 Permanent Redirect
+      },
     ];
   },
   
