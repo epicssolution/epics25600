@@ -97,7 +97,7 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/Engineering/role-of-ai-in-mep-industry',
+        source: '/Engineering/(role-of-ai-in-mep-industry|role-of-ai-in-mep-indutry)',
         destination: '/the-impact-of-artificial-intelligence-on-mep-systems',
         permanent: true,
       },
