@@ -13,8 +13,8 @@ const nextConfig = {
  async redirects() {
     return [
       {
-        source: '/marketing/revit-mep-2025-tutorial-1-hvac-load-calculation',
-        destination: '/revit-2025-hvac-load-calculation-tutorial-1',
+        source: '(/marketing/revit-mep-2025-tutorial-1-hvac-load-calculationRevit|/marketing/revit-mep-2025-cooling-and-heating-load-calculation-p-1|/marketing/revit-mep-2025-tutorial-1-hvac-load-calculation|/revit-2025-hvac-load-calculation-tutorial-1|/revit-2025-hvac-load-calculation-tutorial-1|/revit-2025-hvac-|/revit-2025-hvac-load-|/how-chillers-work-|/Epics|/marketing/revit-mep-2025-tuotorial-1-hvac-load-calculation|/marketing/revit-mep-2025-cooling-and-heating-load-calculation|/marketing/asif-khan|/marketing/marketing-and-ai|/marketing/revit-mep-2025-tuotorial-1-hvac-load-calculationRevit|/marketing/revit-mep-2025-tutorial-1-hvac-load-calculationRevit|/marketing/URL to favicon)',
+        destination: '/revit/revit-mep-tutorial-1',
         permanent: true, // 301 Permanent Redirect
       },
       {
@@ -109,11 +109,7 @@ const nextConfig = {
         destination: '/equipment',
         permanent: true, // 301 Permanent Redirect
       },
-         {
-        source: '/marketing/revit-mep-2025-cooling-and-heating-load-calculation-p-1',
-        destination: '/revit-2025-hvac-load-calculation-tutorial-1',
-        permanent: true, // 301 Permanent Redirect
-      },
+        
          {
         source: '/marketing/tailwind-css-a-game-changer-in-web-development',
         destination: '/dev',
@@ -179,11 +175,7 @@ const nextConfig = {
         destination: '/how-chillers-work-operation-and-maintenance-tips',
         permanent: true, // 301 Permanent Redirect
       },
-         {
-        source: '/marketing/revit-mep-2025-tutorial-1-hvac-load-calculationRevit',
-        destination: '/revit-2025-hvac-load-calculation-tutorial-1',
-        permanent: true, // 301 Permanent Redirect
-      },
+         
          {
         source: '/Engineering/tunnels-ventilation',
         destination: '/tunnels-ventilation',
@@ -244,15 +236,7 @@ const nextConfig = {
         destination: '/hospital-hvac',
         permanent: true, // 301 Permanent Redirect
       },
-      {
-  source: '/(revit-2025-hvac-|revit-2025-hvac-load-|how-chillers-work-|Epics)',
-  destination: '/revit-mep-hvac-load-calculation-tutorial-1',
-  permanent: true, // 301 Permanent Redirect
-}, {
-  source: '/marketing/(revit-mep-2025-tuotorial-1-hvac-load-calculation|revit-mep-2025-cooling-and-heating-load-calculation|asif-khan|marketing-and-ai|revit-mep-2025-tuotorial-1-hvac-load-calculationRevit|revit-mep-2025-tutorial-1-hvac-load-calculationRevit|URL to favicon)',
-  destination: '/revit-mep-hvac-load-calculation-tutorial-1',
-  permanent: true, // 301 Permanent Redirect
-},   {
+   {
         source: '/development/applications-of-ai-in-healthcare',
         destination: '/role-of-artificial-intelligence-in-healthcare',
         permanent: true, // 301 Permanent Redirect
