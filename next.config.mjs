@@ -67,7 +67,7 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/(artificialf/ai|artificial-)',
+        source: '/(artificialf/ai|artificial-|artificial-intelligence-ai-in-hvac)',
         destination: '/ai',
         permanent: true,
       },
@@ -170,6 +170,10 @@ const nextConfig = {
       },  {
         source: '/(fonts/CustomFont.woff2|marketing/URL%20to%20favicon)',
         destination: '/',
+        permanent: true,
+      }, {
+        source: '/absorption-chiller1',
+        destination: '/absorption-chiller',
         permanent: true,
       },
     ];
