@@ -52,22 +52,22 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/Engineering/tunnel-ventilation',
+        source: '/(Engineering/tunnel-ventilation|Engineering/tunnels-)',
         destination: '/tunnels-ventilation',
         permanent: true,
       },
       {
-        source: '/(Engineering/hospital-hvac-system|hospital-hvac-system|Engineering/hvac-system-designing-for-hospitals)',
+        source: '/(Engineering/hospital-hvac-system|hospital-hvac-system|Engineering/hvac-system-designing-for-hospitals|Engineering/plumbing-design-for-people-with-disability)',
         destination: '/hospital-hvac',
         permanent: true,
       },
       {
-        source: '/equipment/how-chiller-work',
+        source: '/(equipment/how-chiller-work|Engineering/chiller-system-greater-than-types-working-o-and-m|Engineering/concepts-of-chiller-in-hvac|Engineering/hvac-)',
         destination: '/how-chillers-work-operation-and-maintenance-tips',
         permanent: true,
       },
       {
-        source: '/(artificialf/ai|artificial-|artificial-intelligence-ai-in-hvac)',
+        source: '/(artificialf/ai|artificial-|artificial-intelligence-ai-in-hvac|artificiali/ai|marketing/use-of-ai-in-digital-marketing)',
         destination: '/ai',
         permanent: true,
       },
