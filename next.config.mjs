@@ -63,8 +63,8 @@ const nextConfig = {
         permanent: true, // 301 Permanent Redirect
       },
          {
-        source: '/Engineering/hospital-hvac-system',
-        destination: '/hospital-hvac-system',
+        source: '(/Engineering/hospital-hvac-system|/hospital-hvac-system|/Engineering/hvac-system-designing-for-hospitals)',
+        destination: '/hospital-hvac',
         permanent: true, // 301 Permanent Redirect
       },
          {
@@ -87,16 +87,8 @@ const nextConfig = {
         destination: '/how-chillers-work-operation-and-maintenance-tips',
         permanent: true, // 301 Permanent Redirect
       },
-         {
-        source: '/Engineering/hvac-system-designing-for-hospitals',
-        destination: '/hospital-hvac-system',
-        permanent: true, // 301 Permanent Redirect
-      },
-         {
-        source: '/Engineering/hvac-system-designing-for-hospitals',
-        destination: '/hospital-hvac-system',
-        permanent: true, // 301 Permanent Redirect
-      },
+         
+        
          {
         source: '/artificialf/ai',
         destination: '/ai',
