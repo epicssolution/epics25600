@@ -12,7 +12,7 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/(marketing/revit-mep-2025-tutorial-1-hvac-load-calculation(?:Revit)?|marketing/revit-mep-2025-tuotorial-1-hvac-load-calculation|marketing/revit-mep-2025-cooling-and-heating-load-calculation-p-1|marketing/revit-mep-2025-tutorial-1-hvac-load-calculation|revit-2025-hvac-load-calculation-tutorial-1|revit-2025-hvac-load-|how-chillers-work-|Epics|marketing/asif-khan|marketing/marketing-and-ai)',
+        source: '/(marketing/revit-mep-2025-tutorial-1-hvac-load-calculation(?:Revit)?|marketing/revit-mep-2025-tuotorial-1-hvac-load-calculationRevit|revit-2025-hvac-|marketing/revit-mep-2025-cooling-and-heating-load-calculation|marketing/revit-mep-2025-tuotorial-1-hvac-load-calculation|marketing/revit-mep-2025-cooling-and-heating-load-calculation-p-1|marketing/revit-mep-2025-tutorial-1-hvac-load-calculation|revit-2025-hvac-load-calculation-tutorial-1|revit-2025-hvac-load-|how-chillers-work-|Epics|marketing/asif-khan|marketing/marketing-and-ai)',
         destination: '/revit/revit-mep-tutorial-1',
         permanent: true,
       },
