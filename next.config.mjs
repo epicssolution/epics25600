@@ -72,13 +72,13 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/artificialf/building-management-systems-bms',
-        destination: '/building-management-systems-bms',
+        source: '/(artificialf/building-management-systems-bms|building-management-systems-bms)',
+        destination: '/ai-in-building-management-systems-bms',
         permanent: true,
       },
       {
         source: '/Engineering/centrifugal-liquid-chiller-operation-and-maintenance',
-        destination: '/equipment',
+        destination: '/centrifugal-chiller-maintenance',
         permanent: true,
       },
       {
@@ -88,7 +88,7 @@ const nextConfig = {
       },
       {
         source: '/marketing/tailwind-css-a-game-changer-in-web-development',
-        destination: '/dev',
+        destination: '/tailwind-css-revolutionize-web-development',
         permanent: true,
       },
       {
@@ -166,6 +166,10 @@ const nextConfig = {
        {
         source: '/revit-2025-hvac-load-calculation-report-analyses-tuotorial-2',
         destination: '/revit/revit-mep-tutorial-2',
+        permanent: true,
+      },  {
+        source: '/(fonts/CustomFont.woff2|marketing/URL%20to%20favicon)',
+        destination: '/',
         permanent: true,
       },
     ];
