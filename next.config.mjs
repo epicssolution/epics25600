@@ -98,14 +98,10 @@ const nextConfig = {
       },
       {
         source: '/Engineering/role-of-ai-in-mep-industry',
-        destination: '/role-of-artificial-intelligence-in-healthcare',
+        destination: '/the-impact-of-artificial-intelligence-on-mep-systems',
         permanent: true,
       },
-      {
-        source: '/artificial/applications-of-ai-in-healthcare',
-        destination: '/role-of-artificial-intelligence-in-healthcare',
-        permanent: true,
-      },
+  
       {
         source: '/(Engineering/hvac-cooling-load-calculation|hvac-cooling-load-calculation)',
         destination: '/hvac-load-calculation',
@@ -141,19 +137,15 @@ const nextConfig = {
         destination: '/how-chillers-work-operation-and-maintenance-tips',
         permanent: true,
       },
-      {
-        source: '/marketing/use-of-ai-in-digital-marketing-details',
-        destination: '/role-of-artificial-intelligence-in-healthcare',
-        permanent: true,
-      },
+    
       {
         source: '/hospital-hvac-system',
         destination: '/hospital-hvac',
         permanent: true,
       },
       {
-        source: '/development/applications-of-ai-in-healthcare',
-        destination: '/role-of-artificial-intelligence-in-healthcare',
+        source: '/(artificial/applications-of-ai-in-healthcare|marketing/use-of-ai-in-digital-marketing-details|development/applications-of-ai-in-healthcare|role-of-artificial-intelligence-in-healthcare)',
+        destination: '/role-of-artificial-intelligence',
         permanent: true,
       },
       {
@@ -169,6 +161,11 @@ const nextConfig = {
         {
         source: '/centrifugal-chillers',
         destination: '/centrifugal-chiller1',
+        permanent: true,
+      },
+       {
+        source: '/revit-2025-hvac-load-calculation-report-analyses-tuotorial-2',
+        destination: '/revit/revit-mep-tutorial-2',
         permanent: true,
       },
     ];
