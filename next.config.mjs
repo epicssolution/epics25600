@@ -166,6 +166,11 @@ const nextConfig = {
         destination: '/data-visualization1',
         permanent: true,
       },
+        {
+        source: '/centrifugal-chillers',
+        destination: '/centrifugal-chiller1',
+        permanent: true,
+      },
     ];
   },
 };
