@@ -32,7 +32,7 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/development/next-js-a-full-stack-developer',
+        source: '/development/(next-js-a-full-stack-developer|what-is-next-js)',
         destination: '/next-js-a-full-stack-developer',
         permanent: true,
       },
