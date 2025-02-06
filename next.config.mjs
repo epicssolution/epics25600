@@ -139,7 +139,7 @@ const nextConfig = {
       },
     
       {
-        source: '/hospital-hvac-system',
+        source: '/(hospital-hvac-system|hvac-system-designing-for-hospitals)',
         destination: '/hospital-hvac',
         permanent: true,
       },
