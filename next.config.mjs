@@ -5,7 +5,6 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'cdn.sanity.io',
-        port: '', // Optional, leave empty for default ports (80 for http and 443 for https)
         pathname: '/**', // Allow all paths under this domain
       },
     ],
@@ -13,7 +12,7 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '(?:/marketing/revit-mep-2025-tutorial-1-hvac-load-calculation(?:Revit)?|/marketing/revit-mep-2025-cooling-and-heating-load-calculation-p-1|/marketing/revit-mep-2025-tutorial-1-hvac-load-calculation|/revit-2025-hvac-load-calculation-tutorial-1|/revit-2025-hvac-load-|/how-chillers-work-|/Epics|/marketing/asif-khan|/marketing/marketing-and-ai)',
+        source: '/(marketing/revit-mep-2025-tutorial-1-hvac-load-calculation(?:Revit)?|marketing/revit-mep-2025-cooling-and-heating-load-calculation-p-1|marketing/revit-mep-2025-tutorial-1-hvac-load-calculation|revit-2025-hvac-load-calculation-tutorial-1|revit-2025-hvac-load-|how-chillers-work-|Epics|marketing/asif-khan|marketing/marketing-and-ai)',
         destination: '/revit/revit-mep-tutorial-1',
         permanent: true,
       },
@@ -58,7 +57,7 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '(?:/Engineering/hospital-hvac-system|/hospital-hvac-system|/Engineering/hvac-system-designing-for-hospitals)',
+        source: '/(Engineering/hospital-hvac-system|hospital-hvac-system|Engineering/hvac-system-designing-for-hospitals)',
         destination: '/hospital-hvac',
         permanent: true,
       },
@@ -68,7 +67,7 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/artificialf/ai',
+        source: '/(artificialf/ai|artificial-)',
         destination: '/ai',
         permanent: true,
       },
@@ -108,7 +107,7 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/Engineering/hvac-cooling-load-calculation',
+        source: '/(Engineering/hvac-cooling-load-calculation|hvac-cooling-load-calculation)',
         destination: '/hvac-load-calculation',
         permanent: true,
       },
@@ -120,11 +119,6 @@ const nextConfig = {
       {
         source: '/tunnel-ventilation',
         destination: '/tunnels-ventilation',
-        permanent: true,
-      },
-      {
-        source: '/hvac-cooling-load-calculation',
-        destination: '/hvac-load-calculation',
         permanent: true,
       },
       {
@@ -159,11 +153,6 @@ const nextConfig = {
       },
       {
         source: '/development/applications-of-ai-in-healthcare',
-        destination: '/role-of-artificial-intelligence-in-healthcare',
-        permanent: true,
-      },
-      {
-        source: '/artificial-intelligence-',
         destination: '/role-of-artificial-intelligence-in-healthcare',
         permanent: true,
       },
