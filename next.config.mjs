@@ -175,6 +175,14 @@ const nextConfig = {
         source: '/absorption-chiller1',
         destination: '/absorption-chiller',
         permanent: true,
+      },{
+        source: '/Engineering/room-heating-by-perforated-solar-air-collector',
+        destination: '/room-heating-by-perforated-solar-air-collector',
+        permanent: true,
+      },{
+        source: '/Engineering/hvac-load-calculation',
+        destination: '/hvac-load-calculation',
+        permanent: true,
       },
     ];
   },
