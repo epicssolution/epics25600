@@ -4,6 +4,8 @@ import { engType } from "../engType"
 import { devType } from "../devType"
 import { aiType } from "../aiType"
 import { equipmentType } from "../equipmentType"
+import { energyType } from "../energyType"
+
 
 
 export const schema = {
