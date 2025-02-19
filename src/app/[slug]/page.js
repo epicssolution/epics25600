@@ -18,7 +18,7 @@ export async function generateMetadata({ params }) {
   const { slug } = params;
 
   const query = `
-    *[_type in ["AI", "Eng", "equipment", "development", "dev"] && slug.current == $slug][0]{
+    *[_type in ["AI", "Eng", "equipment", "development", "dev","energy"] && slug.current == $slug][0]{
       title,
       description,
       "slug": slug.current,
