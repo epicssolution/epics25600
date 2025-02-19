@@ -89,6 +89,8 @@ const Header = () => {
             <Link href="/ai">Artificial intelligence</Link>
             <Link href="/eng">Designing</Link>
             <Link href="/mar">Revit MEP</Link>
+            <Link href="/energy">Energy</Link>
+
           </nav>
           <button
             onClick={() => setMode(mode === "light" ? "dark" : "light")}
