@@ -1,8 +1,8 @@
 import { defineField, defineType } from 'sanity';
 
 export const energyType = defineType({
-  name: 'Energy',
-  title: 'Energy',
+  name: 'energy',
+  title: 'energy',
   type: 'document',
   fields: [
     defineField({
