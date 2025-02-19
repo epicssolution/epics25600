@@ -1,6 +1,6 @@
 
 import React from "react";
-import Equipment from "@/components/Energy/page";
+import Energy from "@/components/energy/page";
 import Head from 'next/head'; // Importing Head component for adding meta tags
 
 export default function equipment() {
