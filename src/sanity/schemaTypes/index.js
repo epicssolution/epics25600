@@ -7,5 +7,5 @@ import { equipmentType } from "../equipmentType"
 
 
 export const schema = {
-  types: [blogType,equipmentType,coursesType,engType,devType,aiType],
+  types: [blogType,equipmentType,coursesType,engType,devType,aiType,energyType],
 }
