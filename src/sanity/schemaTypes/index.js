@@ -5,7 +5,7 @@ import { devType } from "../devType"
 import { aiType } from "../aiType"
 import { equipmentType } from "../equipmentType"
 import { wasteType } from "../wasteType"
-
+import { energyType } from "../energyType"
 
 
 
