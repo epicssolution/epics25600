@@ -26,7 +26,7 @@ const Header = () => {
     if (query.trim()) {
       try {
         const searchQuery = `
-          *[_type in ["AI", "Eng", "equipment", "development", "dev"] && title match $query]{
+          *[_type in ["AI", "Eng", "equipment", "development", "dev","waste"] && title match $query]{
             title,
             "slug": slug.current,
             description,
@@ -90,6 +90,8 @@ const Header = () => {
             <Link href="/eng">Designing</Link>
             <Link href="/mar">Revit MEP</Link>
             <Link href="/energy">Energy</Link>
+            <Link href="/waste">Waste</Link>
+
 
           </nav>
           <button
