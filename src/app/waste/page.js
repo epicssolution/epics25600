@@ -9,7 +9,7 @@ import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import Head from "next/head"; // Importing Head component
 
-const Energy = () => {
+const Waste = () => {
   const [universities, setUniversities] = useState([]);
 
   useEffect(() => {
@@ -143,4 +143,4 @@ const Energy = () => {
   );
 };
 
-export default Energy;
+export default Waste;
