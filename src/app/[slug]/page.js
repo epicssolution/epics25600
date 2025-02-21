@@ -18,12 +18,16 @@ export async function generateMetadata({ params }) {
   const { slug } = params;
 
   const query = `
-    *[_type in ["AI", "Eng", "equipment", "development", "dev","energy","waste"] && slug.current == $slug][0]{
+    *[_type in ["AI", "Eng", "equipment", "development", "dev", "energy", "waste"] && slug.current == $slug][0]{
       title,
       description,
       "slug": slug.current,
       image,
-      publishedAt
+      publishedAt,
+      faq[] { // Added FAQ for metadata (optional, depending on your needs)
+        question,
+        answer
+      }
     }
   `;
 
@@ -34,7 +38,25 @@ export async function generateMetadata({ params }) {
     return null;
   }
 
-const imageUrl = blog.image ? urlFor(blog.image).url() : "https://www.epicssolution.com/default-banner.jpg";
+  const imageUrl = blog.image ? urlFor(blog.image).url() : "https://www.epicssolution.com/default-banner.jpg";
+
+  // FAQ Structured Data (optional here, we’ll add it mainly in the page)
+  const faqSchema = blog.faq
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: blog.faq.map((item) => ({
+          "@type": "Question",
+          name: escapeJsonLd(item.question),
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: escapeJsonLd(
+              item.answer.map((block) => block.children.map((child) => child.text).join(" ")).join(" ")
+            ),
+          },
+        })),
+      }
+    : null;
 
   return {
     title: blog.title,
@@ -52,39 +74,47 @@ const imageUrl = blog.image ? urlFor(blog.image).url() : "https://www.epicssolut
       description: blog.description,
       images: imageUrl ? [imageUrl] : [],
     },
-    structuredData: {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      headline: blog.title,
-      description: blog.description,
-      image: imageUrl,
-      datePublished: blog.publishedAt,
-      url: `https://www.epicssolution.com/${slug}`,
-      author: { "@type": "Person", name: "Epic Solution Team" },
-      publisher: {
-        "@type": "Organization",
-        name: "EPICS Solution",
-        logo: { "@type": "ImageObject", url: siteMetadata.logo },
+    structuredData: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: blog.title,
+        description: blog.description,
+        image: imageUrl,
+        datePublished: blog.publishedAt,
+        url: `https://www.epicssolution.com/${slug}`,
+        author: { "@type": "Person", name: "Epic Solution Team" },
+        publisher: {
+          "@type": "Organization",
+          name: "EPICS Solution",
+          logo: { "@type": "ImageObject", url: siteMetadata.logo },
+        },
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": `https://www.epicssolution.com/${slug}`,
+        },
       },
-      mainEntityOfPage: {
-        "@type": "WebPage",
-        "@id": `https://www.epicssolution.com/${slug}`,
-      },
-    },
+      ...(faqSchema ? [faqSchema] : []), // Add FAQ schema if it exists
+    ],
   };
 }
+
 export default async function BlogPage({ params }) {
   const { slug } = params;
 
   const query = `
-    *[_type in ["AI", "Eng", "equipment", "development", "dev","energy", "waste"] && slug.current == $slug][0]{
+    *[_type in ["AI", "Eng", "equipment", "development", "dev", "energy", "waste"] && slug.current == $slug][0]{
       title,
       description,
       "slug": slug.current,
       image,
       publishedAt,
       href,
-      content
+      content,
+      faq[] { // Fetch FAQ data
+        question,
+        answer
+      }
     }
   `;
 
@@ -111,33 +141,80 @@ export default async function BlogPage({ params }) {
 
   const imageUrl = blog.image ? urlFor(blog.image).url() : siteMetadata.socialBanner;
 
+  // FAQ Structured Data for the page
+  const faqSchema = blog.faq
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: blog.faq.map((item) => ({
+          "@type": "Question",
+          name: escapeJsonLd(item.question),
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: escapeJsonLd(
+              item.answer.map((block) => block.children.map((child) => child.text).join(" ")).join(" ")
+            ),
+          },
+        })),
+      }
+    : null;
+
   return (
     <article>
       <Head>
         <title>{blog.title}</title>
         <meta name="description" content={blog.description} />
-        <meta name="keywords" content={`${blog.title}`} />
+        <meta name="keywords" content={`${blog.title}, skip bins, construction waste`} /> {/* Added keywords */}
         <link rel="canonical" href={`https://www.epicssolution.com/${slug}`} />
         <meta name="author" content="Epic Solution Team" />
         <meta name="robots" content="index, follow" />
 
         {/* Open Graph Tags */}
-         <meta property="og:title" content={blog.title} />
-         <meta property="og:description" content={blog.description} />
-         <meta property="og:url" content={`https://www.epicssolution.com/${slug}`} />
-         <meta property="og:image" content={imageUrl} />
-         <meta property="og:image:width" content="1200" />
-         <meta property="og:image:height" content="630" />
-         <meta property="og:type" content="article" />
-         <meta property="og:site_name" content="Epic Solution Blog" />
-         <meta property="og:locale" content="en_US" />
-         <meta property="og:updated_time" content={new Date().toISOString()} />
+        <meta property="og:title" content={blog.title} />
+        <meta property="og:description" content={blog.description} />
+        <meta property="og:url" content={`https://www.epicssolution.com/${slug}`} />
+        <meta property="og:image" content={imageUrl} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="Epic Solution Blog" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:updated_time" content={new Date().toISOString()} />
 
-    {/* Twitter Card Tags */}
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content={blog.title} />
-          <meta name="twitter:description" content={blog.description} />
-          <meta name="twitter:image" content={imageUrl} />
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={blog.title} />
+        <meta name="twitter:description" content={blog.description} />
+        <meta name="twitter:image" content={imageUrl} />
+
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "Article",
+                headline: blog.title,
+                description: blog.description,
+                image: imageUrl,
+                datePublished: blog.publishedAt,
+                url: `https://www.epicssolution.com/${slug}`,
+                author: { "@type": "Person", name: "Epic Solution Team" },
+                publisher: {
+                  "@type": "Organization",
+                  name: "EPICS Solution",
+                  logo: { "@type": "ImageObject", url: siteMetadata.logo },
+                },
+                mainEntityOfPage: {
+                  "@type": "WebPage",
+                  "@id": `https://www.epicssolution.com/${slug}`,
+                },
+              },
+              ...(faqSchema ? [faqSchema] : []), // Include FAQ schema if present
+            ]),
+          }}
+        />
       </Head>
 
       <div className="relative w-full h-[70vh] bg-gray-800">
@@ -173,10 +250,7 @@ export default async function BlogPage({ params }) {
               {headings.length > 0 ? (
                 headings.map((heading) => (
                   <li key={heading.slug} className="py-1">
-                    <a
-                      href={`#${heading.slug}`}
-                      className="text-blue-500 hover:underline"
-                    >
+                    <a href={`#${heading.slug}`} className="text-blue-500 hover:underline">
                       {heading.text}
                     </a>
                   </li>
@@ -189,7 +263,7 @@ export default async function BlogPage({ params }) {
         </div>
 
         {/* Blog Content */}
-        <div className="col-span-12 lg:col-span-8 text-black bg-light dark:bg-dark text-dark dark:text-light transition-all ease ">
+        <div className="col-span-12 lg:col-span-8 text-black bg-light dark:bg-dark text-dark dark:text-light transition-all ease">
           {blog.content ? (
             <PortableText
               value={blog.content}
@@ -233,6 +307,34 @@ export default async function BlogPage({ params }) {
             />
           ) : (
             <p>No content available</p>
+          )}
+
+          {/* FAQ Section */}
+          {blog.faq && blog.faq.length > 0 && (
+            <section className="mt-8">
+              <h2 className="text-3xl font-semibold mb-4">Frequently Asked Questions</h2>
+              {blog.faq.map((item, index) => (
+                <div key={index} className="mb-6">
+                  <h3 className="text-xl font-medium text-blue-600">{item.question}</h3>
+                  <PortableText
+                    value={item.answer}
+                    components={{
+                      block: {
+                        normal: ({ children }) => <p className="mt-2">{children}</p>,
+                      },
+                      list: {
+                        bullet: ({ children }) => <ul className="list-disc ml-5 mt-2">{children}</ul>,
+                        number: ({ children }) => <ol className="list-decimal ml-5 mt-2">{children}</ol>,
+                      },
+                      listItem: {
+                        bullet: ({ children }) => <li>{children}</li>,
+                        number: ({ children }) => <li>{children}</li>,
+                      },
+                    }}
+                  />
+                </div>
+              ))}
+            </section>
           )}
         </div>
       </div>
