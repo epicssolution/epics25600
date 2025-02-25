@@ -189,6 +189,11 @@ const nextConfig = {
         destination: '/generative-artificial-intelligenc',
         permanent: true,
       },
+        {
+        source: '/artificial-intelligence-in-the-oil-and-gas-industry',
+        destination: '/ai-in-the-oil-and-gas-industry',
+        permanent: true,
+      },
     ];
   },
 };
