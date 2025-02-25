@@ -16,7 +16,7 @@ function escapeJsonLd(value) {
 
 // Define typeKeywords mapping for default keywords based on blog type
 const typeKeywords = {
-  AI: "AI, artificial intelligence, machine learning",
+  AI: "Generative AI , AI in the Oil and Gas , AI, artificial intelligence, machine learning",
   Eng: "engineering, technology, innovation",
   equipment: "equipment, tools, machinery",
   development: "software development, coding, programming",
