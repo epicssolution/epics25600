@@ -47,8 +47,20 @@ const Header = () => {
   return (
     <>
       <Head>
-        <title>Engineering Mindset</title>
-        <meta name="description" content="Engineering content and resources" />
+       <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.epicssolution.com" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:site_name" content="Epics Solution" />
+        <meta property="og:image" content="https://www.epicssolution.com/thumbnail.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content="https://www.epicssolution.com/thumbnail.jpg" />
+        <meta name="twitter:site" content="@epicssolution" />
       </Head>
 
       <header className="w-full bg-white shadow-md flex flex-col items-center p-4 px-6 relative dark:bg-dark text-dark dark:text-light transition-all ease">
