@@ -184,6 +184,11 @@ const nextConfig = {
         destination: '/hvac-load-calculation',
         permanent: true,
       },
+      {
+        source: '/generative-ai',
+        destination: '/generative-artificial-intelligence',
+        permanent: true,
+      },
     ];
   },
 };
