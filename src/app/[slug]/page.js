@@ -14,17 +14,31 @@ function escapeJsonLd(value) {
   return value.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
 }
 
+// Define typeKeywords mapping for default keywords based on blog type
+const typeKeywords = {
+  AI: "AI, artificial intelligence, machine learning",
+  Eng: "engineering, technology, innovation",
+  equipment: "equipment, tools, machinery",
+  development: "software development, coding, programming",
+  dev: "dev, development, tech",
+  energy: "energy, sustainability, green tech",
+  waste: "waste management, recycling, environment",
+};
+
 export async function generateMetadata({ params }) {
   const { slug } = params;
 
+  // GROQ query to fetch blog data including _type and tags
   const query = `
     *[_type in ["AI", "Eng", "equipment", "development", "dev", "energy", "waste"] && slug.current == $slug][0]{
+      _type,
       title,
       description,
       "slug": slug.current,
       image,
       publishedAt,
-      faq[] { // Added FAQ for metadata (optional, depending on your needs)
+      tags,
+      faq[] {
         question,
         answer
       }
@@ -40,7 +54,7 @@ export async function generateMetadata({ params }) {
 
   const imageUrl = blog.image ? urlFor(blog.image).url() : "https://www.epicssolution.com/default-banner.jpg";
 
-  // FAQ Structured Data (optional here, we’ll add it mainly in the page)
+  // FAQ Structured Data
   const faqSchema = blog.faq
     ? {
         "@context": "https://schema.org",
@@ -58,9 +72,14 @@ export async function generateMetadata({ params }) {
       }
     : null;
 
+  // Generate dynamic keywords based on tags or type
+  const defaultKeywords = typeKeywords[blog._type] || "technology, innovation";
+  const keywords = blog.tags && blog.tags.length > 0 ? blog.tags.join(", ") : defaultKeywords;
+
   return {
     title: blog.title,
     description: blog.description,
+    keywords: keywords, // Dynamic keywords for SEO
     openGraph: {
       title: blog.title,
       description: blog.description,
@@ -94,7 +113,7 @@ export async function generateMetadata({ params }) {
           "@id": `https://www.epicssolution.com/${slug}`,
         },
       },
-      ...(faqSchema ? [faqSchema] : []), // Add FAQ schema if it exists
+      ...(faqSchema ? [faqSchema] : []),
     ],
   };
 }
@@ -102,16 +121,34 @@ export async function generateMetadata({ params }) {
 export default async function BlogPage({ params }) {
   const { slug } = params;
 
+  // GROQ query to fetch blog data including _type, tags, and image metadata
   const query = `
     *[_type in ["AI", "Eng", "equipment", "development", "dev", "energy", "waste"] && slug.current == $slug][0]{
+      _type,
       title,
       description,
       "slug": slug.current,
       image,
       publishedAt,
       href,
-      content,
-      faq[] { // Fetch FAQ data
+      content[] {
+        ...,
+        _type == "image" => {
+          ...,
+          asset-> {
+            _id,
+            url,
+            metadata {
+              dimensions {
+                width,
+                height
+              }
+            }
+          }
+        }
+      },
+      tags,
+      faq[] {
         question,
         answer
       }
@@ -125,7 +162,7 @@ export default async function BlogPage({ params }) {
     return null;
   }
 
-  // Dynamically extract headings from blog.content
+  // Dynamically extract headings from blog.content for table of contents
   const headings = [];
   if (Array.isArray(blog.content)) {
     blog.content.forEach((block, index) => {
@@ -159,12 +196,16 @@ export default async function BlogPage({ params }) {
       }
     : null;
 
+  // Calculate dynamic keywords
+  const defaultKeywords = typeKeywords[blog._type] || "technology, innovation";
+  const keywords = blog.tags && blog.tags.length > 0 ? blog.tags.join(", ") : defaultKeywords;
+
   return (
     <article>
       <Head>
         <title>{blog.title}</title>
         <meta name="description" content={blog.description} />
-        <meta name="keywords" content={`${blog.title}, skip bins, construction waste`} /> {/* Added keywords */}
+        <meta name="keywords" content={keywords} />
         <link rel="canonical" href={`https://www.epicssolution.com/${slug}`} />
         <meta name="author" content="Epic Solution Team" />
         <meta name="robots" content="index, follow" />
@@ -211,18 +252,19 @@ export default async function BlogPage({ params }) {
                   "@id": `https://www.epicssolution.com/${slug}`,
                 },
               },
-              ...(faqSchema ? [faqSchema] : []), // Include FAQ schema if present
+              ...(faqSchema ? [faqSchema] : []),
             ]),
           }}
         />
       </Head>
 
+      {/* Hero Image Section */}
       <div className="relative w-full h-[70vh] bg-gray-800">
         {blog.image && (
           <div title={blog.title}>
-            <Image
+               <Image
               src={imageUrl}
-              alt={blog.title}
+              alt={`${blog.title} - ${blog.description.slice(0, 50)}`}
               fill
               className="aspect-square w-full h-full object-cover object-center"
               loading="lazy"
@@ -236,6 +278,7 @@ export default async function BlogPage({ params }) {
         </div>
       </div>
 
+      {/* Main Content Grid */}
       <div className="grid grid-cols-12 gap-8 mt-8 px-5 md:px-10">
         {/* Table of Contents - Hidden on Mobile */}
         <div className="col-span-12 lg:col-span-4 hidden lg:block">
@@ -269,15 +312,36 @@ export default async function BlogPage({ params }) {
               value={blog.content}
               components={{
                 types: {
-                  image: ({ value }) => (
-                    <div className="my-4">
-                      <Image
-                        src={urlFor(value).url()}
-                        alt={value.alt || "Blog image"}
-                        className="w-full h-auto rounded"
-                      />
-                    </div>
-                  ),
+                  image: ({ value }) => {
+                    // Check if dimensions are available in the metadata
+                    if (value.asset && value.asset.metadata && value.asset.metadata.dimensions) {
+                      const { width, height } = value.asset.metadata.dimensions;
+                      return (
+                        <div className="my-4">
+                          <Image
+                            src={urlFor(value).url()}
+                            alt={value.alt || "Blog image"}
+                            width={width}
+                            height={height}
+                            className="w-full h-auto rounded"
+                          />
+                        </div>
+                      );
+                    } else {
+                      // Fallback in case metadata is missing
+                      return (
+                        <div className="my-4">
+                          <Image
+                            src={urlFor(value).url()}
+                            alt={value.alt || "Blog image"}
+                            width={800}  // Default width
+                            height={600} // Default height
+                            className="w-full h-auto rounded"
+                          />
+                        </div>
+                      );
+                    }
+                  },
                 },
                 marks: {
                   link: ({ value, children }) => (
