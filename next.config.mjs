@@ -185,7 +185,7 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/(generative-ai|generative-artificial-intelligence',
+        source: '/(generative-ai|generative-artificial-intelligence)',
         destination: '/generative-artificial-intelligenc',
         permanent: true,
       },
