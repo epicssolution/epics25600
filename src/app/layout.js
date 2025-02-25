@@ -75,7 +75,7 @@ export default function RootLayout({ children }) {
   />
 
   {/* SEO Meta Tags */}
-  <meta name="description" content={siteMetadata.description} />
+
   <meta name="author" content="Epic Solutions" />
 
   {/* Google Verification and Viewport */}
