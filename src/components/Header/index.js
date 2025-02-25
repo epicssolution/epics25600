@@ -20,47 +20,50 @@ const Header = () => {
   const [category, setCategory] = useState("All"); // Category selection state
   const [dropdownOpen, setDropdownOpen] = useState(false); // Dropdown toggle state
 
-  const handleSearch = async (query) => {
-    setSearchQuery(query);
+  export default async function BlogPage({ params }) {
+  const { slug } = params;
 
-    if (query.trim()) {
-      try {
-        const searchQuery = `
-          *[_type in ["AI", "Eng", "equipment", "development", "dev","waste"] && title match $query]{
-            title,
-            "slug": slug.current,
-            description,
-            image
-          }
-        `;
-        const results = await client.fetch(searchQuery, { query: `${query}*` });
-        setSearchResults(results);
-      } catch (error) {
-        console.error("Error fetching search results:", error);
-        setSearchResults([]);
-      }
-    } else {
-      setSearchResults([]);
+  // Simplified GROQ query to fetch only title and description
+  const query = `
+    *[_type in ["AI", "Eng", "equipment", "development", "dev", "energy", "waste"] && slug.current == $slug][0]{
+      title,
+      description
     }
-  };
+  `;
+
+  const blog = await client.fetch(query, { slug });
+
+  if (!blog) {
+    notFound();
+    return null;
+  }
+
+  // Use default keywords since tags are no longer fetched
+  const keywords = "technology, innovation"; // Fallback keywords
 
   return (
     <>
       <Head>
-       <title>{title}</title>
-        <meta name="description" content={description} />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.epicssolution.com" />
+        <title>{blog.title}</title>
+        <meta name="description" content={blog.description} />
+        <meta name="keywords" content={keywords} />
+        <link rel="canonical" href={`https://www.epicssolution.com/${slug}`} />
+        <meta name="author" content="Epic Solution Team" />
+        <meta name="robots" content="index, follow" />
+
+        {/* Open Graph Tags */}
+        <meta property="og:title" content={blog.title} />
+        <meta property="og:description" content={blog.description} />
+        <meta property="og:url" content={`https://www.epicssolution.com/${slug}`} />
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="Epic Solution Blog" />
         <meta property="og:locale" content="en_US" />
-        <meta property="og:site_name" content="Epics Solution" />
-        <meta property="og:image" content="https://www.epicssolution.com/thumbnail.jpg" />
+        <meta property="og:updated_time" content={new Date().toISOString()} />
+
+        {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content="https://www.epicssolution.com/thumbnail.jpg" />
-        <meta name="twitter:site" content="@epicssolution" />
+        <meta name="twitter:title" content={blog.title} />
+        <meta name="twitter:description" content={blog.description} />
       </Head>
 
       <header className="w-full bg-white shadow-md flex flex-col items-center p-4 px-6 relative dark:bg-dark text-dark dark:text-light transition-all ease">
