@@ -1,10 +1,8 @@
 "use client"
-  
 
 export default function PrivacyPolicy() {
   return (
     <div className="bg-gray-50 text-gray-800 p-6 max-w-4xl mx-auto">
-  
       <h1 className="text-4xl font-bold mb-6">Privacy Policy</h1>
 
       <section className="mb-8">
