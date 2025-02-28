@@ -201,6 +201,10 @@ const nextConfig = {
         source: '/septic-tank',
         destination: '/what-is-septic-tank',
         permanent: true,
+      },{
+        source: '/skip-bins-and-construction-waste-management',
+        destination: '/skip-bins-and-waste-management',
+        permanent: true,
       },
     ];
   },
