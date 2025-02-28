@@ -1,4 +1,5 @@
-"use client";import Head from 'next/head';
+"use client";
+import Head from 'next/head';
 
 export default function PrivacyPolicy() {
   return (
@@ -33,7 +34,7 @@ export default function PrivacyPolicy() {
             Cookies and similar tracking technologies may be used to improve your browsing experience, analyze website usage, and provide personalized content or advertisements.
           </p>
           <p className="mb-4">
-            <strong>Google AdSense and Cookies:</strong> We use Google AdSense to display advertisements on our website. Google AdSense uses cookies to serve targeted advertisements based on your browsing history and interests. You can opt-out of Google AdSense cookies by visiting the <a href="https://adssettings.google.com/" className="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">Google AdSense opt-out page</a>.
+            <strong>Google AdSense and Cookies:</strong> We use Google AdSense to display advertisements on our website. Google AdSense uses cookies to serve targeted advertisements based on your browsing history and interests. You can opt-out of Google AdSense cookies by visiting the <a href="https://adssettings.google.com/" className="text-blue-500" target="_blank" rel="noopener noreferrer">Google AdSense opt-out page</a>.
           </p>
           <p>
             <strong>Note:</strong> You can disable cookies in your browser settings, but this may affect your user experience.
@@ -67,7 +68,7 @@ export default function PrivacyPolicy() {
             <li><strong>Opt-Out:</strong> Opt-out of receiving promotional emails by following the "unsubscribe" link in our emails.</li>
           </ul>
           <p className="mt-4">
-            To execute these rights, please contact us at <a href="mailto:abdulghaffar25600@epicssolution.com" className="text-blue-500 hover:underline">abdulghaffar25600@epicssolution.com</a>.
+            To execute these rights, please contact us at <a href="mailto:abdulghaffar25600@epicssolution.com" className="text-blue-500">abdulghaffar25600@epicssolution.com</a>.
           </p>
         </section>
 
