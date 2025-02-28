@@ -1,7 +1,12 @@
 "use client";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { YoutubeIcon, FacebookIcon, LinkedinIcon, InstagramIcon } from "../Icons";
+import {
+  YoutubeIcon,
+  FacebookIcon,
+  LinkedinIcon,
+  InstagramIcon,
+} from "../Icons";
 import Link from "next/link";
 import siteMetadata from "@/utils/siteMetaData";
 
@@ -11,72 +16,131 @@ const Footer = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
   const onSubmit = (data) => console.log(data);
-  console.log(errors);
 
   return (
-    <footer className="mt-16 rounded-2xl bg-dark dark:bg-accentDark/90 m-2 sm:m-10 flex flex-col items-center text-light dark:text-dark">
-      <h3 className="mt-16 font-medium dark:font-bold text-center capitalize text-2xl sm:text-3xl lg:text-4xl px-4">
-       Online Courses | udemy | Courses
-      </h3>
-      <p className="mt-5 px-4 text-center w-full sm:w-3/5 font-light dark:font-medium text-sm sm:text-base">
-      Educate yourself and lead the word. Enroll in best courses of every field.
-      </p>
-
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="mt-6 w-fit sm:min-w-[384px] flex items-stretch bg-light dark:bg-dark p-1 sm:p-2 rounded mx04"
-      >
-        <input
-          type="email"
-          placeholder="Enter your email"
-          {...register("email", { required: true, maxLength: 80 })}
-          className="w-full bg-transparent pl-2 sm:pl-0 text-dark focus:border-dark focus:ring-0 border-0 border-b mr-2 pb-1"
-        />
-
-        <input
-          type="submit"
-          className="bg-dark text-light dark:text-dark dark:bg-light cursor-pointer font-medium rounded px-3 sm:px-5 py-1"
-        />
-      </form>
-      <div className="flex items-center mt-8">
-      <a href={siteMetadata.linkedin} rel="noopener noreferrer" className="inline-block w-6 h-6 mr-4" aria-label="Reach out to me via LinkedIn" target="_blank"><LinkedinIcon className="hover:scale-125 transition-all ease duration-200" /></a>
-        <a href={siteMetadata.facebook} rel="noopener noreferrer" className="inline-block w-6 h-6 mr-4" aria-label="Reach out to me via Twitter" target="_blank"><FacebookIcon className="hover:scale-125 transition-all ease duration-200" /></a>
-        <a href={siteMetadata.youtube} rel="noopener noreferrer" className="inline-block w-6 h-6 mr-4" aria-label="Check my profile on Github" target="_blank"><YoutubeIcon className="  hover:scale-125 transition-all ease duration-200 dark:fill-light" /></a>
-        <a href={siteMetadata.Instagram} rel="noopener noreferrer" className="inline-block w-6 h-6 mr-4" aria-label="Check my profile on Dribbble" target="_blank"><InstagramIcon className="hover:scale-125 transition-all ease duration-200" /></a>
-      </div>
-
-      <div className="mt-8 flex flex-wrap justify-center space-x-4">
-        <Link href="/about" className="text-sm hover:underline">
-          About Us
-        </Link>
-        <Link  href="/contact" className="text-sm hover:underline">
-          Contact Us
-        </Link>
-        <Link href="/privacy" className="text-sm hover:underline">
-          Privacy Policy
-        </Link>
-        <Link href="/terms" className="text-sm hover:underline">
-          Terms & Conditions
-        </Link>
-      </div>
-
-      <div className="w-full  mt-16 md:mt-24 relative font-medium border-t border-solid border-light py-6 px-8 flex  flex-col md:flex-row items-center justify-between">
-        <span className="text-center">
-          &copy;Professional Courses.
-        </span>
-        <Link
-          href="https://g.co/kgs/mCZEPTi"
-          className="text-center underline my-4 md:my-0"
-        >
-          Our Location
-        </Link>
-        <div className="text-center">
-          Made with &hearts; by{" "}
-          <a href={siteMetadata.facebook} className="underline" target="_blank">
-            AGKS
-          </a>
+    <footer className="py-10 px-4 mb-4 border border-gray-300 dark:border-gray-700 rounded-lg shadow-lg bg-white dark:bg-black text-black dark:text-white">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Left Section - About */}
+        <div className="max-w-md">
+          <h2 className="text-3xl font-extrabold text-red-500 dark:text-red-300 flex items-center">
+            <span className="mr-3">
+              <img
+                src="/epics.jpg"
+                className="w-10 h-10 object-contain"
+              />
+            </span>
+            EPICS SOLUTION
+          </h2>
+          <p className="mt-4 text-base leading-relaxed">
+            Epic Solutions is a leading software house specializing in custom
+            software, web & mobile app development, and AI-driven solutions. We
+            turn ideas into powerful digital products with innovation and
+            expertise.
+          </p>
         </div>
+
+        {/* Center Section - Useful Links */}
+        <div>
+          <h3 className="text-lg font-semibold mb-4">USEFUL LINKS</h3>
+          <ul className="space-y-2">
+            <li>
+              <Link href="/HomePage" className="hover:text-red-500 flex items-center">
+                ➝ Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/blog" className="hover:text-red-500 flex items-center">
+                ➝ Blog
+              </Link>
+            </li>
+            <li>
+              <Link href="/dev" className="hover:text-red-500 flex items-center">
+                ➝ Development
+              </Link>
+            </li>
+            <li>
+              <Link href="/ai" className="hover:text-red-500 flex items-center">
+                ➝ Artificial Intelligence
+              </Link>
+            </li>
+            <li>
+              <Link href="/eng" className="hover:text-red-500 flex items-center">
+                ➝ Designing
+              </Link>
+            </li>
+            <li>
+              <Link href="/Software" className="hover:text-red-500 flex items-center">
+                ➝ HVAC Software
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Right Section - Subscribe */}
+        <div>
+          <h3 className="text-lg font-semibold mb-4">Let's Connect</h3>
+          <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
+            <input
+              type="email"
+              {...register("email", { required: "Email is required" })}
+              placeholder="Enter your email"
+              className="p-2 rounded-md border border-gray-400 focus:ring-2 focus:ring-red-500 dark:bg-gray-800 dark:border-gray-600 text-gray-900 dark:text-gray-100"
+            />
+            {errors.email && (
+              <p className="text-red-500 dark:text-red-300 text-sm">
+                {errors.email.message}
+              </p>
+            )}
+            <button
+              type="submit"
+              className="mt-2 p-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition-all"
+            >
+              ContactUs
+            </button>
+          </form>
+        </div>
+      </div>
+
+      {/* Social Media Links */}
+      <div className="flex items-center justify-center mt-8">
+        <a
+          href={siteMetadata.linkedin}
+          rel="noopener noreferrer"
+          className="inline-block w-6 h-6 mr-4"
+          aria-label="Reach out to me via LinkedIn"
+          target="_blank"
+        >
+          <LinkedinIcon className="hover:scale-125 transition-all ease duration-200 fill-current" />
+        </a>
+        <a
+          href={siteMetadata.facebook}
+          rel="noopener noreferrer"
+          className="inline-block w-6 h-6 mr-4"
+          aria-label="Reach out to me via Facebook"
+          target="_blank"
+        >
+          <FacebookIcon className="hover:scale-125 transition-all ease duration-200 fill-current" />
+        </a>
+        <a
+          href={siteMetadata.youtube}
+          rel="noopener noreferrer"
+          className="inline-block w-6 h-6 mr-4"
+          aria-label="Check my profile on YouTube"
+          target="_blank"
+        >
+          <YoutubeIcon className="hover:scale-125 transition-all ease duration-200 fill-current" />
+        </a>
+        <a
+          href={siteMetadata.instagram}
+          rel="noopener noreferrer"
+          className="inline-block w-6 h-6 mr-4"
+          aria-label="Check my profile on Instagram"
+          target="_blank"
+        >
+          <InstagramIcon className="hover:scale-125 transition-all ease duration-200 fill-current" />
+        </a>
       </div>
     </footer>
   );
