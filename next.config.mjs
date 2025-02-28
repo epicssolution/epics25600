@@ -197,6 +197,10 @@ const nextConfig = {
         source: '/chilled-water-piping-system',
         destination: '/chilled-water-piping-systems',
         permanent: true,
+      },{
+        source: '/septic-tank',
+        destination: '/what-is-septic-tank',
+        permanent: true,
       },
     ];
   },
