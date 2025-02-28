@@ -3,7 +3,7 @@ import Head from 'next/head';
 
 export default function Disclaimer() {
   return (
-    <div className="bg-gray-50 text-gray-800">
+    <div className="p-6 max-w-4xl mx-auto bg-light dark:bg-dark text-black dark:text-light transition-all border-solid border-dark dark:border-light">
       <Head>
         <title>Disclaimer | Epic Solutions</title>
       </Head>
