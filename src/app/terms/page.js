@@ -1,4 +1,5 @@
-import Head from 'next/head';
+"use client"
+  import Head from 'next/head';
 
 export default function TermsOfUse() {
   return (
