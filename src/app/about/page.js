@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function AboutUs() {
   return (
-    <div className="bg-gray-100 text-gray-800">
+    <div className="p-6 max-w-4xl mx-auto bg-light dark:bg-dark text-black dark:text-light transition-all border-solid border-dark dark:border-light">
       <Head>
         <title>About Us | Epic Solutions</title>
       </Head>
