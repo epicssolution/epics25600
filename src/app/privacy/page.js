@@ -62,10 +62,10 @@ export default function PrivacyPolicy() {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">4. Your Privacy Rights</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li><strong>Access:</strong> Request access to the personal data we acquire from you.</li>
-            <li><strong>Correction:</strong> Request corrections to your personal information if it is inaccurate or incomplete.</li>
-            <li><strong>Deletion:</strong> Request the deletion of your personal information, subject to legal obligations.</li>
-            <li><strong>Opt-Out:</strong> Opt-out of receiving promotional emails by following the "unsubscribe" link in our emails.</li>
+            <li><strong>Access</strong> Request access to the personal data we acquire from you.</li>
+            <li><strong>Correction</strong> Request corrections to your personal information if it is inaccurate or incomplete.</li>
+            <li><strong>Deletion</strong> Request the deletion of your personal information, subject to legal obligations.</li>
+            <li><strong>Opt-Out</strong> Opt-out of receiving promotional emails by following the "unsubscribe" link in our emails.</li>
           </ul>
           <p className="mt-4">
             To execute these rights, please contact us at <a href="mailto:abdulghaffar25600@epicssolution.com" className="text-blue-500">abdulghaffar25600@epicssolution.com</a>.
