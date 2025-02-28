@@ -1,7 +1,7 @@
-vimport React from 'react';
+import React from 'react';
 import Head from 'next/head';
 
-export default function Page() {
+export default function Pv() {
   return (
     <div className="bg-gray-50 text-gray-800">
       <Head>
@@ -11,7 +11,6 @@ export default function Page() {
       <main className="p-6 max-w-4xl mx-auto bg-light dark:bg-dark text-dark dark:text-light transition-all">
         <h1 className="text-4xl font-bold mb-6">Privacy Policy</h1>
 
-        ### Welcome Section
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">Welcome to Epic Solutions!</h2>
           <p className="mb-4">
@@ -25,7 +24,6 @@ export default function Page() {
           </p>
         </section>
 
-        ### What Information Do We Collect
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">1. What Information Do We Collect</h2>
           <ul className="list-disc list-inside space-y-2">
@@ -45,7 +43,6 @@ export default function Page() {
           </p>
         </section>
 
-        ### How We Use Your Information
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">2. How We Use Your Information</h2>
           <ul className="list-disc list-inside space-y-2">
@@ -57,7 +54,6 @@ export default function Page() {
           </ul>
         </section>
 
-        ### How We Protect Your Information
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">3. How We Protect Your Information</h2>
           <p>
@@ -65,7 +61,6 @@ export default function Page() {
           </p>
         </section>
 
-        ### Your Privacy Rights
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">4. Your Privacy Rights</h2>
           <ul className="list-disc list-inside space-y-2">
@@ -79,7 +74,6 @@ export default function Page() {
           </p>
         </section>
 
-        ### Children’s Privacy
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">5. Children’s Privacy</h2>
           <p>
@@ -87,25 +81,11 @@ export default function Page() {
           </p>
         </section>
 
-        ### Changes to This Privacy Policy
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">6. Changes to This Privacy Policy</h2>
           <p>
             We may update this Privacy Policy periodically to reflect changes in our practices, services, or legal requirements. Updates will be posted on this page with a revised "Effective Date."
           </p>
-        </section>
-
-        ### Contact Us
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">Contact Us</h2>
-          <p>
-            If you have any questions or concerns about this Privacy Policy or how we handle your data, please contact us at:
-          </p>
-          <ul className="list-none">
-            <li><strong>Epic Solutions</strong></li>
-            <li>Email: <a href="mailto:abdulghaffar25600@epicssolution.com" className="text-blue-500">abdulghaffar25600@epicssolution.com</a></li>
-            <li>Website: <a href="https://www.epicssolution.com/contact" className="text-blue-500">https://www.epicssolution.com/contact</a></li>
-          </ul>
         </section>
       </main>
     </div>
