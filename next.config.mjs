@@ -193,6 +193,10 @@ const nextConfig = {
         source: '/artificial-intelligence-in-the-oil-and-gas-industry',
         destination: '/ai-in-the-oil-and-gas-industry',
         permanent: true,
+      },  {
+        source: '/chilled-water-piping-system',
+        destination: '/chilled-water-piping-systems',
+        permanent: true,
       },
     ];
   },
