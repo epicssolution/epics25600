@@ -50,8 +50,8 @@ const Footer = () => {
           <h3 className="text-lg font-semibold mb-4">USEFUL LINKS</h3>
           <ul className="space-y-2">
             <li>
-              <Link href="/HomePage" className="hover:text-red-500 flex items-center">
-                ➝ Home
+              <Link href="/about" className="hover:text-red-500 flex items-center">
+                ➝ About Us
               </Link>
             </li>
             <li>
@@ -60,18 +60,18 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/dev" className="hover:text-red-500 flex items-center">
-                ➝ Development
+              <Link href="/contact" className="hover:text-red-500 flex items-center">
+                ➝ Contact Us
               </Link>
             </li>
             <li>
-              <Link href="/ai" className="hover:text-red-500 flex items-center">
-                ➝ Artificial Intelligence
+              <Link href="/terms" className="hover:text-red-500 flex items-center">
+                ➝ Terms of Use
               </Link>
             </li>
             <li>
-              <Link href="/eng" className="hover:text-red-500 flex items-center">
-                ➝ Designing
+              <Link href="/dis" className="hover:text-red-500 flex items-center">
+                ➝ Disclaimer Page
               </Link>
             </li>
             <li>
