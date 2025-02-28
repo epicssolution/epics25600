@@ -8,6 +8,7 @@ import {
   InstagramIcon,
 } from "../Icons";
 import Link from "next/link";
+import Image from "next/image"; // Added import
 import siteMetadata from "@/utils/siteMetaData";
 
 const Footer = () => {
@@ -26,8 +27,11 @@ const Footer = () => {
         <div className="max-w-md">
           <h2 className="text-3xl font-extrabold text-red-500 dark:text-red-300 flex items-center">
             <span className="mr-3">
-              <img
+              <Image
                 src="/epics.jpg"
+                width={40}
+                height={40}
+                alt="EPICS SOLUTION Logo"
                 className="w-10 h-10 object-contain"
               />
             </span>
@@ -80,7 +84,7 @@ const Footer = () => {
 
         {/* Right Section - Subscribe */}
         <div>
-          <h3 className="text-lg font-semibold mb-4">Let's Connect</h3>
+          <h3 className="text-lg font-semibold mb-4">Let&apos;s Connect</h3>
           <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
             <input
               type="email"
