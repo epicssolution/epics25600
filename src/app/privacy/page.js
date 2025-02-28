@@ -1,4 +1,4 @@
-import React from 'react';
+"use client";
 import Head from 'next/head';
 
 export default function Pv() {
