@@ -7,8 +7,7 @@ export default function TermsOfUse() {
       <Head>
         <title>Terms of Use | Epic Solutions</title>
       </Head>
-      <main className="p-6 max-w-4xl mx-auto bg-light dark:bg-dark text-dark dark:text-light transition-all">
-        <h1 className="text-4xl font-bold mb-6">Terms of Use</h1>
+<main className="p-6 max-w-4xl mx-auto bg-light dark:bg-dark text-black dark:text-light transition-all border-solid border-dark dark:border-light">        <h1 className="text-4xl font-bold mb-6">Terms of Use</h1>
         <p className="mb-8">
           Please read these terms and conditions carefully before using{' '}
           <a href="https://www.epicssolution.com/" className="text-blue-500">
