@@ -74,11 +74,6 @@ const Footer = () => {
                 ➝ Disclaimer Page
               </Link>
             </li>
-            <li>
-              <Link href="/Software" className="hover:text-red-500 flex items-center">
-                ➝ HVAC Software
-              </Link>
-            </li>
           </ul>
         </div>
 
