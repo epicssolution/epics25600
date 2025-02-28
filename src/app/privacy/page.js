@@ -1,20 +1,17 @@
-"use client";
-import Head from "next/head";
+"use client";import Head from 'next/head';
 
-export default function Pv() {
+export default function PrivacyPolicy() {
   return (
     <div className="bg-gray-50 text-gray-800">
       <Head>
         <title>Privacy Policy | Epic Solutions</title>
       </Head>
-
-      <main className="p-6 max-w-4xl mx-auto bg-light dark:bg-dark text-dark dark:text-light transition-all">
+      <main className="p-6 max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Privacy Policy</h1>
 
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">Welcome to Epic Solutions!</h2>
           <p className="mb-4">
-            At Epic Solutions, we are determined to empower the youth with new skills that are the need of the hour in this modern era. Whether you are a student or a job holder, our platform helps you in learning new skills. We believe that knowledge should be available to all, and we strive to make our resources easy to access.
+            Welcome to Epic Solutions! At Epic Solutions, we are determined to empower the youth with new skills that are the need of the hour in this modern era. Whether you are a student or a job holder, our platform helps you in learning new skills. We believe that knowledge should be available to all, and we strive to make our resources easy to access.
           </p>
           <p className="mb-4">
             When you use our services, you are trusting us for your information to be secured. Understanding this is a big responsibility, we work hard to protect your information and ensure all of your information is secured with us.
@@ -36,7 +33,7 @@ export default function Pv() {
             Cookies and similar tracking technologies may be used to improve your browsing experience, analyze website usage, and provide personalized content or advertisements.
           </p>
           <p className="mb-4">
-            <strong>Google AdSense and Cookies:</strong> We use Google AdSense to display advertisements on our website. Google AdSense uses cookies to serve targeted advertisements based on your browsing history and interests. You can opt-out of Google AdSense cookies by visiting the <a href="https://adssettings.google.com/" className="text-blue-500" target="_blank" rel="noopener noreferrer">Google AdSense opt-out page</a>.
+            <strong>Google AdSense and Cookies:</strong> We use Google AdSense to display advertisements on our website. Google AdSense uses cookies to serve targeted advertisements based on your browsing history and interests. You can opt-out of Google AdSense cookies by visiting the <a href="https://adssettings.google.com/" className="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">Google AdSense opt-out page</a>.
           </p>
           <p>
             <strong>Note:</strong> You can disable cookies in your browser settings, but this may affect your user experience.
@@ -69,8 +66,8 @@ export default function Pv() {
             <li><strong>Deletion:</strong> Request the deletion of your personal information, subject to legal obligations.</li>
             <li><strong>Opt-Out:</strong> Opt-out of receiving promotional emails by following the "unsubscribe" link in our emails.</li>
           </ul>
-          <p>
-            To execute these rights, please contact us at <a href="mailto:abdulghaffar25600@epicssolution.com" className="text-blue-500">abdulghaffar25600@epicssolution.com</a>.
+          <p className="mt-4">
+            To execute these rights, please contact us at <a href="mailto:abdulghaffar25600@epicssolution.com" className="text-blue-500 hover:underline">abdulghaffar25600@epicssolution.com</a>.
           </p>
         </section>
 
