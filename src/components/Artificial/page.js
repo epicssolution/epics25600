@@ -86,7 +86,7 @@ const Artificial = () => {
               href={`/${uni.slug}`}
               className="h-full rounded-xl overflow-hidden"
             >
-              {uni.image && (
+              {uni.image && uni.image.asset && ( // Check for both uni.image and uni.image.asset
                 <Image
                   src={urlFor(uni.image).url()}
                   alt={uni.image?.alt || uni.title || "University Image"}
