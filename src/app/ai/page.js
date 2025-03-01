@@ -1,7 +1,7 @@
 "use client"; // Added "use client" to ensure client-side rendering, in case Artificial uses client-side APIs
 import React from "react";
 import Head from "next/head"; // Corrected import (removed unnecessary quotes)
-import Artificial from "@/components/Artificial"; // Corrected path (removed "/page" suffix, assuming Artificial.js or Artificial.tsx)
+import Artificial from "@/components/Artificial/page"; // Corrected path (removed "/page" suffix, assuming Artificial.js or Artificial.tsx)
 
 export default function Artif() {
   return (
