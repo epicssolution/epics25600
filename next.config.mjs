@@ -218,6 +218,10 @@ const nextConfig = {
         source: '/district-cooling-system',
         destination: '/district-cooling-system-DCS',
         permanent: true,
+      },{
+        source: '/compressors',
+        destination: '/compressor-1',
+        permanent: true,
       },
     ];
   },
