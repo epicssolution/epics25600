@@ -210,6 +210,11 @@ const nextConfig = {
         destination: '/variable-refrigerant-flow-vrf-1',
         permanent: true,
       },
+      {
+        source: '/valves',
+        destination: '/https://www.epicssolution.com/valves-and-there-types',
+        permanent: true,
+      },
     ];
   },
 };
