@@ -222,6 +222,10 @@ const nextConfig = {
         source: '/compressors',
         destination: '/compressor-1',
         permanent: true,
+      },{
+        source: '/dehumidifier',
+        destination: '/dehumidifier-1',
+        permanent: true,
       },
     ];
   },
