@@ -212,7 +212,11 @@ const nextConfig = {
       },
       {
         source: '/valves',
-        destination: '/https://www.epicssolution.com/valves-and-there-types',
+        destination: '/valves-and-there-types',
+        permanent: true,
+      }, {
+        source: '/district-cooling-system',
+        destination: '/district-cooling-system-DCS',
         permanent: true,
       },
     ];
