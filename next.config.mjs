@@ -159,8 +159,8 @@ const nextConfig = {
         permanent: true,
       },
         {
-        source: '/centrifugal-chillers',
-        destination: '/centrifugal-chiller1',
+        source: '/(centrifugal-chillers|centrifugal-chiller1)',
+        destination: '/centrifugal-chiller-2',
         permanent: true,
       },
        {
@@ -204,6 +204,10 @@ const nextConfig = {
       },{
         source: '/skip-bins-and-construction-waste-management',
         destination: '/skip-bins-and-waste-management',
+        permanent: true,
+      },{
+        source: '/variable-refrigerant-flow-vrf',
+        destination: '/variable-refrigerant-flow-vrf-1',
         permanent: true,
       },
     ];
