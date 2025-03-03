@@ -225,12 +225,15 @@ const nextConfig = {
       },{
         source: '/dehumidifier',
         destination: '/dehumidifier-1',
-        permanent: true,
+        permanent: true, },
       {
         source: '/supercharge-your-web-performancer',
         destination: '/supercharge-your-web-performance-1',
         permanent: true,
-      },
+      },{
+        source: '/maximizing-centrifugal-chiller-efficiency-for-peak-performance',
+        destination: '/maximizing-centrifugal-chiller-efficiency-for-peak-performance-1',
+        permanent: true, },
     ];
   },
 };
