@@ -233,6 +233,9 @@ const nextConfig = {
       },{
         source: '/maximizing-centrifugal-chiller-efficiency-for-peak-performance',
         destination: '/maximizing-centrifugal-chiller-efficiency-for-peak-performance-1',
+        permanent: true, },{
+        source: '/what-is-next-js',
+        destination: '/next-js',
         permanent: true, },
     ];
   },
