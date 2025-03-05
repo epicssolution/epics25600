@@ -236,6 +236,12 @@ const nextConfig = {
         permanent: true, },{
         source: '/what-is-next-js',
         destination: '/next-js',
+        permanent: true, },{
+        source: '/react-as-a-front-end-development-tool',
+        destination: '/react-as-a-front-end-development',
+        permanent: true, },{
+        source: '/tailwind-css-revolutionize-web-development',
+        destination: '/tailwind-css-revolutionize-web-dev',
         permanent: true, },
     ];
   },
