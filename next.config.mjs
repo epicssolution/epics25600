@@ -251,8 +251,8 @@ const nextConfig = {
         destination: '/big-data-analysis',
         permanent: true, },
       {
-        source: '/ai-in-green-building',
-        destination: '/ai-in-green-buildings',
+        source: '/(ai-in-green-building|ai-in-green-buildings)',
+        destination: '/ ai-in-green-building-1',
         permanent: true, },
     ];
   },
