@@ -67,7 +67,7 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/(artificialf/ai|artificial-|artificial-intelligence-ai-in-hvac|artificiali/ai|marketing/use-of-ai-in-digital-marketing)',
+        source: '/artificial-intelligence|/(artificialf/ai|artificial-|artificial-intelligence-ai-in-hvac|artificiali/ai|marketing/use-of-ai-in-digital-marketing)',
         destination: '/ai',
         permanent: true,
       },
