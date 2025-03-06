@@ -249,6 +249,9 @@ const nextConfig = {
       {
         source: '/big-data-analysis-unlocking-the-potential-of-massive-data-sets',
         destination: '/big-data-analysis',
+        permanent: true, }, {
+        source: '/ai-in-green-building',
+        destination: '/ai-in-green-buildings',
         permanent: true, },
     ];
   },
