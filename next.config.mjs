@@ -254,6 +254,10 @@ const nextConfig = {
         source: '/(ai-in-green-building|ai-in-green-buildings)',
         destination: '/ ai-in-green-building-1',
         permanent: true, },
+        {
+        source: '/artificial-intelligence-in-hvac',
+        destination: '/ artificial-intelligence-in-hvac-1',
+        permanent: true, },
     ];
   },
 };
