@@ -47,8 +47,8 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/artificiali/applications-of-ai-in-healthcare',
-        destination: '/role-of-artificial-intelligence-in-healthcare',
+        source: '/artificiali/applications-of-ai-in-healthcare|/role-of-artificial-intelligence-in-healthcare',
+        destination: '/role-of-artificial-intelligence-1',
         permanent: true,
       },
       {
