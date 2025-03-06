@@ -154,8 +154,8 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/(data-analyses|data-visualization)',
-        destination: '/data-visualization1',
+        source: '/(data-analyses|data-visualization|data-visualization1)',
+        destination: '/data-visualization-1',
         permanent: true,
       },
         {
@@ -233,15 +233,22 @@ const nextConfig = {
       },{
         source: '/maximizing-centrifugal-chiller-efficiency-for-peak-performance',
         destination: '/maximizing-centrifugal-chiller-efficiency-for-peak-performance-1',
-        permanent: true, },{
+        permanent: true, },
+      {
         source: '/what-is-next-js',
         destination: '/next-js',
-        permanent: true, },{
+        permanent: true, },
+      {
         source: '/react-as-a-front-end-development-tool',
         destination: '/react-as-a-front-end-development',
-        permanent: true, },{
+        permanent: true, },
+      {
         source: '/tailwind-css-revolutionize-web-development',
         destination: '/tailwind-css-revolutionize-web-dev',
+        permanent: true, },
+      {
+        source: '/big-data-analysis-unlocking-the-potential-of-massive-data-sets',
+        destination: '/big-data-analysis',
         permanent: true, },
     ];
   },
