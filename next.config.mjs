@@ -47,8 +47,8 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/artificiali/applications-of-ai-in-healthcare|/role-of-artificial-intelligence-in-healthcare',
-        destination: '/role-of-artificial-intelligence-1',
+        source: '/artificiali/applications-of-ai-in-healthcare|/role-of-artificial-intelligence-in-healthcare|/role-of-artificial-intelligence-1 ',
+        destination: '/role-of-artificial-intelligence-in-healthcare-1',
         permanent: true,
       },
       {
@@ -145,7 +145,7 @@ const nextConfig = {
       },
       {
         source: '/(artificial/applications-of-ai-in-healthcare|marketing/use-of-ai-in-digital-marketing-details|development/applications-of-ai-in-healthcare|role-of-artificial-intelligence-in-healthcare)',
-        destination: '/role-of-artificial-intelligence',
+        destination: '/role-of-artificial-intelligence-in-healthcare-1',
         permanent: true,
       },
       {
