@@ -1,12 +1,15 @@
-"use client"
-import Head from 'next/head';
+"use client"; // Optional: Only if you need client-side features
+
+import { Metadata } from 'next';
+
+// Metadata export for SEO (replaces <Head>)
+export const metadata: Metadata = {
+  title: 'Disclaimer | Epic Solutions',
+};
 
 export default function Disclaimer() {
   return (
     <div className="p-6 max-w-4xl mx-auto bg-light dark:bg-dark text-black dark:text-light transition-all border-solid border-dark dark:border-light">
-      <Head>
-        <title>Disclaimer | Epic Solutions</title>
-      </Head>
       <main className="p-6 max-w-4xl mx-auto bg-light dark:bg-dark text-dark dark:text-light transition-all">
         <h1 className="text-4xl font-bold mb-6">Disclaimer</h1>
         <p className="mb-8">
@@ -78,22 +81,22 @@ export default function Disclaimer() {
             <li>
               Website:{' '}
               <a href="https://www.epicssolution.com/" className="text-blue-500">
-                https://www.epicssolution.com/
+                https://www.epicssolution.com/contact
               </a>
             </li>
           </ul>
-    <div>
-      <p>This Disclaimer page includes the following essential elements:</p>
-      <ol>
-        <li>General Disclaimer: A statement that the website's information is for general purposes only.</li>
-        <li>Limitation of Liability: A statement that Epics Solution is not liable for any losses or damages.</li>
-        <li>External Links: A statement that Epics Solution is not responsible for external links.</li>
-        <li>Third-Party Content: A statement that Epics Solution is not responsible for third-party content.</li>
-        <li>Disclaimer of Warranties: A statement that Epics Solution disclaims all warranties.</li>
-        <li>Governing Law: A statement that specifies the governing law and jurisdiction.</li>
-        <li>Changes to Disclaimer: A statement that Epics Solution reserves the right to modify the disclaimer.</li>
-      </ol>
-    </div>
+          <div>
+            <p>This Disclaimer page includes the following essential elements:</p>
+            <ol>
+              <li>General Disclaimer: A statement that the website's information is for general purposes only.</li>
+              <li>Limitation of Liability: A statement that Epics Solution is not liable for any losses or damages.</li>
+              <li>External Links: A statement that Epics Solution is not responsible for external links.</li>
+              <li>Third-Party Content: A statement that Epics Solution is not responsible for third-party content.</li>
+              <li>Disclaimer of Warranties: A statement that Epics Solution disclaims all warranties.</li>
+              <li>Governing Law: A statement that specifies the governing law and jurisdiction.</li>
+              <li>Changes to Disclaimer: A statement that Epics Solution reserves the right to modify the disclaimer.</li>
+            </ol>
+          </div>
         </section>
       </main>
     </div>
