@@ -12,7 +12,7 @@ const nextConfig = {
     eslint: {
     ignoreDuringBuilds: true, // Disables ESLint during `next build`
   },
-  };
+  
   async redirects() {
     return [
       {
