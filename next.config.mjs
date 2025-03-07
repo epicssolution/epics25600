@@ -267,6 +267,12 @@ const nextConfig = {
         permanent: true, },{
         source: '/ai-in-building-management-systems-bms',
         destination: '/ai-in-building-management-systems-1',
+        permanent: true, },{
+        source: '/ai-in-building-management-systems-bms',
+        destination: '/ai-in-building-management-systems-1',
+        permanent: true, },{
+        source: '/ducting',
+        destination: '/ducting-and-types-of-hvac-ducts',
         permanent: true, },
     ];
   },
