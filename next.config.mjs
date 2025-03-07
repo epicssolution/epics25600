@@ -260,6 +260,9 @@ const nextConfig = {
         permanent: true, },  {
         source: '/how-ai-is-revolutionizing-supply-chain-efficiency',
         destination: '/how-ai-is-revolutionizing-supply-chain-efficiency-1',
+        permanent: true, },{
+        source: '/ai-in-building-management-systems-bms',
+        destination: '/ai-in-building-management-systems-1',
         permanent: true, },
     ];
   },
