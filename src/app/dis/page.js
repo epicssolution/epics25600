@@ -82,6 +82,18 @@ export default function Disclaimer() {
               </a>
             </li>
           </ul>
+    <div>
+      <p>This Disclaimer page includes the following essential elements:</p>
+      <ol>
+        <li>General Disclaimer: A statement that the website's information is for general purposes only.</li>
+        <li>Limitation of Liability: A statement that Epics Solution is not liable for any losses or damages.</li>
+        <li>External Links: A statement that Epics Solution is not responsible for external links.</li>
+        <li>Third-Party Content: A statement that Epics Solution is not responsible for third-party content.</li>
+        <li>Disclaimer of Warranties: A statement that Epics Solution disclaims all warranties.</li>
+        <li>Governing Law: A statement that specifies the governing law and jurisdiction.</li>
+        <li>Changes to Disclaimer: A statement that Epics Solution reserves the right to modify the disclaimer.</li>
+      </ol>
+    </div>
         </section>
       </main>
     </div>
