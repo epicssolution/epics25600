@@ -149,8 +149,8 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/high-income-skills',
-        destination: '/high-income-skill',
+        source: '/high-income-skills|/high-income-skill',
+        destination: '/high-income-skills-1',
         permanent: true,
       },
       {
