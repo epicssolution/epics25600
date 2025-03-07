@@ -273,6 +273,9 @@ const nextConfig = {
         permanent: true, },{
         source: '/ducting',
         destination: '/ducting-and-types-of-hvac-ducts',
+        permanent: true, },{
+        source: '/geothermal-hvac',
+        destination: '/geothermal-hvac-1',
         permanent: true, },
     ];
   },
