@@ -3,7 +3,7 @@
 import { Metadata } from 'next';
 
 // Metadata export for SEO (replaces <Head>)
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Disclaimer | Epic Solutions',
 };
 
