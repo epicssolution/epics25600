@@ -1,3 +1,28 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "react",
+    "prettier"
+  ],
+  "rules": {
+    "react/prop-types": "off",           // Disables prop-types requirement (common in Next.js)
+    "no-unused-vars": ["warn", { "vars": "all", "args": "none" }], // Warns instead of errors, ignores unused args
+    "react/react-in-jsx-scope": "off",   // Not needed with Next.js (React 17+)
+    "prettier/prettier": "warn",         // Integrates Prettier, warns instead of errors
+    "no-console": "warn"                 // Allows console.log but warns instead of errors
+  },
+  "settings": {
+    "react": {
+      "version": "detect"                // Automatically detects React version
+    }
+  }
 }
