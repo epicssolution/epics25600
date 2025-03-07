@@ -257,6 +257,9 @@ const nextConfig = {
         {
         source: '/artificial-intelligence-in-hvac',
         destination: '/ artificial-intelligence-in-hvac-1',
+        permanent: true, },  {
+        source: '/how-ai-is-revolutionizing-supply-chain-efficiency',
+        destination: '/how-ai-is-revolutionizing-supply-chain-efficiency-1',
         permanent: true, },
     ];
   },
