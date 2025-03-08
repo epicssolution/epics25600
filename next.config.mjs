@@ -286,7 +286,23 @@ const nextConfig = {
       {
         source: '/ai-studio-what-it-is-and-why-you-should-care',
         destination: '/ai-studio',
+        permanent: true, },   {
+        source: '/green-buildings',
+        destination: '/green-building-1',
+        permanent: true, }, {
+        source: '/biomass-energy',
+        destination: 'biomass-energy-1',
+        permanent: true, },{
+        source: '/sustainable-buildings',
+        destination: 'sustainable-buildings-1',
+        permanent: true, },{
+        source: '/zero-energy-buildings',
+        destination: 'zero-energy-building-1',
+        permanent: true, },{
+        source: '/methods-of-energy-audit',
+        destination: 'energy-audit',
         permanent: true, },
+    ];
     ];
   },
 };
