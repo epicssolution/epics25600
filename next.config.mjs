@@ -163,8 +163,8 @@ const nextConfig = {
         permanent: true,
       },
         {
-        source: '/(centrifugal-chillers|centrifugal-chiller1)',
-        destination: '/centrifugal-chiller-2',
+        source: '/(centrifugal-chillers|centrifugal-chiller1|centrifugal-chiller-2 )',
+        destination: '/absorption-chiller-working',
         permanent: true,
       },
        {
@@ -176,8 +176,8 @@ const nextConfig = {
         destination: '/',
         permanent: true,
       }, {
-        source: '/absorption-chiller1',
-        destination: '/absorption-chiller',
+        source: '/absorption-chiller1|/absorption-chiller',
+        destination: '/absorption-chiller-working',
         permanent: true,
       },{
         source: '/Engineering/room-heating-by-perforated-solar-air-collector',
@@ -276,6 +276,12 @@ const nextConfig = {
         permanent: true, },{
         source: '/geothermal-hvac',
         destination: '/geothermal-hvac-1',
+        permanent: true, },{
+        source: '/air-cooled-chiller',
+        destination: '/air-cooled-chiller-1',
+        permanent: true, },{
+        source: '/hvac-filter',
+        destination: '/hvac-filter-1',
         permanent: true, },
     ];
   },
