@@ -283,6 +283,10 @@ const nextConfig = {
         source: '/hvac-filter',
         destination: '/hvac-filter-1',
         permanent: true, },
+      {
+        source: '/ai-studio-what-it-is-and-why-you-should-care',
+        destination: '/ai-studio',
+        permanent: true, },
     ];
   },
 };
