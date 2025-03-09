@@ -15,6 +15,16 @@ const nextConfig = {
   async redirects() {
     return [
       // Redirects originally grouped under '/(marketing/revit-mep-2025-tutorial-1-hvac-load-calculation(?:Revit)?|...)'
+        {
+        source: '/fan-coil-units',
+        destination: '/fan-coil-unit-fcu-1',
+        permanent: true,
+      },{
+        source: '/fan-coil-units-fcus',
+        destination: '/fan-coil-unit-fcu-1',
+        permanent: true,
+      },
+      
       {
         source: '/marketing/revit-mep-2025-tutorial-1-hvac-load-calculation',
         destination: '/revit/revit-mep-tutorial-1',
