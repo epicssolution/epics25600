@@ -291,16 +291,21 @@ const nextConfig = {
         destination: '/green-building-1',
         permanent: true, }, {
         source: '/biomass-energy',
-        destination: 'biomass-energy-1',
+        destination: /.biomass-energy-1',
         permanent: true, },{
         source: '/sustainable-buildings',
-        destination: 'sustainable-buildings-1',
+        destination: '/sustainable-buildings-1',
         permanent: true, },{
         source: '/zero-energy-buildings',
-        destination: 'zero-energy-building-1',
-        permanent: true, },{
+        destination: '/zero-energy-building-1',
+        permanent: true, },
+      {
         source: '/methods-of-energy-audit',
-        destination: 'energy-audit',
+        destination: '/energy-audit',
+        permanent: true, },
+         {
+        source: '/machine-learning-and-data-science',
+        destination: '/machine-learning',
         permanent: true, },
     ];
     ];
