@@ -610,6 +610,10 @@ const nextConfig = {
         source: '/how-chillers-work-operation-and-maintenance-tips',
         destination: '/chiller-and-there-o-and-m',
         permanent: true,
+      },{
+        source: '/cooling-tower',
+        destination: '/cooling-tower-1',
+        permanent: true,
       },
     ];
   },
