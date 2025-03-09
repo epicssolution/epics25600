@@ -606,6 +606,10 @@ const nextConfig = {
         source: '/machine-learning-and-data-science',
         destination: '/machine-learning',
         permanent: true,
+      }, {
+        source: '/how-chillers-work-operation-and-maintenance-tips',
+        destination: '/chiller-and-there-o-and-m',
+        permanent: true,
       },
     ];
   },
