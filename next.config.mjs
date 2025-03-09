@@ -16,6 +16,10 @@ const nextConfig = {
     return [
       // Redirects originally grouped under '/(marketing/revit-mep-2025-tutorial-1-hvac-load-calculation(?:Revit)?|...)'
         {
+        source: '/chilled-water-pumps',
+        destination: '/chilled-water-pumps-1',
+        permanent: true,
+      },{
         source: '/fan-coil-units',
         destination: '/fan-coil-unit-fcu-1',
         permanent: true,
