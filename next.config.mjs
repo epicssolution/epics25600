@@ -614,6 +614,10 @@ const nextConfig = {
         source: '/cooling-tower',
         destination: '/cooling-tower-1',
         permanent: true,
+      },{
+        source: '/AHU',
+        destination: '/air-handling-units-1',
+        permanent: true,
       },
     ];
   },
