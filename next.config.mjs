@@ -308,8 +308,6 @@ const nextConfig = {
         destination: '/machine-learning',
         permanent: true, },
     ];
-    ];
-  },
 };
 
 export default nextConfig;
