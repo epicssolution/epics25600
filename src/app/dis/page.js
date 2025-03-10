@@ -1,4 +1,3 @@
-"use client"; // Optional: Only if you need client-side features
 
 import { Metadata } from 'next';
 

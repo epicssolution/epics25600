@@ -128,7 +128,10 @@ export const devType = defineType({
           type: 'object',
           name: 'customEmbed',
           title: 'Custom Embed',
-          fields: [{ title: 'Embed URL', name: 'embedUrl', type: 'url' }],
+          fields: [
+            { title: 'Embed URL', name: 'embedUrl', type: 'url' },
+            { title: 'Embed Height', name: 'embedHeight', type: 'number', initialValue: 500 },  // Added height field
+          ],
           preview: {
             select: { title: 'embedUrl' },
             prepare(selection) {
