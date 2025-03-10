@@ -262,7 +262,7 @@ export default async function BlogPage({ params }) {
       <div className="relative w-full h-[70vh] bg-gray-800">
         {blog.image && (
           <div title={blog.title}>
-               <Image
+            <Image
               src={imageUrl}
               alt={`${blog.title} - ${blog.description.slice(0, 50)}`}
               fill
@@ -272,7 +272,7 @@ export default async function BlogPage({ params }) {
             />
           </div>
         )}
-       
+      </div> {/* Added closing div here */}
 
       <div className="grid grid-cols-12 gap-8 mt-8 px-5 md:px-10">
         {/* Table of Contents - Hidden on Mobile */}
