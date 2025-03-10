@@ -5,7 +5,6 @@ import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import VisitCourseButton from "@/components/buttons/page";
 import { PortableText } from "next-sanity";
 
 // Utility to escape JSON-LD values
@@ -272,11 +271,7 @@ export default async function BlogPage({ params }) {
             />
           </div>
         )}
-        <div className="absolute top-0 left-0 right-0 bottom-0 bg-gray-800/60" />
-        <div className="z-10 flex flex-col items-center justify-center absolute inset-0 text-white">
-          <VisitCourseButton href={blog.href} />
-        </div>
-      </div>
+       
 
       {/* Main Content Grid */}
       <div className="grid grid-cols-12 gap-8 mt-8 px-5 md:px-10">
