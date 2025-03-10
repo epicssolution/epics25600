@@ -11,7 +11,7 @@ export default function Sidebar1() {
     // Fetch data from Sanity
     const fetchData = async () => {
       const query = `
-        *[_type == "dev"]{
+        *[_type in ["AI", "Eng", "equipment", "development", "dev", "energy", "waste"] && slug.current == $slug][0]{
           title,
           "slug": slug.current,
           description,
