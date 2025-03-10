@@ -16,6 +16,11 @@ const nextConfig = {
     return [
       // Redirects originally grouped under '/(marketing/revit-mep-2025-tutorial-1-hvac-load-calculation(?:Revit)?|...)'
        {
+        source: '/boosting-centrifugal-chiller-efficiency-with-variable-speed-drives-vsds',
+        destination: '/boosting-centrifugal-chiller-efficiency-with-variable-speed-drives',
+        permanent: true,
+      }, 
+      {
         source: '/the-magic-of-centrifugal-chillers-unveiling-the-secrets-of-efficient-cooling',
         destination: '/magic-of-centrifugal-chillers-unveiling-the-secrets-of-efficient-cooling',
         permanent: true,
