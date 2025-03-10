@@ -16,6 +16,11 @@ const nextConfig = {
     return [
       // Redirects originally grouped under '/(marketing/revit-mep-2025-tutorial-1-hvac-load-calculation(?:Revit)?|...)'
        {
+        source: '/heat-pumps',
+        destination: '/heat-pumps-1',
+        permanent: true,
+      },
+      {
         source: '/boosting-centrifugal-chiller-efficiency-with-variable-speed-drives-vsds',
         destination: '/boosting-centrifugal-chiller-efficiency-with-variable-speed-drives',
         permanent: true,
