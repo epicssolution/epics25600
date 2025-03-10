@@ -15,7 +15,23 @@ const nextConfig = {
   async redirects() {
     return [
       // Redirects originally grouped under '/(marketing/revit-mep-2025-tutorial-1-hvac-load-calculation(?:Revit)?|...)'
-        {
+          {
+        source: '/hvac-and-indoor-air-quality',
+        destination: '/indoor-air-qualitya',
+        permanent: true,
+      },  {
+        source: '/room-heating-by-perforated-solar-air-collector',
+        destination: '/energy',
+        permanent: true,
+      },{
+        source: '/fundamentals-of-energy-engineering',
+        destination: '/energy',
+        permanent: true,
+      }, {
+        source: '/fundamentals-of-energy-engineering',
+        destination: '/energy',
+        permanent: true,
+      }, {
         source: '/revit/revit-mep-tutorial-3',
         destination: '/revit/Autodesk-revit-mep-tutorial-3',
         permanent: true,
