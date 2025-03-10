@@ -16,10 +16,14 @@ const nextConfig = {
     return [
       // Redirects originally grouped under '/(marketing/revit-mep-2025-tutorial-1-hvac-load-calculation(?:Revit)?|...)'
         {
+        source: '/revit/revit-mep-tutorial-3',
+        destination: '/revit/Autodesk-revit-mep-tutorial-3',
+        permanent: true,
+      }, {
         source: '/revit/revit-mep-tutorial-2',
         destination: '/revit/Autodesk-revit-mep-tutorial-2',
         permanent: true,
-      } {
+      }, {
         source: '/revit/revit-mep-tutorial-1',
         destination: '/revit/Autodesk-revit-mep-tutorial-1',
         permanent: true,
