@@ -15,7 +15,12 @@ const nextConfig = {
   async redirects() {
     return [
       // Redirects originally grouped under '/(marketing/revit-mep-2025-tutorial-1-hvac-load-calculation(?:Revit)?|...)'
-        {
+       {
+        source: '/the-magic-of-centrifugal-chillers-unveiling-the-secrets-of-efficient-cooling',
+        destination: '/magic-of-centrifugal-chillers-unveiling-the-secrets-of-efficient-cooling',
+        permanent: true,
+      }, 
+      {
         source: '/an-introduction-to-artificial-intelligence',
         destination: '/ai',
         permanent: true,
