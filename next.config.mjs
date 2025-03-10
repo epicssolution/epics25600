@@ -16,6 +16,10 @@ const nextConfig = {
     return [
       // Redirects originally grouped under '/(marketing/revit-mep-2025-tutorial-1-hvac-load-calculation(?:Revit)?|...)'
        {
+        source: '/hvac-duct-accessories',
+        destination: '/hvac-duct-accessories-1',
+        permanent: true,
+      }, {
         source: '/heat-pumps',
         destination: '/heat-pumps-1',
         permanent: true,
