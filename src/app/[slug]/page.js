@@ -5,6 +5,7 @@ import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import VisitCourseButton from "@/components/buttons/page";
 import { PortableText } from "next-sanity";
 
 // Utility to escape JSON-LD values
@@ -20,7 +21,7 @@ const typeKeywords = {
   equipment: "equipment, tools, machinery",
   development: "software development, coding, programming",
   dev: "dev, development, tech",
-  energy: "energy, sustainability, green tech",
+  energy: "energy, sustainability, green tech,solar energy,green buildinggit pull origin main",
   waste: "waste management, recycling, environment",
 };
 
@@ -273,7 +274,6 @@ export default async function BlogPage({ params }) {
         )}
        
 
-      {/* Main Content Grid */}
       <div className="grid grid-cols-12 gap-8 mt-8 px-5 md:px-10">
         {/* Table of Contents - Hidden on Mobile */}
         <div className="col-span-12 lg:col-span-4 hidden lg:block">
