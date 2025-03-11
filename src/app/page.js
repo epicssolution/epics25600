@@ -1,37 +1,42 @@
-import HomePage from '@/components/Homecomponent/page';
+'use client';
 
-const Page = () => {
+import HeroSection from '@/components/hero/page';
+import AboutUs from '@/components/aboutus/page';
+import Testimonial from '@/components/testimonial/page';
+import BlogSection from '@/components/blog/page';
+import HomePage1 from '@/components/Homecomponent/page';
+
+const Home = () => {
   return (
-    <div className="flex flex-col items-center justify-center">
-      {/* Home Page Section */}
-      <div style={{ minHeight: '300px', width: '100%' }}>
-        <HomePage />
-      </div>
+    <>
+    <HomePage1 />
 
-      {/* About Us Section */}
-      <div
-        id="about"
-        className="flex flex-col items-start justify-start px-6 py-10 max-w-4xl"
-        style={{ width: '100%' }}
-      >
-        <h1 className="text-2xl font-bold mb-4 text-center  bg-light dark:bg-dark text-dark dark:text-light transition-all ease  ">About Us</h1>
-        <p className="text-base text-gray-700 leading-relaxed  bg-light dark:bg-dark text-dark dark:text-light transition-all ease ">
-          Welcome to Epic Solutions! We are here to make learning easy and
-          enjoyable for everyone. At Epic Solutions, we offer online blogs and
-          courses on a variety of topics such as HVAC design, Revit MEP, HVAC
-          equipment, web development, AI, Python, Next.js, BMS systems, energy
-          audits, and much more. Whether you are a beginner or a professional,
-          our content is created with simple and clear language to help you
-          understand quickly. Our goal is to empower students, workers, and
-          anyone curious about learning new skills. We believe that knowledge
-          should be available to all, and we strive to make our resources easy
-          to access. With Epic Solutions, you can grow your skills, explore new
-          opportunities, and achieve your goals. Join us on this journey of
-          learning and discover how simple it is to gain valuable knowledge!
-        </p>
-      </div>
-    </div>
+            {/* Services Section */}
+  <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-8 w-full max-w-6xl py-16 px-4">
+  {[
+    { title: "Development", icon: "💻", href: "https://www.epicssolution.com/dev" },
+    { title: "Artificial Intelligence", icon: "🤖", href: "https://www.epicssolution.com/ai" },
+    { title: "Designing", icon: "🎨", href: "https://www.epicssolution.com/eng" },
+    { title: "Revit MEP", icon: "📐", href: "https://www.epicssolution.com/dev" },
+    { title: "HVAC Software", icon: "❄", href: "https://www.epicssolution.com/equipment" },
+    { title: "MEP Solutions", icon: "🏗", href: "https://www.epicssolution.com/mar" },
+  ].map((service, index) => (
+    <a
+      key={index}
+      href={service.href}
+      className="bg-gradient-to-b from-[#FDE68A] to-[#6366F1] p-6 sm:p-8 rounded-xl text-center shadow-lg transform hover:scale-105 transition-transform hover:shadow-xl"
+    >
+      <div className="text-4xl sm:text-6xl text-[#FACC15]">{service.icon}</div>
+      <h3 className="text-xl sm:text-2xl font-semibold my-2 sm:my-3 text-white">{service.title}</h3>
+      <p className="text-gray-200 text-sm sm:text-base">Explore our {service.title.toLowerCase()} solutions.</p>
+    </a>
+  ))}
+</section>
+
+      {/* Blog Section */}
+      <BlogSection />
+    </>
   );
 };
 
-export default Page;
+export default Home;
