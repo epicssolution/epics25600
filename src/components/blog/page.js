@@ -10,7 +10,7 @@ import { Tooltip } from 'react-tooltip';
 import { client } from '@/sanity/lib/client';
 
 // Filter Categories
-const categories = ["Recent Posts"];
+const categories = [];
 
 const BlogSection = () => {
   const [activeCategory, setActiveCategory] = useState("All");
