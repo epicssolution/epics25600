@@ -110,7 +110,6 @@ const Header = () => {
           <Link href="/eng" className="hover:text-indigo-600 transition-colors" onClick={() => handleCategorySelect('eng')}>Designing</Link>
           <Link href="/mar" className="hover:text-indigo-600 transition-colors" onClick={() => handleCategorySelect('mar')}>Revit MEP</Link>
           <Link href="/energy" className="hover:text-indigo-600 transition-colors" onClick={() => handleCategorySelect('energy')}>Energy</Link>
-          <Link href="/waste" className="hover:text-indigo-600 transition-colors" onClick={() => handleCategorySelect('waste')}>Waste</Link>
         </nav>
       </div>
 
@@ -129,7 +128,6 @@ const Header = () => {
   <Link href="/eng" className="hover:text-indigo-600 transition-colors">Designing</Link>
   <Link href="/mar" className="hover:text-indigo-600 transition-colors">Revit MEP</Link>
   <Link href="/energy" className="hover:text-indigo-600 transition-colors">Energy</Link>
-  <Link href="/waste" className="hover:text-indigo-600 transition-colors">Waste</Link>
 </nav>
 
         <button
