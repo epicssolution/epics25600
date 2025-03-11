@@ -10,7 +10,7 @@ import { Tooltip } from 'react-tooltip';
 import { client } from '@/sanity/lib/client';
 
 // Filter Categories
-const categories = ["All", "Report", "Webinar", "Guide"];
+const categories = ["Recent Posts"];
 
 const BlogSection = () => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -88,7 +88,7 @@ const BlogSection = () => {
             transition={{ duration: 0.5, delay: index * 0.2 }}
           >
             {/* Blog Image */}
-            <Link href={`/blog/${blog.slug}`}>
+            <Link href={`/${blog.slug}`}>
               <div className="relative group cursor-pointer">
                 <Image
                   src={blog.imageUrl || "https://www.epicssolution.com/default-banner.jpg"}
@@ -120,7 +120,7 @@ const BlogSection = () => {
                   {blog.readTime || "5 min read"}
                 </span>
               </div>
-              <Link href={`/blog/${blog.slug}`}>
+              <Link href={`/${blog.slug}`}>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 cursor-pointer hover:underline">
                   {blog.title}
                 </h3>
