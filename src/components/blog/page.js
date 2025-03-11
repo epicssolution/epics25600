@@ -1,16 +1,12 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link'; // Import Link for navigation
-import Button from '../Button';
-import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { FaFilter, FaRegClock } from "react-icons/fa";
 import { Tooltip } from 'react-tooltip';
 import { client } from '@/sanity/lib/client';
-
-// Filter Categories
-const categories = [];
+import { motion } from 'framer-motion';
 
 const BlogSection = () => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -36,6 +32,9 @@ const BlogSection = () => {
     };
     fetchBlogs().catch(console.error);
   }, []);
+
+  // Dynamically generate categories
+  const categories = ["All", ...new Set(blogs.map((blog) => blog.category))];
 
   // Filter blogs based on the active category
   const filteredBlogs =
@@ -131,13 +130,13 @@ const BlogSection = () => {
                   : blog.description}
               </p>
               <Link href={`/${blog.slug}`}>
-    <button
-      className="w-full py-2 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-dark font-semibold rounded-lg transition-colors duration-300 mt-2"
-      aria-label={`Read more about ${blog.title || "this university"}`}
-    >
-      Read More
-    </button>
-  </Link>
+                <button
+                  className="w-full py-2 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-dark font-semibold rounded-lg transition-colors duration-300 mt-2"
+                  aria-label={`Read more about ${blog.title || "this blog"}`}
+                >
+                  Read More
+                </button>
+              </Link>
             </div>
           </motion.div>
         ))}
