@@ -1,7 +1,6 @@
 'use client';
 
-import HeroSection from '@/components/hero/page';
-import AboutUs from '@/components/aboutus/page';
+
 import Testimonial from '@/components/testimonial/page';
 import BlogSection from '@/components/blog/page';
 import HomePage1 from '@/components/Homecomponent/page';
