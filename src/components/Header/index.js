@@ -105,7 +105,7 @@ const Header = () => {
         <nav className="flex flex-col items-start space-y-6 font-semibold text-lg dark:bg-dark text-dark dark:text-light">
           <Link href="/" className="hover:text-indigo-600 transition-colors" onClick={() => handleCategorySelect('home')}>Home</Link>
           <Link href="/dev" className="hover:text-indigo-600 transition-colors" onClick={() => handleCategorySelect('dev')}>Next js</Link>
-          <Link href="/equipment" className="hover:text-indigo-600 transition-colors" onClick={() => handleCategorySelect('equipment')}>Equipment</Link>
+          <Link href="/equipment" className="hover:text-indigo-600 transition-colors" onClick={() => handleCategorySelect('equipment')}>Equipments</Link>
           <Link href="/ai" className="hover:text-indigo-600 transition-colors" onClick={() => handleCategorySelect('ai')}>Artificial Intelligence</Link>
           <Link href="/eng" className="hover:text-indigo-600 transition-colors" onClick={() => handleCategorySelect('eng')}>HVAC Designing</Link>
           <Link href="/mar" className="hover:text-indigo-600 transition-colors" onClick={() => handleCategorySelect('mar')}>Revit MEP</Link>
@@ -123,7 +123,7 @@ const Header = () => {
         <nav className="sm:flex hidden flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 font-semibold text-lg dark:bg-dark text-dark dark:text-light transition-all ease">
   <Link href="/" className="hover:text-indigo-600 transition-colors">Home</Link>
   <Link href="/dev" className="hover:text-indigo-600 transition-colors">Next js</Link>
-  <Link href="/equipment" className="hover:text-indigo-600 transition-colors">Equipment</Link>
+  <Link href="/equipment" className="hover:text-indigo-600 transition-colors">Equipments</Link>
   <Link href="/ai" className="hover:text-indigo-600 transition-colors">Artificial Intelligence</Link>
   <Link href="/eng" className="hover:text-indigo-600 transition-colors">HVAC Designing</Link>
   <Link href="/mar" className="hover:text-indigo-600 transition-colors">Revit MEP</Link>
