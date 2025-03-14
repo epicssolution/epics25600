@@ -50,7 +50,7 @@ const Footer = () => {
           <h3 className="text-lg font-semibold mb-4">USEFUL LINKS</h3>
           <ul className="space-y-2">
             <li>
-              <Link href="/ About-Us" className="hover:text-red-500 flex items-center">
+              <Link href="/About-Us" className="hover:text-red-500 flex items-center">
                 ➝ About Us
               </Link>
             </li>
