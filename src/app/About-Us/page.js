@@ -7,6 +7,7 @@ export default function AboutUs() {
     <div className="p-6 max-w-4xl mx-auto bg-light dark:bg-dark text-black dark:text-light transition-all border-solid border-dark dark:border-light">
       <Head>
         <title>About Us | Epic Solutions</title>
+        <link rel="canonical" href="https://www.epicssolution.com/About-Us" />
       </Head>
       <main className="p-6 max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">About Us</h1>
