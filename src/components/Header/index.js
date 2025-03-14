@@ -110,6 +110,8 @@ const Header = () => {
           <Link href="/eng" className="hover:text-indigo-600 transition-colors" onClick={() => handleCategorySelect('eng')}>HVAC Designing</Link>
           <Link href="/mar" className="hover:text-indigo-600 transition-colors" onClick={() => handleCategorySelect('mar')}>Revit MEP</Link>
           <Link href="/energy" className="hover:text-indigo-600 transition-colors" onClick={() => handleCategorySelect('energy')}>Energy</Link>
+          <Link href="/About-Us" className="hover:text-indigo-600 transition-colors" onClick={() => handleCategorySelect(About-Us)}>  About Us </Link>
+          <Link href="/contact"  className="hover:text-indigo-600 transition-colors" onClick={() => handleCategorySelect( contact)}> Contact Us </Link>
         </nav>
       </div>
 
@@ -128,6 +130,8 @@ const Header = () => {
   <Link href="/eng" className="hover:text-indigo-600 transition-colors">HVAC Designing</Link>
   <Link href="/mar" className="hover:text-indigo-600 transition-colors">Revit MEP</Link>
   <Link href="/energy" className="hover:text-indigo-600 transition-colors">Energy</Link>
+  <Link href="/About-Us" className="hover:text-indigo-600 transition-colors">  About Us </Link>
+  <Link href="/contact"  className="hover:text-indigo-600 transition-colors" > Contact Us </Link>
 </nav>
 
         <button
