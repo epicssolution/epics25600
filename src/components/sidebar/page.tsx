@@ -11,7 +11,7 @@ export default function Sidebar() {
     // Fetch data from Sanity
     const fetchData = async () => {
       const query = `
-        *[_type == "dev"]{
+        *[_type == "post"]{
           title,
           "slug": slug.current,
           description,
