@@ -63,7 +63,7 @@ export default function RootLayout({ children }) {
     type="application/xml"
     href="https://www.epicssolution.com/sitemap.xml"
   />
-  <link rel="canonical" href="https://www.epicssolution.com/" />
+  <link rel="canonical" href={`https://www.epicssolution.com/${slug}`} />
   <link rel="icon" href="https://www.epicssolution.com/favicon.ico" />
   <link rel="preload" href="/css/main.css" as="style" />
   <link
