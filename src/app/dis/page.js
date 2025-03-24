@@ -1,5 +1,6 @@
 
 import { Metadata } from 'next';
+import Head from 'next/head';
 
 // Metadata export for SEO (replaces <Head>)
 export const metadata = {
@@ -9,7 +10,11 @@ export const metadata = {
 export default function Disclaimer() {
   return (
     <div className="p-6 max-w-4xl mx-auto bg-light dark:bg-dark text-black dark:text-light transition-all border-solid border-dark dark:border-light">
-      <main className="p-6 max-w-4xl mx-auto bg-light dark:bg-dark text-dark dark:text-light transition-all">
+     <Head>
+        <title>About Us | Epic Solutions</title>
+        <link rel="canonical" href="https://www.epicssolution.com/dis" />
+      </Head>
+    <main className="p-6 max-w-4xl mx-auto bg-light dark:bg-dark text-dark dark:text-light transition-all">
         <h1 className="text-4xl font-bold mb-6">Disclaimer</h1>
         <p className="mb-8">
           Please read this disclaimer carefully before using{' '}
