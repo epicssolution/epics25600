@@ -24,7 +24,11 @@ export default function Contact() {
 
   return (
     <main className="flex flex-col items-center justify-center border-[1px] border-solid border-dark dark:border-light text-black dark:text-light min-h-screen px-4 sm:px-6 lg:px-8">
-      <div className="w-full max-w-2xl">
+     <Head>
+        <title>contact Us | Epic Solutions</title>
+        <link rel="canonical" href="https://www.epicssolution.com/contact" />
+      </Head> 
+    <div className="w-full max-w-2xl">
         <h1 className="text-4xl font-bold text-center mb-8">Contact Us</h1>
 
         {/* Company Introduction */}
