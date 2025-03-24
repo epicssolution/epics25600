@@ -1,11 +1,13 @@
 "use client"
   import Head from 'next/head';
+import Head from 'next/head';
 
 export default function TermsOfUse() {
   return (
     <div className="bg-gray-50 text-gray-800">
       <Head>
         <title>Terms of Use | Epic Solutions</title>
+        <link rel="canonical" href="https://www.epicssolution.com/terms" />
       </Head>
 <main className="p-6 max-w-4xl mx-auto bg-light dark:bg-dark text-black dark:text-light transition-all border-solid border-dark dark:border-light">        <h1 className="text-4xl font-bold mb-6">Terms of Use</h1>
         <p className="mb-8">
