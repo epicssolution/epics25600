@@ -3,8 +3,11 @@
 export default function PrivacyPolicy() {
   return (
     <div className="p-6 max-w-4xl mx-auto bg-light dark:bg-dark text-black dark:text-light transition-all border-solid border-dark dark:border-light">
-      <h1 className="text-4xl font-bold mb-6">Privacy Policy</h1>
-
+     <Head>
+        <title>Privacy Policy | Epic Solutions</title>
+        <link rel="canonical" href="https://www.epicssolution.com/privacy" />
+      </Head>
+    <h1 className="text-4xl font-bold mb-6">Privacy Policy</h1>
       <section className="mb-8">
         <p className="mb-4">
           Welcome to Epic Solutions! At Epic Solutions, we are determined to empower the youth with new skills that are the need of the hour in this modern era. Whether you are a student or a job holder, our platform helps you in learning new skills. We believe that knowledge should be available to all, and we strive to make our resources easy to access.
