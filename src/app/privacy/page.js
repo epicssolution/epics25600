@@ -1,4 +1,5 @@
 "use client"
+import Head from 'next/head';
 
 export default function PrivacyPolicy() {
   return (
