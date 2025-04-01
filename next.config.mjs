@@ -15,7 +15,11 @@ const nextConfig = {
   async redirects() {
     return [
       // Redirects originally grouped under '/(marketing/revit-mep-2025-tutorial-1-hvac-load-calculation(?:Revit)?|...)'
-             {
+               {
+        source: '/mar',
+        destination: '/mep',
+        permanent: true,
+      }, {
         source: '/aboutus',
         destination: '/About-Us',
         permanent: true,
