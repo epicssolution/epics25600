@@ -7,11 +7,16 @@ import { client } from "@/sanity/lib/client";
 export default function Sidebar() {
   const [universities, setUniversities] = useState([]);
 
+  // Improved function to extract tutorial number from title
+  const getTutorialNumber = (title) => {
+    const match = title.match(/Tutorial[-\s]?(\d+)/i); // Matches "Tutorial-1" or "Tutorial 1"
+    return match ? parseInt(match[1], 10) : Infinity; // Base 10 parsing
+  };
+
   useEffect(() => {
-    // Fetch data from Sanity
     const fetchData = async () => {
       const query = `
-        *[_type == "post"]{
+        *[_type == "dev"]{
           title,
           "slug": slug.current,
           description,
@@ -28,7 +33,15 @@ export default function Sidebar() {
 
       try {
         const result = await client.fetch(query);
-        setUniversities(result);
+        
+        // Proper numerical sorting
+        const sortedUniversities = result.sort((a, b) => {
+          const numA = getTutorialNumber(a.title);
+          const numB = getTutorialNumber(b.title);
+          return numA - numB;
+        });
+
+        setUniversities(sortedUniversities);
       } catch (error) {
         console.error("Error fetching data from Sanity:", error);
       }
