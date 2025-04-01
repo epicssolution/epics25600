@@ -58,51 +58,35 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-  <link
-    rel="sitemap"
-    type="application/xml"
-    href="https://www.epicssolution.com/sitemap.xml"
-  />
-  <link rel="icon" href="https://www.epicssolution.com/favicon.ico" />
-  <link rel="preload" href="/css/main.css" as="style" />
-  <link
-    rel="preload"
-    href="/fonts/CustomFont.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin="anonymous"
-  />
+        <link
+          rel="sitemap"
+          type="application/xml"
+          href="https://www.epicssolution.com/sitemap.xml"
+        />
+        <link rel="icon" href="https://www.epicssolution.com/favicon.ico" />
+        <link rel="preload" href="/css/main.css" as="style" />
+        <link
+          rel="preload"
+          href="/fonts/CustomFont.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
 
-  {/* SEO Meta Tags */}
+        {/* SEO Meta Tags */}
+        <meta name="author" content="Epic Solutions" />
 
-  <meta name="author" content="Epic Solutions" />
+        {/* Google Verification and Viewport */}
+        <meta
+          name="google-site-verification"
+          content="125c3Cukk3D1INp6HOlRmuvTDPOk-qiR_j30PREvm0I"
+        />
+        <meta name="p:domain_verify" content="be8a436f4e7ce83fbeafd23c184e415b" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  {/* Google Verification and Viewport */}
-  <meta
-    name="google-site-verification"
-    content="125c3Cukk3D1INp6HOlRmuvTDPOk-qiR_j30PREvm0I"
-  />
-  <meta name="p:domain_verify" content="be8a436f4e7ce83fbeafd23c184e415b"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  {/* Google Analytics */}
-  <Script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-D50XE9PL55"
-  />
-      
-  <Script id="gtag-init" strategy="afterInteractive">
-    {`
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-D50XE9PL55');
-    `}
-  </Script>
-
-  {/* Google AdSense */}
- <meta name="google-adsense-account" content="ca-pub-4108246218082712">
-   </head>
+        {/* Google AdSense */}
+        <meta name="google-adsense-account" content="ca-pub-4108246218082712" />
+      </head>
 
       <body
         className={cx(
@@ -119,6 +103,21 @@ export default function RootLayout({ children }) {
             } else {
               document.documentElement.classList.remove('dark');
             }
+          `}
+        </Script>
+
+        {/* Google Analytics */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-D50XE9PL55"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-D50XE9PL55');
           `}
         </Script>
 
