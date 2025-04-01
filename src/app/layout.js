@@ -102,6 +102,7 @@ export default function RootLayout({ children }) {
 
   {/* Google AdSense */}
  <meta name="google-adsense-account" content="ca-pub-4108246218082712">
+   </head>
 
       <body
         className={cx(
