@@ -13,19 +13,19 @@ const UniComponent1 = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const query = `
-        *[_type=="dev"]{
-          description,
-          "slug": slug.current,
-          image,
-          title,
-          href,
-          tags,
-          content,
-          publishedAt
-        }
-      `;
+      const query = `*[_type=="dev"]{
+        description,
+        "slug": slug.current,
+        image,
+        title,
+        href,
+        tags,
+        content,
+        publishedAt
+      }`;
       const result = await client.fetch(query);
+      // Sort tutorials by published date or any other field you want
+      result.sort((a, b) => new Date(a.publishedAt) - new Date(b.publishedAt)); // Optional: sort by date
       setUniversities(result);
     };
 
@@ -55,7 +55,7 @@ const UniComponent1 = () => {
 
         {/* Grid Layout */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full mt-8">
-          {universities.map((uni) => (
+          {universities.map((uni, index) => (
             <div
               key={uni.slug}
               className="group flex flex-col items-center text-dark dark:text-light mb-4 p-4 border rounded-lg shadow-lg bg-white dark:bg-gray-900"
@@ -78,13 +78,17 @@ const UniComponent1 = () => {
               </Link>
 
               {/* Content Section */}
-              <div className="flex flex-col w-full mt-4">
+              <div className="flex flex-col w-full mt-4 relative dark:bg-dark text-dark dark:text-light transition-all eas">
                 {uni.tags && (
                   <span className="uppercase text-accent dark:text-yellow-400 font-semibold text-sm">
                     {uni.tags[0]}
                   </span>
                 )}
-               
+
+                {/* Topic Title */}
+                <h3 className="text-lg font-semibold text-dark dark:text-light mt-2 relative dark:bg-dark text-dark dark:text-light transition-all eas">
+                  Tutorial {index + 1}: {uni.title}
+                </h3>
 
                 {/* Button */}
                 <Link href={`/revit/${uni.slug}`}>
