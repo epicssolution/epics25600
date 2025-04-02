@@ -44,14 +44,14 @@ export default function PrivacyPolicy() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-gray-700 mb-4">Cookies and Tracking Technologies</h2>
             <p className="text-gray-600 leading-relaxed">
-              We use cookies and other tracking technologies to improve your browsing experience and provide personalized content. We obtain your consent for non-essential cookies through [describe your consent mechanism, e.g., a cookie banner or opt-in form].
+             We use cookies and other tracking technologies to improve your browsing experience and provide personalized content. We obtain your consent for non-essential cookies through [describe your consent mechanism, e.g., a cookie banner or opt-in form].
             </p>
           </section>
 
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-gray-700 mb-4">International Data Transfers</h2>
             <p className="text-gray-600 leading-relaxed">
-              We may transfer your personal information across borders to our affiliates, service providers, or other third parties. We ensure that all international data transfers are done in accordance with applicable laws and regulations, including the EU's General Data Protection Regulation (GDPR). We use standard contractual clauses approved by the European Commission to ensure that your personal information is protected.
+             We may transfer your personal information across borders to our affiliates, service providers, or other third parties. We ensure that all international data transfers are done in accordance with applicable laws and regulations, including the EU's General Data Protection Regulation (GDPR). We use standard contractual clauses approved by the European Commission to ensure that your personal information is protected.
             </p>
           </section>
 
