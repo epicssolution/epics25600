@@ -51,7 +51,7 @@ export default function Contact() {
             <li>
               <strong>Phone: </strong>
               <a
-                href="tel:+923095704847"
+                href="tel:+923325008560"
                 className="text-blue-500 hover:underline"
               >
                 0332-5008560
@@ -81,57 +81,7 @@ export default function Contact() {
           </div>
         </section>
 
-        {/* Contact Form */}
-        <section className="mb-12">
-          <h3 className="text-xl font-semibold mb-4">Send Us a Message</h3>
-          <form action="#" method="POST" className="space-y-4">
-            <div className="flex flex-col">
-              <label htmlFor="name" className="mb-2 font-medium">
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                className="p-2 border border-gray-300 rounded-md"
-                placeholder="Your name"
-              />
-            </div>
-            <div className="flex flex-col">
-              <label htmlFor="email" className="mb-2 font-medium">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                className="p-2 border border-gray-300 rounded-md"
-                placeholder="Your email address"
-              />
-            </div>
-            <div className="flex flex-col">
-              <label htmlFor="message" className="mb-2 font-medium">
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows="5"
-                required
-                className="p-2 border border-gray-300 rounded-md"
-                placeholder="Your message"
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition duration-300"
-            >
-              Send Message
-            </button>
-          </form>
-        </section>
+      
 
         {/* FAQ Section */}
         <section className="mb-12">
