@@ -85,10 +85,7 @@ const UniComponent1 = () => {
                   </span>
                 )}
 
-                {/* Topic Title */}
-                <h3 className="text-lg font-semibold text-dark dark:text-light mt-2 relative dark:bg-dark text-dark dark:text-light transition-all eas">
-                  Tutorial {index + 1}: {uni.title}
-                </h3>
+                
 
                 {/* Button */}
                 <Link href={`/revit/${uni.slug}`}>
