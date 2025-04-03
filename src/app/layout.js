@@ -77,9 +77,9 @@ export default function RootLayout({ children }) {
         <meta name="author" content="Epic Solutions" />
 
         {/* Google Verification and Viewport */}
-        <meta
+       <meta
           name="google-site-verification"
-          content="125c3Cukk3D1INp6HOlRmuvTDPOk-qiR_j30PREvm0I"
+          content="69LCpKE_Jr39yMWMRpX-mJW1E7RjEi9rrvimR4Qh2KY"
         />
         <meta name="p:domain_verify" content="be8a436f4e7ce83fbeafd23c184e415b" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
