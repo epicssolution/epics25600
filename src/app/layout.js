@@ -1,13 +1,11 @@
 import "./globals.css";
 import { cx } from "@/utils";
 import { Inter, Manrope } from "next/font/google";
-import Head from "next/head";
 import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import siteMetadata from "@/utils/siteMetaData";
 
-// Font setup
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
@@ -20,7 +18,6 @@ const manrope = Manrope({
   variable: "--font-mr",
 });
 
-// Metadata configuration
 export const metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),
   title: {
@@ -59,8 +56,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
-        {/* Preload and Favicon Links */}
+      <head>
         <link
           rel="sitemap"
           type="application/xml"
@@ -75,8 +71,6 @@ export default function RootLayout({ children }) {
           type="font/woff2"
           crossOrigin="anonymous"
         />
-
-        {/* SEO Meta Tags */}
         <meta name="author" content="Epic Solutions" />
         <meta
           name="google-site-verification"
@@ -85,19 +79,17 @@ export default function RootLayout({ children }) {
         <meta name="p:domain_verify" content="be8a436f4e7ce83fbeafd23c184e415b" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        {/* Google AdSense */}
-     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4108246218082712"
-     crossorigin="anonymous"></script>
-      </Head>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4108246218082712"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+      </head>
 
       <body
-        className={cx(
-          inter.variable,
-          manrope.variable,
-          "font-mr bg-light dark:bg-dark"
-        )}
+        className={cx(inter.variable, manrope.variable, "font-mr bg-light dark:bg-dark")}
       >
-        {/* Theme Switcher Script */}
         <Script id="theme-switcher" strategy="beforeInteractive">
           {`
             if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -108,15 +100,6 @@ export default function RootLayout({ children }) {
           `}
         </Script>
 
-        {/* Google AdSense Script */}
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4108246218082712"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
-
-        {/* Google Analytics Script */}
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-CHNLXSTLH7"
@@ -131,7 +114,6 @@ export default function RootLayout({ children }) {
           `}
         </Script>
 
-        {/* Page Structure */}
         <Header />
         <main>{children}</main>
         <Footer />
