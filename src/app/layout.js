@@ -1,11 +1,13 @@
 import "./globals.css";
 import { cx } from "@/utils";
 import { Inter, Manrope } from "next/font/google";
-import Header from "@/components/Header";
-import siteMetadata from "@/utils/siteMetaData";
+import Head from "next/head";
 import Script from "next/script";
+import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import siteMetadata from "@/utils/siteMetaData";
 
+// Font setup
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
@@ -18,7 +20,7 @@ const manrope = Manrope({
   variable: "--font-mr",
 });
 
-// Define metadata with Open Graph and Twitter settings
+// Metadata configuration
 export const metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),
   title: {
@@ -57,7 +59,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
+      <Head>
+        {/* Preload and Favicon Links */}
         <link
           rel="sitemap"
           type="application/xml"
@@ -75,9 +78,7 @@ export default function RootLayout({ children }) {
 
         {/* SEO Meta Tags */}
         <meta name="author" content="Epic Solutions" />
-
-        {/* Google Verification and Viewport */}
-       <meta
+        <meta
           name="google-site-verification"
           content="69LCpKE_Jr39yMWMRpX-mJW1E7RjEi9rrvimR4Qh2KY"
         />
@@ -86,9 +87,7 @@ export default function RootLayout({ children }) {
 
         {/* Google AdSense */}
         <meta name="google-adsense-account" content="ca-pub-4108246218082712" />
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4108246218082712"
-     crossorigin="anonymous"></script>
-      </head>
+      </Head>
 
       <body
         className={cx(
@@ -97,7 +96,7 @@ export default function RootLayout({ children }) {
           "font-mr bg-light dark:bg-dark"
         )}
       >
-        {/* Theme Switcher */}
+        {/* Theme Switcher Script */}
         <Script id="theme-switcher" strategy="beforeInteractive">
           {`
             if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -108,18 +107,30 @@ export default function RootLayout({ children }) {
           `}
         </Script>
 
-        {/* Google Analytics */}
-        <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CHNLXSTLH7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+        {/* Google AdSense Script */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4108246218082712"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
 
-  gtag('config', 'G-CHNLXSTLH7');
-</script>
+        {/* Google Analytics Script */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-CHNLXSTLH7"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-CHNLXSTLH7');
+          `}
+        </Script>
 
-        {/* Layout Components */}
+        {/* Page Structure */}
         <Header />
         <main>{children}</main>
         <Footer />
