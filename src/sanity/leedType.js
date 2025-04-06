@@ -1,6 +1,6 @@
 import { defineField, defineType } from 'sanity';
 
-export const coursesType = defineType({
+export const leedType = defineType({
   name: 'leed',
   title: 'leed',
   type: 'document',
