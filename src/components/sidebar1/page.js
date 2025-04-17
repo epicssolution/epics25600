@@ -58,7 +58,7 @@ export default function Sidebar1() {
       <ul className="space-y-3">
         {universities.map((uni) => (
           <li key={uni.slug} className="hover:bg-gray-700 p-2 rounded-md">
-            <Link href={`/revit/${uni.slug}`} className="block">
+            <Link href={`/Leed/${uni.slug}`} className="block">
               <span className="cursor-pointer hover:text-gray-300 transition duration-200">
                 {uni.title}
               </span>
