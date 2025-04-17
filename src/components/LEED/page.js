@@ -46,7 +46,7 @@ const Control = () => {
       <div className="w-full md:w-3/4 px-5 sm:px-10 md:px-16 lg:px-20 flex flex-col items-center">
         {/* Dynamic Head Meta Tags */}
         <Head>
-          <title>Best Online Courses | Revit Tutorial</title>
+          <title>Best Online Courses | LEED Certification</title>
           <meta
             name="description"
             content="These Revit MEP tutorials are very student-friendly, simple, and easy to follow."
@@ -62,7 +62,7 @@ const Control = () => {
             >
               {/* Image Section */}
               <Link
-                href={`/control/${uni.slug}`}
+                href={`/Leed/${uni.slug}`}
                 className="h-full rounded-xl overflow-hidden"
               >
                 {uni.image && (
