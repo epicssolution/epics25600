@@ -16,7 +16,7 @@ export default function Sidebar() {
   useEffect(() => {
     const fetchData = async () => {
       const query = `
-        *[_type == "dev"]{
+        *[_type == "dev", "leed"]{
           title,
           "slug": slug.current,
           description,
