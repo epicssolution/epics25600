@@ -207,7 +207,33 @@ export default async function BlogPage({ params }) {
   ) : (
     <p>No content available</p>
   )}
-</div>
+</div>  {/* FAQ Section */}
+          {blog.faq && blog.faq.length > 0 && (
+            <section className="mt-8">
+              <h2 className="text-3xl font-semibold mb-4">Frequently Asked Questions</h2>
+              {blog.faq.map((item, index) => (
+                <div key={index} className="mb-6">
+                  <h3 className="text-xl font-medium text-blue-600">{item.question}</h3>
+                  <PortableText
+                    value={item.answer}
+                    components={{
+                      block: {
+                        normal: ({ children }) => <p className="mt-2">{children}</p>,
+                      },
+                      list: {
+                        bullet: ({ children }) => <ul className="list-disc ml-5 mt-2">{children}</ul>,
+                        number: ({ children }) => <ol className="list-decimal ml-5 mt-2">{children}</ol>,
+                      },
+                      listItem: {
+                        bullet: ({ children }) => <li>{children}</li>,
+                        number: ({ children }) => <li>{children}</li>,
+                      },
+                    }}
+                  />
+                </div>
+              ))}
+            </section>
+          )}
 
       </div>
     </article>
