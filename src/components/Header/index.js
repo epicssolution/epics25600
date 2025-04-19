@@ -111,6 +111,7 @@ const Header = () => {
           <Link href="/mep" className="hover:text-indigo-600 transition-colors" onClick={() => handleCategorySelect('mar')}>Revit MEP</Link>
           <Link href="/energy" className="hover:text-indigo-600 transition-colors" onClick={() => handleCategorySelect('energy')}>Energy</Link>
           <Link href="/waste" className="hover:text-indigo-600 transition-colors" onClick={() => handleCategorySelect('waste')}>Waste</Link>
+          <Link href="/Leed" className="hover:text-indigo-600 transition-colors" onClick={() => handleCategorySelect('Leed')}>LEED</Link>
 
           <Link href="/About-Us" className="hover:text-indigo-600 transition-colors" onClick={() => handleCategorySelect(About-Us)}>  About Us </Link>
           <Link href="/contact"  className="hover:text-indigo-600 transition-colors" onClick={() => handleCategorySelect( contact)}> Contact Us </Link>
@@ -133,6 +134,8 @@ const Header = () => {
   <Link href="/mep" className="hover:text-indigo-600 transition-colors">Revit MEP</Link>
   <Link href="/energy" className="hover:text-indigo-600 transition-colors">Energy</Link>
   <Link href="/waste" className="hover:text-indigo-600 transition-colors">Waste</Link>
+  <Link href="/Leed" className="hover:text-indigo-600 transition-colors">LEED</Link>
+
   <Link href="/About-Us" className="hover:text-indigo-600 transition-colors">  About Us </Link>
   <Link href="/contact"  className="hover:text-indigo-600 transition-colors" > Contact Us </Link>
 </nav>
