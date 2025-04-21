@@ -16,12 +16,12 @@ function escapeJsonLd(value) {
 
 // Define typeKeywords mapping for default keywords based on blog type
 const typeKeywords = {
-  AI: "Generative AI , AI in the Oil and Gas , AI, artificial intelligence, machine learning",
-  Eng: "engineering, valves, centrifugal chiller, variable refrigerant flow , septic tank, technology, innovation",
+  AI: "Generative AI, AI in the Oil and Gas, AI, artificial intelligence, machine learning",
+  Eng: "engineering, valves, centrifugal chiller, variable refrigerant flow, septic tank, technology, innovation",
   equipment: "equipment, tools, machinery",
   development: "software development, coding, programming",
   dev: "dev, development, tech",
-  energy: "energy, sustainability, green tech,solar energy,green buildinggit pull origin main",
+  energy: "energy, sustainability, green tech, solar energy, green building",
   waste: "waste management, recycling, environment",
 };
 
@@ -72,6 +72,54 @@ export async function generateMetadata({ params }) {
       }
     : null;
 
+  // BreadcrumbList Structured Data
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.epicssolution.com/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: "https://www.epicssolution.com/blog",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: blog.title,
+        item: `https://www.epicssolution.com/${slug}`,
+      },
+    ],
+  };
+
+  // Organization Structured Data
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "EPICS Solution",
+    url: "https://www.epicssolution.com/",
+    logo: siteMetadata.logo,
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: siteMetadata.phoneNumber || "+1-123-456-7890", // Replace with actual phone number
+      contactType: "Customer Service",
+      areaServed: "Global",
+      availableLanguage: "English",
+    },
+    sameAs: [
+      siteMetadata.twitter,
+      siteMetadata.linkedin,
+      siteMetadata.github,
+      // Add other social media URLs from siteMetadata
+    ].filter(Boolean),
+  };
+
   // Generate dynamic keywords based on tags or type
   const defaultKeywords = typeKeywords[blog._type] || "technology, innovation";
   const keywords = blog.tags && blog.tags.length > 0 ? blog.tags.join(", ") : defaultKeywords;
@@ -79,7 +127,7 @@ export async function generateMetadata({ params }) {
   return {
     title: blog.title,
     description: blog.description,
-    keywords: keywords, // Dynamic keywords for SEO
+    keywords: keywords,
     openGraph: {
       title: blog.title,
       description: blog.description,
@@ -100,7 +148,9 @@ export async function generateMetadata({ params }) {
         headline: blog.title,
         description: blog.description,
         image: imageUrl,
-        datePublished: blog.publishedAt,
+        datePublished: blog্র
+
+        dateModified: blog.publishedAt,
         url: `https://www.epicssolution.com/${slug}`,
         author: { "@type": "Person", name: "Epic Solution Team" },
         publisher: {
@@ -113,6 +163,8 @@ export async function generateMetadata({ params }) {
           "@id": `https://www.epicssolution.com/${slug}`,
         },
       },
+      breadcrumbSchema,
+      organizationSchema,
       ...(faqSchema ? [faqSchema] : []),
     ],
   };
@@ -152,7 +204,7 @@ export default async function BlogPage({ params }) {
         question,
         answer
       }
-    }
+    | order(publishedAt desc)
   `;
 
   const blog = await client.fetch(query, { slug });
@@ -195,6 +247,54 @@ export default async function BlogPage({ params }) {
         })),
       }
     : null;
+
+  // BreadcrumbList Structured Data
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.epicssolution.com/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: "https://www.epicssolution.com/blog",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: blog.title,
+        item: `https://www.epicssolution.com/${slug}`,
+      },
+    ],
+  };
+
+  // Organization Structured Data
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "EPICS Solution",
+    url: "https://www.epicssolution.com/",
+    logo: siteMetadata.logo,
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: siteMetadata.phoneNumber || "+1-123-456-7890", // Replace with actual phone number
+      contactType: "Customer Service",
+      areaServed: "Global",
+      availableLanguage: "English",
+    },
+    sameAs: [
+      siteMetadata.twitter,
+      siteMetadata.linkedin,
+      siteMetadata.github,
+      // Add other social media URLs from siteMetadata
+    ].filter(Boolean),
+  };
 
   // Calculate dynamic keywords
   const defaultKeywords = typeKeywords[blog._type] || "technology, innovation";
@@ -240,6 +340,7 @@ export default async function BlogPage({ params }) {
                 description: blog.description,
                 image: imageUrl,
                 datePublished: blog.publishedAt,
+                dateModified: blog.publishedAt,
                 url: `https://www.epicssolution.com/${slug}`,
                 author: { "@type": "Person", name: "Epic Solution Team" },
                 publisher: {
@@ -252,6 +353,8 @@ export default async function BlogPage({ params }) {
                   "@id": `https://www.epicssolution.com/${slug}`,
                 },
               },
+              breadcrumbSchema,
+              organizationSchema,
               ...(faqSchema ? [faqSchema] : []),
             ]),
           }}
@@ -272,7 +375,7 @@ export default async function BlogPage({ params }) {
             />
           </div>
         )}
-      </div> {/* Added closing div here */}
+      </div>
 
       <div className="grid grid-cols-12 gap-8 mt-8 px-5 md:px-10">
         {/* Table of Contents - Hidden on Mobile */}
@@ -288,7 +391,10 @@ export default async function BlogPage({ params }) {
               {headings.length > 0 ? (
                 headings.map((heading) => (
                   <li key={heading.slug} className="py-1">
-                    <a href={`#${heading.slug}`} className="text-blue-500 hover:underline">
+                    <a
+                      href={`#${heading.slug}`}
+                      className="text-blue-500 hover:underline focus:outline focus:outline-2 focus:outline-blue-600"
+                    >
                       {heading.text}
                     </a>
                   </li>
@@ -308,14 +414,13 @@ export default async function BlogPage({ params }) {
               components={{
                 types: {
                   image: ({ value }) => {
-                    // Check if dimensions are available in the metadata
                     if (value.asset && value.asset.metadata && value.asset.metadata.dimensions) {
                       const { width, height } = value.asset.metadata.dimensions;
                       return (
                         <div className="my-4">
                           <Image
                             src={urlFor(value).url()}
-                            alt={value.alt || "Blog image"}
+                            alt={value.alt || `Image for ${blog.title}`}
                             width={width}
                             height={height}
                             className="w-full h-auto rounded"
@@ -323,14 +428,13 @@ export default async function BlogPage({ params }) {
                         </div>
                       );
                     } else {
-                      // Fallback in case metadata is missing
                       return (
                         <div className="my-4">
                           <Image
                             src={urlFor(value).url()}
-                            alt={value.alt || "Blog image"}
-                            width={800}  // Default width
-                            height={600} // Default height
+                            alt={value.alt || `Image for ${blog.title}`}
+                            width={800}
+                            height={600}
                             className="w-full h-auto rounded"
                           />
                         </div>
@@ -344,7 +448,7 @@ export default async function BlogPage({ params }) {
                       href={value.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-600 underline"
+                      className="text-blue-600 underline focus:outline focus:outline-2 focus:outline-blue-600"
                     >
                       {children}
                     </a>
