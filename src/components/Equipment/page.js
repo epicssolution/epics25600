@@ -8,126 +8,151 @@ import { urlFor } from "@/sanity/lib/image";
 import Head from "next/head";
 
 const Equipment = () => {
-  const [universities, setUniversities] = useState([]);
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    // Fetch data from Sanity
     const fetchData = async () => {
       const query = `
-        *[_type=="equipment"]{
+        *[_type=="equipment"] | order(publishedAt desc) {
           description,
           "slug": slug.current,
           image,
           title,
-          href,
           tags,
-          content,
-          publishedAt
+          publishedAt,
+          "author": author->name
         }
       `;
       const result = await client.fetch(query);
-      setUniversities(result);
+      setPosts(result);
     };
 
     fetchData();
   }, []);
 
+  const mainPosts = posts.slice(0, 2);
+  const sidebarPosts = posts.slice(2, 26);
+
+  const allPosts = [...mainPosts, ...sidebarPosts];
+  const schemas = allPosts.map((post) => ({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    image: [urlFor(post.image).url()],
+    datePublished: post.publishedAt,
+    description: post.description,
+    url: `https://www.epicssolution.com/dev/${post.slug}`,
+    publisher: {
+      "@type": "Organization",
+      name: "Epics Solution",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.epicssolution.com/logo.png",
+      },
+    },
+    author: post.author
+      ? {
+          "@type": "Person",
+          name: post.author,
+        }
+      : undefined,
+  }));
+
   return (
-    <main className="w-full mt-16 sm:mt-24 md:mt-32 px-5 sm:px-10 md:px-24 lg:px-32 flex flex-col items-center justify-center">
+    <>
       <Head>
-        <title>Best online Courses & Blogs|HVAC EQUIPMENT</title>
+        <title>Development Blogs | Epics Solution</title>
         <meta
           name="description"
-          content="Explore new courses"
+          content="Explore the latest development blogs and insights."
         />
-        <meta property="og:title" content="Best Online Courses| HVAC EQUIPMENT " />
-        <meta
-          property="og:description"
-          content="Read simple blogs and join top online courses to learn about HVAC equipment, like chillers, fan coil units, and other systems that help with heating, cooling, and ventilation. Get easy-to-understand details about how HVAC equipment works!."
-        />
-        <meta
-          property="og:image"
-          content="https://www.epicssolution.com/path-to-your-default-image.jpg"
-        />
-        <meta
-          property="og:url"
-          content="https://www.epicssolution.com/equipment"
-        />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="best ONLINE COURSES | HVAC EQUIPMENT" />
-        <meta
-          name="twitter:description"
-          content="Read simple blogs and join top online courses to learn about HVAC equipment, like chillers, fan coil units, and other systems that help with heating, cooling, and ventilation. Get easy-to-understand details about how HVAC equipment works!."
-        />
-        <meta
-          name="twitter:image"
-          content="https://www.epicssolution.com/path-to-your-default-image.jpg"
-        />
-      </Head>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {universities.map((uni) => (
-          <div
-            key={uni.slug}
-            className="group flex flex-col items-center text-dark dark:text-light mb-8"
-          >
-            <Link href={`/${uni.slug}`} className="h-full rounded-xl overflow-hidden">
-              {uni.image && uni.image.asset && (
-                <Image
-                  src={urlFor(uni.image).url()} // Only called if asset exists
-                  alt={uni.image.alt || uni.title} // Fallback to title if alt is missing
-                  width={400}
-                  height={300}
-                  className="aspect-[4/3] w-full h-full object-cover object-center group-hover:scale-105 transition-all ease duration-300"
-                  sizes="(max-width: 440px) 80vw, (max-width: 824px) 30vw, 23vw"
-                  loading="lazy"
-                />
-              )}
-            </Link>
-            <div className="flex flex-col w-full mt-4">
-              {uni.tags && uni.tags.length > 0 && (
-                <span className="uppercase text-accent dark:text-accentDark font-semibold text-xs sm:text-sm">
-                  {uni.tags[0]}
-                </span>
-              )}
-              <Link href={`/${uni.slug}`} className="inline-block my-1">
-                <h2 className="font-semibold capitalize text-base sm:text-lg">
-                  <span
-                    className="bg-gradient-to-r from-accent/50 to-accent/50 dark:from-accentDark/50 dark:to-accentDark/50
-                    bg-[length:0px_4px] group-hover:bg-[length:100%_4px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500"
-                  >
-                    {uni.title}
-                  </span>
-                </h2>
-                <p className="text-sm text-gray-700 dark:text-gray-300 mt-2">
-                  {uni.description.length > 150
-                    ? `${uni.description.slice(0, 150)}...`
-                    : uni.description}
-                </p>
-                <Link href={`/${uni.slug}`}>
-                  <button
-                    className="w-full py-2 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-dark font-semibold rounded-lg transition-colors duration-300 mt-2"
-                    aria-label={`Read more about ${uni.title || "this university"}`}
-                  >
-                    Read More
-                  </button>
-                </Link>
-              </Link>
-              <span className="capitalize text-gray dark:text-light/50 font-semibold text-sm sm:text-base mt-2">
-                {uni.publishedAt
-                  ? new Date(uni.publishedAt).toLocaleDateString("en-US", {
-                      month: "long",
-                      day: "numeric",
-                      year: "numeric",
-                    })
-                  : "Date not available"}
-              </span>
-            </div>
-          </div>
+        {schemas.map((schema, index) => (
+          <script key={index} type="application/ld+json">
+            {JSON.stringify(schema)}
+          </script>
         ))}
-      </div>
-    </main>
+      </Head>
+      <main className="w-full mt-16 sm:mt-24 md:mt-32 px-5 sm:px-10 md:px-24 lg:px-32 ">
+        <div className="flex flex-row gap-8">
+          <div className="flex-1">
+            {mainPosts.map((post) => (
+              <div key={post.slug} className="mb-12">
+                {post.tags && post.tags.length > 0 && (
+                  <span className="uppercase text-[#FF6F61] font-semibold text-sm mb-2 block">
+                    {post.tags[0]}
+                  </span>
+                )}
+                <div className="flex flex-col md:flex-row gap-4">
+                  <div className="md:w-1/3">
+                    <Link href={`/${post.slug}`}>
+                      <div className="relative w-full pt-[75%]">
+                        <Image
+                          src={urlFor(post.image).url()}
+                          alt={post.title}
+                          layout="fill"
+                          objectFit="cover"
+                          className="rounded-lg shadow-md"
+                        />
+                      </div>
+                    </Link>
+                  </div>
+                  <div className="md:w-2/3">
+                    <Link href={`/${post.slug}`}>
+                      <h2 className="text-2xl font-bold hover:underline">
+                        {post.title}
+                      </h2>
+                    </Link>
+                    <span className="text-sm text-gray-500 mt-2 block">
+                      by {post.author || "Abdul Ghaffar Khan"} |{" "}
+                      {new Date(post.publishedAt).toLocaleDateString("en-US", {
+                        month: "long",
+                        day: "numeric",
+                        year: "numeric",
+                      })}
+                    </span>
+                    <p className="mt-2 text-gray-700">{post.description}</p>
+                    <Link href={`/${post.slug}`}>
+                      <button className="mt-4 px-4 py-2 bg-[#FF6F61] text-white rounded hover:bg-[#E65C50]">
+                        Read More
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="w-1/4">
+            <h3 className="text-xl font-semibold mb-4">Latest Blogs</h3>
+            {sidebarPosts.map((post) => (
+              <div key={post.slug} className="flex items-center mb-4">
+                <div className="relative w-20 h-[60px]">
+                  <Image
+                    src={urlFor(post.image).url()}
+                    alt={post.title}
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded shadow-sm"
+                  />
+                </div>
+                <div className="ml-4">
+                  <Link href={`/${post.slug}`}>
+                    <h4 className="text-sm font-medium hover:underline">
+                      {post.title}
+                    </h4>
+                  </Link>
+                  <span className="text-xs text-gray-500">
+                    {new Date(post.publishedAt).toLocaleDateString("en-US", {
+                      month: "short",
+                      day: "numeric",
+                    })}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </main>
+    </>
   );
 };
 
