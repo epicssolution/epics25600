@@ -31,7 +31,7 @@ const Equipment = () => {
   }, []);
 
   const mainPosts = posts.slice(0, 30);
-  const sidebarPosts = posts.slice(0, 4);
+  const sidebarPosts = posts.slice(2, 6);
 
   const allPosts = [...mainPosts, ...sidebarPosts];
   const schemas = allPosts.map((post) => ({
@@ -72,9 +72,9 @@ const Equipment = () => {
           </script>
         ))}
       </Head>
-      <main className="w-full mt-16 sm:mt-24 md:mt-32 px-5 sm:px-10 md:px-24 lg:px-32 ">
-        <div className="flex flex-row gap-8">
-          <div className="flex-1">
+      <main className="w-full mt-16 sm:mt-24 md:mt-32 px-5 sm:px-10 md:px-24 lg:px-32  text-black bg-light dark:bg-dark text-dark dark:text-light transition-all ease">
+        <div className="flex flex-col md:flex-row gap-8">
+          <div className="w-full md:flex-1">
             {mainPosts.map((post) => (
               <div key={post.slug} className="mb-12">
                 {post.tags && post.tags.length > 0 && (
@@ -121,7 +121,7 @@ const Equipment = () => {
               </div>
             ))}
           </div>
-          <div className="w-1/4">
+          <div className="w-full md:w-1/4">
             <h3 className="text-xl font-semibold mb-4">Latest Blogs</h3>
             {sidebarPosts.map((post) => (
               <div key={post.slug} className="flex items-center mb-4">
