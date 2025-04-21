@@ -30,8 +30,8 @@ const Equipment = () => {
     fetchData();
   }, []);
 
-  const mainPosts = posts.slice(0, 2);
-  const sidebarPosts = posts.slice(2, 26);
+  const mainPosts = posts.slice(0, 30);
+  const sidebarPosts = posts.slice(0, 4);
 
   const allPosts = [...mainPosts, ...sidebarPosts];
   const schemas = allPosts.map((post) => ({
