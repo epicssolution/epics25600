@@ -212,19 +212,14 @@ export default async function BlogPage({ params }) {
     return null;
   }
 
-  // Dynamically extract headings from blog.content for table of contents
-  const headings = [];
-  if (Array.isArray(blog.content)) {
-    blog.content.forEach((block) => {
-      if (block._type === "block" && block.style && block.style.startsWith("h")) {
-        headings.push({
-          text: block.children.map((child) => child.text).join(" "),
-          slug: block._key,
-          level: parseInt(block.style.replace("h", ""), 10),
-        });
-      }
-    });
-  }
+  // Fetch all blog topics for the sidebar
+  const allBlogsQuery = `
+    *[_type in ["AI", "Eng", "equipment", "development", "dev", "energy", "waste"]] | order(publishedAt desc) {
+      title,
+      "slug": slug.current
+    }
+  `;
+  const allBlogs = await client.fetch(allBlogsQuery);
 
   const imageUrl = blog.image ? urlFor(blog.image).url() : siteMetadata.socialBanner;
 
@@ -375,32 +370,23 @@ export default async function BlogPage({ params }) {
       </div>
 
       <div className="grid grid-cols-12 gap-8 mt-8 px-5 md:px-10">
-        {/* Table of Contents - Hidden on Mobile */}
+        {/* Sidebar with All Blog Topics */}
         <div className="col-span-12 lg:col-span-4 hidden lg:block">
-          <details
-            className="border border-dark text-black rounded-lg p-4 sticky top-6 max-h-[80vh] overflow-auto"
-            open
-          >
-            <summary className="text-lg font-semibold capitalize cursor-pointer">
-              Table Of Contents
-            </summary>
+          <div className="border border-dark text-black rounded-lg p-4 sticky top-6 max-h-[80vh] overflow-auto text-black bg-light dark:bg-dark text-dark dark:text-light transition-all ease">
+            <h2 className="text-lg font-semibold capitalize">Read More</h2>
             <ul className="mt-4">
-              {headings.length > 0 ? (
-                headings.map((heading) => (
-                  <li key={heading.slug} className="py-1">
-                    <a
-                      href={`#${heading.slug}`}
-                      className="text-blue-500 hover:underline focus:outline focus:outline-2 focus:outline-blue-600"
-                    >
-                      {heading.text}
-                    </a>
-                  </li>
-                ))
-              ) : (
-                <li>No content available</li>
-              )}
+              {allBlogs.map((blog) => (
+                <li key={blog.slug} className="py-1">
+                  <a
+                    href={`/${blog.slug}`}
+                    className="text-blue-500 hover:underline focus:outline focus:outline-2 focus:outline-blue-600"
+                  >
+                    {blog.title}
+                  </a>
+                </li>
+              ))}
             </ul>
-          </details>
+          </div>
         </div>
 
         {/* Blog Content */}
