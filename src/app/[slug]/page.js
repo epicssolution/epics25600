@@ -107,7 +107,7 @@ export async function generateMetadata({ params }) {
     logo: siteMetadata.logo,
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: siteMetadata.phoneNumber || "+1-123-456-7890", // Replace with actual phone number
+      telephone: siteMetadata.phoneNumber || "+1-123-456-7890",
       contactType: "Customer Service",
       areaServed: "Global",
       availableLanguage: "English",
@@ -116,7 +116,6 @@ export async function generateMetadata({ params }) {
       siteMetadata.twitter,
       siteMetadata.linkedin,
       siteMetadata.github,
-      // Add other social media URLs from siteMetadata
     ].filter(Boolean),
   };
 
@@ -203,7 +202,7 @@ export default async function BlogPage({ params }) {
         question,
         answer
       }
-    } | order(publishedAt desc)
+    }
   `;
 
   const blog = await client.fetch(query, { slug });
@@ -216,11 +215,11 @@ export default async function BlogPage({ params }) {
   // Dynamically extract headings from blog.content for table of contents
   const headings = [];
   if (Array.isArray(blog.content)) {
-    blog.content.forEach((block, index) => {
-      if (block.style && block.style.startsWith("h")) {
+    blog.content.forEach((block) => {
+      if (block._type === "block" && block.style && block.style.startsWith("h")) {
         headings.push({
           text: block.children.map((child) => child.text).join(" "),
-          slug: `heading-${index}`,
+          slug: block._key,
           level: parseInt(block.style.replace("h", ""), 10),
         });
       }
@@ -282,7 +281,7 @@ export default async function BlogPage({ params }) {
     logo: siteMetadata.logo,
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: siteMetadata.phoneNumber || "+1-123-456-7890", // Replace with actual phone number
+      telephone: siteMetadata.phoneNumber || "+1-123-456-7890",
       contactType: "Customer Service",
       areaServed: "Global",
       availableLanguage: "English",
@@ -291,7 +290,6 @@ export default async function BlogPage({ params }) {
       siteMetadata.twitter,
       siteMetadata.linkedin,
       siteMetadata.github,
-      // Add other social media URLs from siteMetadata
     ].filter(Boolean),
   };
 
@@ -454,14 +452,14 @@ export default async function BlogPage({ params }) {
                   ),
                 },
                 block: {
-                  h1: ({ children }) => (
-                    <h1 className="text-4xl font-bold my-4">{children}</h1>
+                  h1: ({ children, value }) => (
+                    <h1 id={value._key} className="text-4xl font-bold my-4">{children}</h1>
                   ),
-                  h2: ({ children }) => (
-                    <h2 className="text-3xl font-semibold my-4">{children}</h2>
+                  h2: ({ children, value }) => (
+                    <h2 id={value._key} className="text-3xl font-semibold my-4">{children}</h2>
                   ),
-                  h3: ({ children }) => (
-                    <h3 className="text-2xl font-medium my-3">{children}</h3>
+                  h3: ({ children, value }) => (
+                    <h3 id={value._key} className="text-2xl font-medium my-3">{children}</h3>
                   ),
                   normal: ({ children }) => <p className="my-2">{children}</p>,
                 },
