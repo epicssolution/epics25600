@@ -148,8 +148,7 @@ export async function generateMetadata({ params }) {
         headline: blog.title,
         description: blog.description,
         image: imageUrl,
-        datePublished: blog্র
-
+        datePublished: blog.publishedAt,
         dateModified: blog.publishedAt,
         url: `https://www.epicssolution.com/${slug}`,
         author: { "@type": "Person", name: "Epic Solution Team" },
@@ -204,7 +203,7 @@ export default async function BlogPage({ params }) {
         question,
         answer
       }
-    | order(publishedAt desc)
+    } | order(publishedAt desc)
   `;
 
   const blog = await client.fetch(query, { slug });
