@@ -1,171 +1,250 @@
 "use client";
 
+import Head from "next/head";
+import siteMetadata from "@/utils/siteMetaData";
 import Link from "next/link";
 import Logo from "./Logo";
-import { MoonIcon, SunIcon } from "../Icons";
 import { useThemeSwitch } from "../Hooks/useThemeSwitch";
 import { useState } from "react";
-import { cx } from "@/utils";
-import { FaSearch } from "react-icons/fa"; // Using React Icons for better visuals
-import { client } from "@/sanity/lib/client"; // Assume sanity client is correctly set up
+import { client } from "@/sanity/lib/client";
+import { useRouter } from "next/navigation";
+import { Menu, X } from "lucide-react";
 
 const Header = () => {
-  const [mode, setMode] = useThemeSwitch();
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [mode] = useThemeSwitch();
+  const [isOpen, setIsOpen] = useState(false);
+  const [certOpen, setCertOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileCatOpen, setMobileCatOpen] = useState(false);
+  const [mobileCertOpen, setMobileCertOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
-  const [searchOpen, setSearchOpen] = useState(false);
-  const [category, setCategory] = useState("All");
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const router = useRouter();
 
-  // Handle search and fetch results from Sanity
-  const handleSearch = async (query) => {
-    if (!query) {
-      setSearchResults([]); // Clear results if search is empty
-      return;
-    }
-    const querySanity = `
-      *[_type in ["AI", "Eng", "equipment", "development", "dev", "energy", "waste"] && title match $query]{
-        title,
-        description,
-        "slug": slug.current,
-        image,
-      }
-    `;
-    const results = await client.fetch(querySanity, { query });
-    setSearchResults(results);
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+    setCertOpen(false);
   };
 
-  const handleCategorySelect = (slug) => {
-    setCategory(slug);
-    setMenuOpen(false); // Close the menu after selecting a category
+  const toggleCertDropdown = () => {
+    setCertOpen(!certOpen);
+    setIsOpen(false);
+  };
+
+  const handleSearch = async (e) => {
+    if (e.key === "Enter" && searchQuery.trim() !== "") {
+      try {
+        const results = await client.fetch(
+          `*[_type in ["AI", "Eng", "equipment", "development", "dev", "energy", "waste","leed"] && title match $query]{
+            _id,
+            title,
+            "slug": slug.current
+          }`,
+          { query: `*${searchQuery}*` }
+        );
+        if (results.length > 0) {
+          router.push(`/post/${results[0].slug}`);
+        } else {
+          alert("No results found.");
+        }
+      } catch (error) {
+        console.error("Search error:", error);
+      }
+    }
+  };
+
+  const handleMobileMenuToggle = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+    if (mobileMenuOpen) {
+      setMobileCatOpen(false);
+      setMobileCertOpen(false);
+    }
   };
 
   return (
-    <header className="w-full bg-white shadow-lg flex flex-col items-center p-4 px-6 relative dark:bg-dark text-dark dark:text-light transition-all ease">
-      {/* Top Row: Logo, Search, and Menu Icon */}
-      <div className="flex items-center justify-between w-full relative">
-        <Logo />
-        {/* Search Bar - Positioned between the logo and the search icon */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 transition-all ease-in-out">
-          {searchOpen && (
-            <div className="flex items-center border-2 border-gray-300 dark:border-gray-600 rounded-lg shadow-md px-4 py-2 w-96 bg-white dark:bg-dark">
+    <>
+      <Head>
+        <title>{siteMetadata.title}</title>
+        <meta name="description" content={siteMetadata.description} />
+      </Head>
+
+      <header className="w-full bg-white text-black shadow-md sticky top-0 z-50">
+        <div className="max-w-screen-xl mx-auto px-4 py-4 flex items-center justify-between">
+          {/* Left: Logo + Mobile Toggle */}
+          <div className="flex items-center justify-between w-full md:w-auto">
+            <Logo />
+            <button
+              className="md:hidden text-gray-700"
+              onClick={handleMobileMenuToggle}
+              aria-label="Toggle Menu"
+            >
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+
+          {/* Center: Navigation (Desktop only) */}
+          <nav className="hidden md:flex items-center space-x-6 text-sm">
+            <Link href="/" className="hover:text-pink-600 transition">
+              Home
+            </Link>
+
+            <div className="relative">
+              <button
+                onClick={toggleDropdown}
+                className="hover:text-pink-600 transition flex items-center space-x-1"
+              >
+                <span>Articles</span>
+                <span className="text-xs">▾</span>
+              </button>
+              {isOpen && (
+                <div className="absolute left-0 mt-2 bg-white border rounded-md shadow-md p-2 w-56 z-50 space-y-1">
+                  <Link href="/dev" className="block hover:text-pink-500">
+                    Development
+                  </Link>
+                  <Link href="/equipment" className="block hover:text-pink-500">
+                    Equipment
+                  </Link>
+                  <Link href="/ai" className="block hover:text-pink-500">
+                    Artificial Intelligence
+                  </Link>
+                  <Link href="/eng" className="block hover:text-pink-500">
+                    Designing
+                  </Link>
+                 
+                  <Link href="/energy" className="block hover:text-pink-500">
+                   Energy
+                  </Link>
+                  <Link href="/waste" className="block hover:text-pink-500">
+                    Waste
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            <div className="relative">
+              <button
+                onClick={toggleCertDropdown}
+                className="hover:text-pink-600 transition flex items-center space-x-1"
+              >
+                <span>Certifications</span>
+                <span className="text-xs">▾</span>
+              </button>
+              {certOpen && (
+                <div className="absolute left-0 mt-2 bg-white border rounded-md shadow-md p-2 w-44 z-50 space-y-1">
+                  <Link href="/mep" className="block hover:text-pink-500">
+                    Revit MEP
+                  </Link>
+                  <Link href="/Leed" className="block hover:text-pink-500">
+                    LEED
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            <Link href="/about" className="hover:text-pink-600 transition">
+              About
+            </Link>
+            <Link href="/contact" className="hover:text-pink-600 transition">
+              Contact
+            </Link>
+          </nav>
+
+          {/* Right: Search Bar (Desktop only) */}
+          <div className="hidden md:flex items-center relative w-64">
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              onKeyDown={handleSearch}
+              placeholder="Search articles..."
+              className="w-full pl-10 pr-4 py-2 text-sm text-gray-800 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+            />
+            <div className="absolute left-3 top-2.5 text-gray-400 pointer-events-none">🔍</div>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-white px-4 pb-6 pt-2 space-y-4 text-sm border-t">
+            <Link href="/" className="block hover:text-pink-600">
+              Home
+            </Link>
+
+            {/* Categories Dropdown (Mobile) */}
+            <div>
+              <button
+                className="w-full flex justify-between items-center font-semibold mb-1"
+                onClick={() => setMobileCatOpen(!mobileCatOpen)}
+              >
+                Articles <span className="text-xs">{mobileCatOpen ? "▴" : "▾"}</span>
+              </button>
+              {mobileCatOpen && (
+                <div className="space-y-1 pl-4">
+                    <Link href="/dev" className="block hover:text-pink-500">
+                    Development
+                  </Link>
+                  <Link href="/equipment" className="block hover:text-pink-500">
+                    Equipment
+                  </Link>
+                  <Link href="/ai" className="block hover:text-pink-500">
+                    Artificial Intelligence
+                  </Link>
+                  <Link href="/eng" className="block hover:text-pink-500">
+                    Designing
+                  </Link>
+                 
+                  <Link href="/energy" className="block hover:text-pink-500">
+                   Energy
+                  </Link>
+                  <Link href="/waste" className="block hover:text-pink-500">
+                    Waste
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            {/* Certifications Dropdown (Mobile) */}
+            <div>
+              <button
+                className="w-full flex justify-between items-center font-semibold mb-1"
+                onClick={() => setMobileCertOpen(!mobileCertOpen)}
+              >
+                Certifications <span className="text-xs">{mobileCertOpen ? "▴" : "▾"}</span>
+              </button>
+              {mobileCertOpen && (
+                <div className="space-y-1 pl-4">
+                  <Link href="/mep" className="block">
+                    Revit MEP
+                  </Link>
+                  <Link href="/Leed" className="block">
+                    LEED
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            <Link href="/about" className="block hover:text-pink-600">
+              About
+            </Link>
+            <Link href="/contact" className="block hover:text-pink-600">
+              Contact
+            </Link>
+
+            {/* Mobile Search */}
+            <div className="relative mt-2">
               <input
                 type="text"
                 value={searchQuery}
-                onChange={(e) => {
-                  setSearchQuery(e.target.value);
-                  handleSearch(e.target.value);
-                }}
-                placeholder="Search..."
-                className="p-2 w-full border-none rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-dark dark:text-light dark:border-gray-600"
+                onChange={(e) => setSearchQuery(e.target.value)}
+                onKeyDown={handleSearch}
+                placeholder="Search articles..."
+                className="w-full pl-10 pr-4 py-2 text-sm text-gray-800 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
               />
-              <button
-                className="p-2 bg-pink-600 text-white rounded-md ml-2"
-                onClick={() => handleSearch(searchQuery)}
-                aria-label="Search"
-              >
-                <FaSearch />
-              </button>
+              <div className="absolute left-3 top-2.5 text-gray-400 pointer-events-none">🔍</div>
             </div>
-          )}
-        </div>
-        {/* Search Toggle Button */}
-        <button
-          className="text-black p-2 dark:text-white"
-          onClick={() => setSearchOpen(!searchOpen)}
-          aria-label="Toggle Search"
-        >
-          <FaSearch className="text-lg" />
-        </button>
-        {/* Menu Toggle Button - Only Visible on Mobile */}
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="sm:hidden text-black p-2 dark:text-white"
-          aria-label="Toggle Menu"
-        >
-          ☰
-        </button>
-      </div>
-
-      {/* Mobile Menu - Slide In from Left */}
-      <div
-        className={cx(
-          "absolute top-0 left-0 w-64 h-full bg-white shadow-xl p-6 transform transition-transform duration-300 ease-in-out z-50 sm:hidden",
-          menuOpen ? "translate-x-0" : "-translate-x-full"
+          </div>
         )}
-      >
-        <button
-          onClick={() => setMenuOpen(false)}
-          className="absolute top-2 right-2 text-2xl text-black"
-          aria-label="Close Menu"
-        >
-          ✖️
-        </button>
-        <nav className="flex flex-col items-start space-y-6 font-semibold text-lg dark:bg-dark text-dark dark:text-light">
-          <Link href="/" className="hover:text-indigo-600 transition-colors" onClick={() => handleCategorySelect('home')}>Home</Link>
-          <Link href="/dev" className="hover:text-indigo-600 transition-colors" onClick={() => handleCategorySelect('dev')}>Next js</Link>
-          <Link href="/equipment" className="hover:text-indigo-600 transition-colors" onClick={() => handleCategorySelect('equipment')}>Equipments</Link>
-          <Link href="/ai" className="hover:text-indigo-600 transition-colors" onClick={() => handleCategorySelect('ai')}>Artificial Intelligence</Link>
-          <Link href="/eng" className="hover:text-indigo-600 transition-colors" onClick={() => handleCategorySelect('eng')}>HVAC Designing</Link>
-          <Link href="/mep" className="hover:text-indigo-600 transition-colors" onClick={() => handleCategorySelect('mar')}>Revit MEP</Link>
-          <Link href="/energy" className="hover:text-indigo-600 transition-colors" onClick={() => handleCategorySelect('energy')}>Energy</Link>
-          <Link href="/waste" className="hover:text-indigo-600 transition-colors" onClick={() => handleCategorySelect('waste')}>Waste</Link>
-          <Link href="/Leed" className="hover:text-indigo-600 transition-colors" onClick={() => handleCategorySelect('Leed')}>LEED</Link>
-
-          <Link href="/About-Us" className="hover:text-indigo-600 transition-colors" onClick={() => handleCategorySelect(About-Us)}>  About Us </Link>
-          <Link href="/contact"  className="hover:text-indigo-600 transition-colors" onClick={() => handleCategorySelect( contact)}> Contact Us </Link>
-        </nav>
-      </div>
-
-      {/* Navigation and Theme Toggle - Hide on Mobile */}
-      <div
-        className={cx(
-          "w-full mt-4 sm:mt-0 flex flex-col items-center sm:flex-row sm:justify-between sm:items-center",
-          menuOpen ? "hidden" : "block sm:flex"
-        )}
-      >
-        <nav className="sm:flex hidden flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 font-semibold text-lg dark:bg-dark text-dark dark:text-light transition-all ease">
-  <Link href="/" className="hover:text-indigo-600 transition-colors">Home</Link>
-  <Link href="/dev" className="hover:text-indigo-600 transition-colors">Next js</Link>
-  <Link href="/equipment" className="hover:text-indigo-600 transition-colors">Equipments</Link>
-  <Link href="/ai" className="hover:text-indigo-600 transition-colors">Artificial Intelligence</Link>
-  <Link href="/eng" className="hover:text-indigo-600 transition-colors">HVAC Designing</Link>
-  <Link href="/mep" className="hover:text-indigo-600 transition-colors">Revit MEP</Link>
-  <Link href="/energy" className="hover:text-indigo-600 transition-colors">Energy</Link>
-  <Link href="/waste" className="hover:text-indigo-600 transition-colors">Waste</Link>
-  <Link href="/Leed" className="hover:text-indigo-600 transition-colors">LEED</Link>
-
-  <Link href="/About-Us" className="hover:text-indigo-600 transition-colors">  About Us </Link>
-  <Link href="/contact"  className="hover:text-indigo-600 transition-colors" > Contact Us </Link>
-</nav>
-
-        <button
-          onClick={() => setMode(mode === "light" ? "dark" : "light")}
-          className={cx(
-            "w-8 h-8 flex items-center justify-center rounded-full p-1 transition-all ease-in-out",
-            mode === "light" ? "bg-black text-white" : "bg-white text-black"
-          )}
-          aria-label="Theme Switcher"
-        >
-          {mode === "light" ? <MoonIcon /> : <SunIcon />}
-        </button>
-      </div>
-
-      {/* Search Results */}
-      {searchResults.length > 0 && (
-        <ul className="mt-4 w-full max-w-lg bg-white border border-gray-300 rounded-xl shadow-lg p-4 dark:bg-dark dark:border-gray-600">
-          {searchResults.map((result, index) => (
-            <li key={index} className="py-3">
-              <Link href={`/${result.slug}`} className="text-blue-500 hover:underline text-lg">
-                {result.title}
-              </Link>
-              <p className="text-gray-500 text-sm">{result.description}</p>
-            </li>
-          ))}
-        </ul>
-      )}
-    </header>
+      </header>
+    </>
   );
 };
 
