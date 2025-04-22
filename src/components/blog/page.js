@@ -1,4 +1,3 @@
-
 "use client"
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
@@ -73,8 +72,12 @@ const BlogSection  = () => {
           </script>
         ))}
       </Head>
-      <main className="w-full mt-16 sm:mt-24 md:mt-32 px-5 sm:px-10 md:px-24 lg:px-32 bg-light dark:bg-dark text-dark dark:text-light transition-all ease">
-        <div className="flex flex-col md:flex-row gap-8">
+       
+  <main className="w-full mt-16 sm:mt-24 md:mt-32 px-5 sm:px-10 md:px-24 lg:px-32 bg-light dark:bg-dark text-dark dark:text-light transition-all ease">
+  <div className="flex justify-center">
+  <h1 className="text-4xl font-bold mb-8 bg-light dark:bg-dark text-dark dark:text-light transition-all ease">All blogs</h1>
+</div>  
+       <div className="flex flex-col md:flex-row gap-8">
           <div className="w-full md:flex-1">
             {posts.slice(0, displayCount).map((post) => (
               <div key={post.slug} className="mb-12">
