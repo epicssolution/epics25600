@@ -16,7 +16,7 @@ export default function Sidebar() {
   useEffect(() => {
     const fetchData = async () => {
       const query = `
-        *[_type == "dev", "leed"]{
+        *[_type ==  "dev"]{
           title,
           "slug": slug.current,
           description,
@@ -53,7 +53,7 @@ export default function Sidebar() {
   return (
     <div className="w-full md:w-60 bg-black text-white p-6 transition-all duration-300">
       <h2 className="text-2xl font-bold mb-4 border-b border-gray-700 pb-2">
-        Revit MEP Tutorial
+        Revit MEP Certification 
       </h2>
       <ul className="space-y-3">
         {universities.map((uni) => (
