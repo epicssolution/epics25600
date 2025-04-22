@@ -125,11 +125,12 @@ const Development = () => {
             {posts.length > displayCount && (
               <div className="text-center mt-8">
                 <button
-                  onClick={() => setDisplayCount(displayCount + 6)}
-                  className="px-6 py-2 bg-[#FF6F61] text-white rounded hover:bg-[#E65C50]"
-                >
-                  Load More
-                </button>
+  onClick={() => setDisplayCount(displayCount + 6)}
+  className="px-6 py-2 bg-transparent border border-[#0052CC] text-[#0052CC] font-medium uppercase tracking-wider rounded-none flex items-center gap-2 hover:bg-[#0052CC] hover:text-white transition-colors duration-200"
+>
+  Load More
+  <span>&gt;</span>
+</button>
               </div>
             )}
           </div>
