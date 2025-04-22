@@ -51,7 +51,7 @@ export default async function Page() {
           {JSON.stringify(schema)}
         </script>
       ))}
-      <EquipmentClient posts={posts} />
+      <AiClient posts={posts} />
     </>
   );
 }
