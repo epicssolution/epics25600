@@ -170,7 +170,7 @@ const Development = () => {
                   </div>
                 </div>
               ))}
-              <div className="mt-8">
+              <div className="mt-8 fixed ">
                 <h2 className="text-lg font-bold mb-4 text-[#FF6F61]">
                   Categories
                 </h2>
