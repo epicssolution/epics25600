@@ -1,6 +1,6 @@
 
 import React from "react";
-import Energy from "@/components/waste/page";
+import Waste from "@/components/waste/page";
 import Head from 'next/head'; // Importing Head component for adding meta tags
 
 export default function energy() {
