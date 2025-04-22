@@ -14,7 +14,7 @@ const Development = () => {
 
   useEffect(() => {
     const query = `
-      *[_type=="dev"] | order(publishedAt desc) {
+      *[_type=="development"] | order(publishedAt desc) {
         description,
         "slug": slug.current,
         image,
