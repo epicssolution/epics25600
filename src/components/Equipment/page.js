@@ -3,8 +3,8 @@ import EquipmentClient from './equipmentclient';
 import { urlFor } from '@/sanity/lib/image';
 
 export const metadata = {
-  title: 'Development Blogs | Epics Solution',
-  description: 'Explore the latest development blogs and insights.',
+  title: 'HVAC Equipment Blogs | Epics Solution',
+  description: 'Explore the latest hvac equipment  blogs and insights.',
 };
 
 export default async function Page() {
