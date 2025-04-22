@@ -134,7 +134,7 @@ const Development = () => {
               </div>
             )}
           </div>
-          <div className="w-full md:w-1/4 md:sticky md:top-0">
+          <div className="w-full md:w-1/4 md:sticky fixed md:top-0">
             <div className="mt-8 p-4 bg-gray-100 dark:bg-gray-800 rounded shadow">
               <h3 className="text-xl font-semibold mb-4 text-[#FF6F61]">
                 Latest Blogs
@@ -170,7 +170,7 @@ const Development = () => {
                   </div>
                 </div>
               ))}
-              <div className="mt-8 fixed ">
+              <div className="mt-8  ">
                 <h2 className="text-lg font-bold mb-4 text-[#FF6F61]">
                   Categories
                 </h2>
