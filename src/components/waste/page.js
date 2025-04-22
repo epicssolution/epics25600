@@ -1,145 +1,242 @@
 
-
-"use client";
-
-import React, { useEffect, useState } from "react";
+"use client"
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { client } from "@/sanity/lib/client";
+import Head from "next/head";
 import { urlFor } from "@/sanity/lib/image";
-import Head from "next/head"; // Importing Head component
+import { client } from "@/sanity/lib/client";
 
 const Waste = () => {
-  const [universities, setUniversities] = useState([]);
+  const [posts, setPosts] = useState([]);
+  const [displayCount, setDisplayCount] = useState(5);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Fetch data from Sanity
-    const fetchData = async () => {
-      const query = `
-        *[_type=="waste"]{
-          description,
-          "slug": slug.current,
-          image,
-          title,
-          href,
-          tags,
-          content,
-          publishedAt
-        }
-      `;
-      const result = await client.fetch(query);
-      setUniversities(result);
-    };
-
-    fetchData();
+    const query = `
+      *[_type=="waste"] | order(publishedAt desc) {
+        description,
+        "slug": slug.current,
+        image,
+        title,
+        tags,
+        publishedAt,
+        "author": author->name
+      }
+    `;
+    client.fetch(query).then((fetchedPosts) => {
+      setPosts(fetchedPosts);
+      setLoading(false);
+    });
   }, []);
 
+  if (loading) {
+    return <div className="text-center mt-16">Loading...</div>;
+  }
+
+  const sidebarPosts = posts.slice(6, 10);
+
+  const schemas = posts.map((post) => ({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    image: [urlFor(post.image).url()],
+    datePublished: post.publishedAt,
+    description: post.description,
+    url: `https://www.epicssolution.com/dev/${post.slug}`,
+    publisher: {
+      "@type": "Organization",
+      name: "Epics Solution",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.epicssolution.com/logo.png",
+      },
+    },
+    author: post.author
+      ? {
+          "@type": "Person",
+          name: post.author,
+        }
+      : undefined,
+  }));
+
   return (
-    <main className="w-full mt-16 sm:mt-24 md:mt-32 px-5 sm:px-10 md:px-24 lg:px-32 flex flex-col items-center justify-center">
-      {/* Adding dynamic Open Graph meta tags */}
+    <>
       <Head>
-        <title>Best online Courses & Blogs|HVAC EQUIPMENT</title>
+        <title>Energy Blogs | Epics Solution</title>
         <meta
           name="description"
-          content="Explore new courses"
+          content="Explore the latest Energy blogs and insights."
         />
-
-        {/* Open Graph tags */}
-        <meta property="og:title" content="Best Online Courses| HVAC EQUIPMENT " />
-        <meta
-          property="og:description"
-          content=" Read simple blogs and join top online courses to learn about HVAC equipment, like chillers, fan coil units, and other systems that help with heating, cooling, and ventilation. Get easy-to-understand details about how HVAC equipment works!."
-        />
-        <meta
-          property="og:image"
-          content="https://www.epicssolution.com/path-to-your-default-image.jpg"
-        />
-        <meta
-          property="og:url"
-          content="https://www.epicssolution.com/equipment"
-        />
-        <meta property="og:type" content="website" />
-
-        {/* Twitter Card tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="best ONLINE COURSES | HVAC EQUIPMENT" />
-        <meta
-          name="twitter:description"
-          content="Read simple blogs and join top online courses to learn about HVAC equipment, like chillers, fan coil units, and other systems that help with heating, cooling, and ventilation. Get easy-to-understand details about how HVAC equipment works!."
-        />
-        <meta
-          name="twitter:image"
-          content="https://www.epicssolution.com/path-to-your-default-image.jpg"
-        />
+        {schemas.map((schema, index) => (
+          <script key={index} type="application/ld+json">
+            {JSON.stringify(schema)}
+          </script>
+        ))}
       </Head>
-
-      {/* Grid layout for displaying courses */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {universities.map((uni) => (
-          <div
-            key={uni.slug}
-            className="group flex flex-col items-center text-dark dark:text-light mb-8"
-          >
-          <Link href={`/${uni.slug}`} className="h-full rounded-xl overflow-hidden">
-  {uni.image && (
-    <Image
-      src={urlFor(uni.image).url()} // Using urlFor to generate the image URL
-      alt={uni.image.alt || uni.title} // Using alt text if available
-      width={400}
-      height={300}
-      className="aspect-[4/3] w-full h-full object-cover object-center group-hover:scale-105 transition-all ease duration-300"
-      sizes="(max-width: 440px) 80vw, (max-width: 824px) 30vw, 23vw"
-      loading="lazy" // Enable lazy loading
-    />
-  )}
-</Link>
-            <div className="flex flex-col w-full mt-4">
-              {uni.tags && uni.tags.length > 0 && (
-                <span className="uppercase text-accent dark:text-accentDark font-semibold text-xs sm:text-sm">
-                  {uni.tags[0]}
-                </span>
-              )}
-
-
-
-          <Link href={`/${uni.slug}`} className="inline-block my-1">
-  <h2 className="font-semibold capitalize text-base sm:text-lg">
-    <span
-      className="bg-gradient-to-r from-accent/50 to-accent/50 dark:from-accentDark/50 dark:to-accentDark/50
-      bg-[length:0px_4px] group-hover:bg-[length:100%_4px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500"
-    >
-      {uni.title}
-    </span>
-  </h2>
-  <p className="text-sm text-gray-700 dark:text-gray-300 mt-2">
-    {uni.description.length > 150 
-      ? `${uni.description.slice(0, 150)}...` 
-      : uni.description}
-  </p>
-  <Link href={`/${uni.slug}`}>
-    <button
-      className="w-full py-2 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-dark font-semibold rounded-lg transition-colors duration-300 mt-2"
-      aria-label={`Read more about ${uni.title || "this university"}`}
-    >
-      Read More
-    </button>
-  </Link>
-</Link>
-
-              <span className="capitalize text-gray dark:text-light/50 font-semibold text-sm sm:text-base mt-2">
-                {uni.publishedAt
-                  ? new Date(uni.publishedAt).toLocaleDateString("en-US", {
-                      month: "long",
-                      day: "numeric",
-                      year: "numeric",
-                    })
-                  : "Date not available"}
-              </span>
+      <main className="w-full mt-16 sm:mt-24 md:mt-32 px-5 sm:px-10 md:px-24 lg:px-32 bg-light dark:bg-dark text-dark dark:text-light transition-all ease">
+        <div className="flex flex-col md:flex-row gap-8">
+          <div className="w-full md:flex-1">
+            {posts.slice(0, displayCount).map((post) => (
+              <div key={post.slug} className="mb-12">
+                {post.tags && post.tags.length > 0 && (
+                  <span className="uppercase text-[#FF6F61] font-semibold text-sm mb-2 block">
+                    {post.tags[0]}
+                  </span>
+                )}
+                <div className="flex flex-col md:flex-row gap-4">
+                  <div className="md:w-1/3">
+                    <Link href={`/${post.slug}`}>
+                      <div className="relative w-full pt-[75%]">
+                        <Image
+                          src={urlFor(post.image).url()}
+                          alt={post.title}
+                          fill
+                          style={{ objectFit: "cover" }}
+                          className="rounded-lg shadow-md"
+                        />
+                      </div>
+                    </Link>
+                  </div>
+                  <div className="md:w-2/3">
+                    <Link href={`/${post.slug}`}>
+                      <h2 className="text-2xl font-bold hover:underline">
+                        {post.title}
+                      </h2>
+                    </Link>
+                    <span className="text-sm text-gray-500 mt-2 block">
+                      by {post.author || "Abdul Ghaffar Khan"} |{" "}
+                      {new Date(post.publishedAt).toLocaleDateString("en-US", {
+                        month: "long",
+                        day: "numeric",
+                        year: "numeric",
+                      })}
+                    </span>
+                    <p className="mt-2 text-gray-700">{post.description}</p>
+                    <Link href={`/${post.slug}`}>
+                      <button className="mt-4 px-4 py-2 bg-[#FF6F61] text-white rounded hover:bg-[#E65C50]">
+                        Read More
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+            {posts.length > displayCount && (
+              <div className="text-center mt-8">
+                <button
+                  onClick={() => setDisplayCount(displayCount + 6)}
+                  className="px-6 py-2 bg-[#FF6F61] text-white rounded hover:bg-[#E65C50]"
+                >
+                  Load More
+                </button>
+              </div>
+            )}
+          </div>
+          <div className="w-full md:w-1/4 md:sticky md:top-0">
+            <div className="mt-8 p-4 bg-gray-100 dark:bg-gray-800 rounded shadow">
+              <h3 className="text-xl font-semibold mb-4 text-[#FF6F61]">
+                Latest Blogs
+              </h3>
+              {sidebarPosts.map((post) => (
+                <div
+                  key={post.slug}
+                  className="flex items-center mb-4 hover:bg-gray-200 dark:hover:bg-gray-700 p-2 rounded"
+                >
+                  <div className="relative w-20 h-[60px]">
+                    <Image
+                      src={urlFor(post.image).url()}
+                      alt={post.title}
+                      fill
+                      style={{ objectFit: "cover" }}
+                      className="rounded shadow-sm"
+                    />
+                  </div>
+                  <div className="ml-4">
+                    <Link href={`/${post.slug}`}>
+                      <h4 className="text-sm font-medium hover:underline text-gray-900 dark:text-gray-100">
+                        {post.title.length > 20
+                          ? `${post.title.slice(0, 20)}...`
+                          : post.title}
+                      </h4>
+                    </Link>
+                    <span className="text-xs text-gray-500 dark:text-gray-400">
+                      {new Date(post.publishedAt).toLocaleDateString("en-US", {
+                        month: "short",
+                        day: "numeric",
+                      })}
+                    </span>
+                  </div>
+                </div>
+              ))}
+              <div className="mt-8">
+                <h2 className="text-lg font-bold mb-4 text-[#FF6F61]">
+                  Categories
+                </h2>
+                <div className="space-y-2">
+                  <Link
+                    href="/dev"
+                    className="block text-gray-700 dark:text-gray-300 hover:text-[#FF6F61]"
+                  >
+                    Development
+                  </Link>
+                  <Link
+                    href="/equipment"
+                    className="block text-gray-700 dark:text-gray-300 hover:text-[#FF6F61]"
+                  >
+                    Equipment
+                  </Link>
+                  <Link
+                    href="/ai"
+                    className="block text-gray-700 dark:text-gray-300 hover:text-[#FF6F61]"
+                  >
+                    Artificial Intelligence
+                  </Link>
+                  <Link
+                    href="/eng"
+                    className="block text-gray-700 dark:text-gray-300 hover:text-[#FF6F61]"
+                  >
+                    Designing
+                  </Link>
+                  <Link
+                    href="/energy"
+                    className="block text-gray-700 dark:text-gray-300 hover:text-[#FF6F61]"
+                  >
+                    Energy
+                  </Link>
+                  <Link
+                    href="/waste"
+                    className="block text-gray-700 dark:text-gray-300 hover:text-[#FF6F61]"
+                  >
+                    Waste
+                  </Link>
+                </div>
+              </div>
+              <hr className="my-8 border-gray-300 dark:border-gray-600" />
+              <div>
+                <h2 className="text-lg font-bold mb-4 text-[#FF6F61]">
+                  Certifications
+                </h2>
+                <div className="space-y-2">
+                  <Link
+                    href="/mep"
+                    className="block text-gray-700 dark:text-gray-300 hover:text-[#FF6F61]"
+                  >
+                    Revit MEP
+                  </Link>
+                  <Link
+                    href="/Leed"
+                    className="block text-gray-700 dark:text-gray-300 hover:text-[#FF6F61]"
+                  >
+                    LEED
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
-        ))}
-      </div>
-    </main>
+        </div>
+      </main>
+    </>
   );
 };
 
