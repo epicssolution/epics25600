@@ -3,7 +3,7 @@ import React from "react";
 import Waste from "@/components/waste/page";
 import Head from 'next/head'; // Importing Head component for adding meta tags
 
-export default function energy() {
+export default function waste() {
   return (
     <>
       {/* Adding the Head component for Open Graph and Twitter meta tags */}
