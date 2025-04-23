@@ -42,7 +42,7 @@ const Header = () => {
           { query: `*${searchQuery}*` }
         );
         if (results.length > 0) {
-          router.push(`/post/${results[0].slug}`);
+          router.push(`/results?query=${encodeURIComponent(searchQuery)}`);
         } else {
           alert("No results found.");
         }
@@ -51,7 +51,7 @@ const Header = () => {
       }
     }
   };
-
+  
   const handleMobileMenuToggle = () => {
     setMobileMenuOpen(!mobileMenuOpen);
     if (mobileMenuOpen) {
