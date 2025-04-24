@@ -15,7 +15,11 @@ const nextConfig = {
   async redirects() {
     return [
       // Redirects originally grouped under '/(marketing/revit-mep-2025-tutorial-1-hvac-load-calculation(?:Revit)?|...)'
-               {
+                      {
+        source: '/https://www.epicssolution.com/chilled-water-piping-systems',
+        destination: '/https://www.epicssolution.com/chilled-water-piping-system-1',
+        permanent: true,
+      },{
         source: '/mar',
         destination: '/mep',
         permanent: true,
