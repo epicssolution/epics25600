@@ -63,10 +63,10 @@ const Artificial = () => {
   return (
     <>
       <Head>
-        <title>HVAC Equipment Blogs | Epics Solution</title>
+        <title>Artificial Intelligence Blogs | Epics Solution</title>
         <meta
           name="description"
-          content="Explore the latest development blogs and insights."
+          content="Explore the latest AI blogs and insights."
         />
         {schemas.map((schema, index) => (
           <script key={index} type="application/ld+json">
