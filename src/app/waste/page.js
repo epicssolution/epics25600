@@ -31,7 +31,7 @@ export default function waste() {
       <div className="mt-8">
         {/* Second component */}
         <div className="flex justify-center align-middle font-semibold text-2xl border-[1px] border-solid border-dark dark:border-light text-black dark:text-light rounded-lg p-4 sticky top-6 max-h-[80vh]" >
-      <h1> Green buildings and Energy blogs & courses </h1> 
+      <h1> Waste Management blogs & courses </h1> 
 
         </div>
        <div className=" mt-6 "> <article  style={{ minHeight: '300px', width: '100%' }}>
