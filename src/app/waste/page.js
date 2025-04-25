@@ -23,7 +23,7 @@ export default function waste() {
         <meta name="twitter:title" content="Best online courses & Blogs related to Green buildings and Energy" />
         <meta
           name="twitter:description"
-          content="Best online courses & Blogs related to working of Green buildings and EnergyT"
+          content="Best online  Blogs related to working of watste management  "
         />
         <meta name="twitter:image" content="https://www.epicssolution.com/social-banner.png" />
       </Head>
