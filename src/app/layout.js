@@ -78,6 +78,7 @@ export default function RootLayout({ children }) {
         />
         <meta name="p:domain_verify" content="be8a436f4e7ce83fbeafd23c184e415b" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="google-adsense-account" content="ca-pub-4108246218082712" />
 
         <Script
           async
