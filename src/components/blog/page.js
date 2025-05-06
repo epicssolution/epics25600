@@ -13,7 +13,7 @@ const BlogSection  = () => {
 
   useEffect(() => {
     const query = `
-      *[_type in ["AI", "Eng", "equipment", "development", "dev", "energy", "waste"]] | order(publishedAt desc) {
+      *[_type in ["AI", "Eng", "equipment", "development", "dev","leed", "energy", "waste"]] | order(publishedAt desc) {
         description,
         "slug": slug.current,
         image,
