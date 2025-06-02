@@ -30,6 +30,7 @@ const Header = () => {
           content="Empowering students with the best global online courses and skill-building resources."
         />
         <meta property="og:title" content="Epics Solution | Online Courses & Blogs" />
+         <meta name='impact-site-verification' value='7d491e05-9e33-4ce8-9366-fbb41f29e935'>
         <meta
           property="og:description"
           content="Empowering students with the best global online courses and skill-building resources."
