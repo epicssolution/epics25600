@@ -1,6 +1,6 @@
 
 import React from "react";
-import Equipment from "@/components/hvac/page";
+import Equipment from "@/components/Equipment/page";
 import Head from 'next/head'; // Importing Head component for adding meta tags
 
 export default function equipment() {
