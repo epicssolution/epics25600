@@ -136,6 +136,23 @@ const Header = () => {
                 </div>
               )}
             </div>
+               <div className="relative">
+              <button
+                onClick={toggleCertDropdown}
+                className="hover:text-pink-600 transition flex items-center space-x-1"
+              >
+                <span>Certifications</span>
+                <span className="text-xs">▾</span>
+              </button>
+              {certOpen && (
+                <div className="absolute left-0 mt-2 bg-white border rounded-md shadow-md p-2 w-56 z-50 space-y-1">
+                  <Link href="/products" className="block hover:text-pink-500">
+                    Products
+                  </Link>
+                  
+                </div>
+              )}
+            </div>
           </nav>
 
           <div className="hidden md:flex items-center relative w-64">
@@ -203,6 +220,23 @@ const Header = () => {
                   <Link href="/Leed" className="block hover:text-pink-500">
                     LEED
                   </Link>
+                </div>
+              )}
+            </div>
+           <div className="relative">
+              <button
+                onClick={toggleCertDropdown}
+                className="hover:text-pink-600 transition flex items-center space-x-1"
+              >
+                <span>Certifications</span>
+                <span className="text-xs">▾</span>
+              </button>
+              {certOpen && (
+                <div className="absolute left-0 mt-2 bg-white border rounded-md shadow-md p-2 w-56 z-50 space-y-1">
+                  <Link href="/products" className="block hover:text-pink-500">
+                    Products
+                  </Link>
+                  
                 </div>
               )}
             </div>
