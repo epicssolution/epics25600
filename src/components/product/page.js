@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
-import Sidebar1 from "../sidebar1/page";
+import Sidebar2 from "../sidebar2/page";
 import Head from "next/head";
 
 const Product = () => {
@@ -34,12 +34,12 @@ const Product = () => {
 
   return (
     <main className="flex flex-col md:flex-row mt-16 sm:mt-24 md:mt-32">
-      {/* Sidebar */}
+      {/* Sidebar2 */}
       <aside className="w-full md:w-1/4 bg-gray-100 dark:bg-gray-800 p-5 md:p-8 shadow-lg h-auto md:h-screen sticky top-0">
         <h2 className="text-2xl font-bold text-dark dark:text-light mb-4">
           Explore More
         </h2>
-        <Sidebar1 universities={universities} />
+        <Sidebar2 universities={universities} />
       </aside>
 
       {/* Main Content */}
