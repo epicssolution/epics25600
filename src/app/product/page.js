@@ -1,5 +1,5 @@
 import React from "react";
-import Development from "@/components/product/page";
+import Product from "@/components/product/page";
 import Head from 'next/head'; // Importing Head component for adding meta tags
 
 export default function Developmentf() {
