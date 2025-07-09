@@ -1,5 +1,6 @@
 import { blogType } from "../blogType"
 import { leedType } from "../leedType"
+import { productType } from "../product"
 
 import { coursesType } from "../courses"
 import { engType } from "../engType"
@@ -14,5 +15,5 @@ import { hvacType } from "../hvacType"
 
 
 export const schema = {
-  types: [blogType,equipmentType,coursesType,engType,devType,aiType,energyType,wasteType, leedType, hvacType],
+  types: [blogType,equipmentType,coursesType,engType,devType,aiType,energyType,wasteType, leedType, hvacType, productType],
 }
