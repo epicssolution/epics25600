@@ -144,14 +144,14 @@ const Header = () => {
                 <span>Certifications</span>
                 <span className="text-xs">▾</span>
               </button>
-              {certOpen && (
+               (
                 <div className="absolute left-0 mt-2 bg-white border rounded-md shadow-md p-2 w-56 z-50 space-y-1">
                   <Link href="/products" className="block hover:text-pink-500">
                     Products
                   </Link>
                   
                 </div>
-              )}
+              )
             </div>
           </nav>
 
@@ -231,14 +231,14 @@ const Header = () => {
                 <span>Certifications</span>
                 <span className="text-xs">▾</span>
               </button>
-              {certOpen && (
+              (
                 <div className="absolute left-0 mt-2 bg-white border rounded-md shadow-md p-2 w-56 z-50 space-y-1">
                   <Link href="/products" className="block hover:text-pink-500">
                     Products
                   </Link>
                   
                 </div>
-              )}
+              )
             </div>
 
             <Link href="/About-Us" className="block hover:text-pink-600">
