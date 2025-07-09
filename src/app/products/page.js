@@ -2,7 +2,7 @@ import React from "react";
 import Product from "@/components/product/page";
 import Head from 'next/head'; // Importing Head component for adding meta tags
 
-export default function Product() {
+export default function Products() {
   return (
     <>
       {/* Adding the Head component for Open Graph and Twitter meta tags */}
