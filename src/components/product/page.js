@@ -1,4 +1,4 @@
-"use client";
+p"use client";
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
@@ -62,7 +62,7 @@ const Product = () => {
             >
               {/* Image Section */}
               <Link
-                href={`/Leed/${uni.slug}`}
+                href={`/products/${uni.slug}`}
                 className="h-full rounded-xl overflow-hidden"
               >
                 {uni.image && (
@@ -91,7 +91,7 @@ const Product = () => {
                 </h3>
 
                 {/* Button */}
-                <Link href={`/Leed/${uni.slug}`}>
+                <Link href={`/products/${uni.slug}`}>
                   <button className="mt-3 w-full py-2 bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-dark font-semibold rounded-lg transition-all duration-300">
                     Read More
                   </button>
