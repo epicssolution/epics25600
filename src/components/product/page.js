@@ -87,7 +87,7 @@ const Product = () => {
 
                 {/* Topic Title */}
                 <h3 className="text-lg font-semibold text-dark dark:text-light mt-2 relative dark:bg-dark text-dark dark:text-light transition-all eas">
-                  chapter- {index + 1}: {uni.title}
+                 {index + 1}: {uni.title}
                 </h3>
 
                 {/* Button */}
