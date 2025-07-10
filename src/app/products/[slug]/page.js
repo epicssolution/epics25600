@@ -1,4 +1,3 @@
-
 import BlogDetails from "@/components/blogdetail/page";
 import siteMetadata from "@/utils/siteMetaData";
 import { client } from "@/sanity/lib/client";
@@ -7,6 +6,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import VisitCourseButton from "@/components/buttons/page";
 import { PortableText } from "next-sanity";
+import Sidebar from "@/components/sidebar/page"; // Corrected: Added missing Sidebar import
 import Sidebar2 from "@/components/sidebar2/page";
 import portableTextComponents from "@/components/yt/page";
 
@@ -141,7 +141,7 @@ export default async function BlogPage({ params }) {
         {/* Sidebar - Table of Contents */}
         <div className="col-span-12 lg:col-span-4 hidden lg:block">
           <div className="border border-gray-300 rounded-lg p-4 sticky top-6 max-h-[80vh] overflow-auto bg-gray-100">
-            <Sidebar headings={headings} />
+            <Sidebar2 headings={headings} />
           </div>
         </div>
 
