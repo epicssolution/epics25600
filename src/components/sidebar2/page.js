@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { client } from "@/sanity/lib/client";
 
-export default function Sidebar1() {
+export default function Sidebar2() {
   const [universities, setUniversities] = useState([]);
 
   // Improved function to extract tutorial number from title
