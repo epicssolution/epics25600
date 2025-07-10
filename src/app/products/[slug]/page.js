@@ -7,7 +7,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import VisitCourseButton from "@/components/buttons/page";
 import { PortableText } from "next-sanity";
-import Sidebar from "@/components/sidebar/page";
+import Sidebar2 from "@/components/sidebar2/page";
 import portableTextComponents from "@/components/yt/page";
 
 // Utility to escape JSON-LD values
