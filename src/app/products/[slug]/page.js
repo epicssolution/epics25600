@@ -350,7 +350,7 @@ export default function BlogPage({ params }) {
             </details>
 
             {/* Blog Content */}
-            {blog.content ? (
+           {blog.content ? (
               <PortableText
                 value={blog.content}
                 components={{
