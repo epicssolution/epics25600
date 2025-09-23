@@ -65,8 +65,9 @@ const Header = () => {
       <Head>
         <title>{siteMetadata.title}</title>
         <meta name="description" content={siteMetadata.description} />
+        <meta name="google-adsense-account" content="ca-pub-7084928378740575">
 
-       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6106733128223559"
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7084928378740575"
      crossorigin="anonymous"></script>
        
       </Head>
