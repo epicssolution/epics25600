@@ -80,11 +80,13 @@ const Header = () => {
             </button>
           </div>
 
+          {/* Desktop Menu */}
           <nav className="hidden md:flex items-center space-x-6 text-sm">
             <Link href="/" className="hover:text-pink-600 transition">
               Home
             </Link>
 
+            {/* Articles Dropdown */}
             <div className="relative">
               <button
                 onClick={toggleDropdown}
@@ -117,6 +119,7 @@ const Header = () => {
               )}
             </div>
 
+            {/* Certifications Dropdown */}
             <div className="relative">
               <button
                 onClick={toggleCertDropdown}
@@ -133,20 +136,15 @@ const Header = () => {
                   <Link href="/Leed" className="block hover:text-pink-500">
                     LEED
                   </Link>
-                 <Link href="/products" className="block hover:text-pink-500">
+                  <Link href="/products" className="block hover:text-pink-500">
                     Products
                   </Link>
                 </div>
               )}
             </div>
-              
-             
-              
-                 
-                  
-               
           </nav>
 
+          {/* Desktop Search */}
           <div className="hidden md:flex items-center relative w-64">
             <input
               type="text"
@@ -156,16 +154,20 @@ const Header = () => {
               placeholder="Search articles..."
               className="w-full pl-10 pr-4 py-2 text-sm text-gray-800 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
             />
-            <div className="absolute left-3 top-2.5 text-gray-400 pointer-events-none">🔍</div>
+            <div className="absolute left-3 top-2.5 text-gray-400 pointer-events-none">
+              🔍
+            </div>
           </div>
         </div>
 
+        {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden bg-white px-4 pb-6 pt-2 space-y-4 text-sm border-t">
             <Link href="/" className="block hover:text-pink-600">
               Home
             </Link>
 
+            {/* Mobile Articles */}
             <div>
               <button
                 className="w-full flex justify-between items-center font-semibold mb-1"
@@ -197,12 +199,14 @@ const Header = () => {
               )}
             </div>
 
+            {/* Mobile Certifications */}
             <div>
               <button
                 className="w-full flex justify-between items-center font-semibold mb-1"
                 onClick={() => setMobileCertOpen(!mobileCertOpen)}
               >
-                Certifications <span className="text-xs">{mobileCertOpen ? "▴" : "▾"}</span>
+                Certifications{" "}
+                <span className="text-xs">{mobileCertOpen ? "▴" : "▾"}</span>
               </button>
               {mobileCertOpen && (
                 <div className="space-y-1 pl-4">
@@ -218,10 +222,6 @@ const Header = () => {
                 </div>
               )}
             </div>
-          
-                
-                  
-              
 
             <Link href="/About-Us" className="block hover:text-pink-600">
               About
@@ -230,6 +230,7 @@ const Header = () => {
               Contact
             </Link>
 
+            {/* Mobile Search */}
             <div className="relative mt-2">
               <input
                 type="text"
@@ -239,7 +240,9 @@ const Header = () => {
                 placeholder="Search articles..."
                 className="w-full pl-10 pr-4 py-2 text-sm text-gray-800 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
               />
-              <div className="absolute left-3 top-2.5 text-gray-400 pointer-events-none">🔍</div>
+              <div className="absolute left-3 top-2.5 text-gray-400 pointer-events-none">
+                🔍
+              </div>
             </div>
           </div>
         )}
