@@ -66,16 +66,9 @@ const Header = () => {
         <title>{siteMetadata.title}</title>
         <meta name="description" content={siteMetadata.description} />
 
-        {/* ✅ Google AdSense Verification */}
-        <meta
-          name="google-adsense-account"
-          content="ca-pub-6106733128223559"
-        />
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6106733128223559"
-          crossOrigin="anonymous"
-        ></script>
+       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6106733128223559"
+     crossorigin="anonymous"></script>
+       
       </Head>
 
       <header className="w-full bg-white text-black shadow-md sticky top-0 z-50">
