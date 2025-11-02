@@ -1,4 +1,4 @@
-{"use client";
+"use client";
 
 import Head from "next/head";
 import siteMetadata from "@/utils/siteMetaData";
@@ -65,11 +65,15 @@ const Header = () => {
       <Head>
         <title>{siteMetadata.title}</title>
         <meta name="description" content={siteMetadata.description} />
-        <meta name="google-adsense-account" content="ca-pub-7084928378740575">
-
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7084928378740575"
-     crossorigin="anonymous"></script>
-       
+        <meta
+          name="google-adsense-account"
+          content="ca-pub-7084928378740575"
+        />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7084928378740575"
+          crossOrigin="anonymous"
+        ></script>
       </Head>
 
       <header className="w-full bg-white text-black shadow-md sticky top-0 z-50">
