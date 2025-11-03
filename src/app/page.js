@@ -12,11 +12,8 @@ const Home = () => {
     <>
     <HomePage1 />
     <AboutUs />
-     <section>
-        <IndustriesSection />   {/* ✅ Added your new section here */}
-      </section>
-
-    <section >
+     <IndustriesSection />   
+    
     {/* Services Section */}
     <div><BlogSlider /></div>
       </section>
