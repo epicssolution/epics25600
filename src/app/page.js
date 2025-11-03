@@ -1,6 +1,5 @@
 'use client';
 
-
 import BlogSection from '@/components/blog/page';
 import HomePage1 from '@/components/Homecomponent/page';
 import AboutUs from '@/components/Homecomponent/aboutus';
@@ -10,14 +9,14 @@ import BlogSlider from '@/components/ALL/page';
 const Home = () => {
   return (
     <>
-    <HomePage1 />
-    <AboutUs />
-     <IndustriesSection />   
-    
-    {/* Services Section */}
-    <div><BlogSlider /></div>
-      </section>
+      <HomePage1 />
+      <AboutUs />
+      <IndustriesSection />
 
+      {/* Services Section */}
+      <div>
+        <BlogSlider />
+      </div>
 
       {/* Blog Section */}
       <BlogSection />
@@ -26,3 +25,4 @@ const Home = () => {
 };
 
 export default Home;
+
