@@ -4,6 +4,7 @@
 import BlogSection from '@/components/blog/page';
 import HomePage1 from '@/components/Homecomponent/page';
 import AboutUs from '@/components/Homecomponent/aboutus';
+import IndustriesSection from '@/components/Homecomponent/IndustriesSection';
 import BlogSlider from '@/components/ALL/page';
 
 const Home = () => {
@@ -11,6 +12,9 @@ const Home = () => {
     <>
     <HomePage1 />
     <AboutUs />
+     <section>
+        <IndustriesSection />   {/* ✅ Added your new section here */}
+      </section>
 
     <section >
     {/* Services Section */}
