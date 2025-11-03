@@ -3,12 +3,14 @@
 
 import BlogSection from '@/components/blog/page';
 import HomePage1 from '@/components/Homecomponent/page';
+import AboutUs from '@/components/Homecomponent/aboutus';
 import BlogSlider from '@/components/ALL/page';
 
 const Home = () => {
   return (
     <>
     <HomePage1 />
+    <AboutUs />
 
     <section >
     {/* Services Section */}
