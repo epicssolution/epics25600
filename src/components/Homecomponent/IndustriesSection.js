@@ -58,7 +58,7 @@ export default function ServicesSection() {
         transition={{ duration: 0.7 }}
         className="text-4xl font-extrabold text-orange-600 mb-2 tracking-wide"
       >
-        EPIC SOLUTIONS
+      SERVICES WE PROVIDE✍(◔◡◔)
       </motion.h2>
 
       <motion.p
