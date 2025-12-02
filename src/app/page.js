@@ -6,7 +6,7 @@ import AboutUs from '@/components/Homecomponent/aboutus';
 import IndustriesSection from '@/components/Homecomponent/IndustriesSection';
 import HowItWorks from '@/components/Homecomponent/HowItWorks';
 import BlogSlider from '@/components/ALL/page';
-
+import ClientFeedbacks from '@/components/Homecomponent/ClientFeedbacks';   // <-- ADD THIS
 
 const Home = () => {
   return (
@@ -14,7 +14,9 @@ const Home = () => {
       <HomePage1 />
       <AboutUs />
       <IndustriesSection />
-     <HowItWorks />
+      <HowItWorks />
+
+      <ClientFeedbacks />  
 
       {/* Services Section */}
       <div>
@@ -28,4 +30,3 @@ const Home = () => {
 };
 
 export default Home;
-
