@@ -25,6 +25,7 @@ const Header = () => {
     setCertOpen(false);
   };
 
+  
   const toggleCertDropdown = () => {
     setCertOpen(!certOpen);
     setIsOpen(false);
@@ -69,6 +70,10 @@ const Header = () => {
           name="google-adsense-account"
           content="ca-pub-7084928378740575"
         />
+            <meta
+  name="google-site-verification"
+  content="125c3Cukk3D1INp6HOlRmuvTDPOk-qiR_j30PREvm0I"
+/>
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7084928378740575"
