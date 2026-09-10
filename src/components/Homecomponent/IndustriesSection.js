@@ -1,127 +1,175 @@
 "use client";
-import Image from "next/image";
+import { useRef } from "react";
 import { motion } from "framer-motion";
-import { Wrench, Fan, Flame, Zap, Building2, Cog } from "lucide-react";
+import {
+  Wrench,
+  Fan,
+  Flame,
+  Zap,
+  Building2,
+  Cog,
+  ChevronLeft,
+  ChevronRight,
+  ArrowRight,
+} from "lucide-react";
 
 export default function ServicesSection() {
+  const scrollRef = useRef(null);
+
+  // All services share the same accent color (matching Fire's rose tone),
+  // with orange kept as the section's primary theme color.
   const services = [
     {
       name: "BIM",
       full: "Building Information Modeling",
       desc: "3D modeling, coordination, clash detection, and detailed construction drawings.",
-      image: "/images/bim.jpg",
       icon: Building2,
+      color: "rose",
     },
     {
       name: "HVAC",
       full: "Heating, Ventilation & Air Conditioning",
       desc: "Complete HVAC design including cooling, heating, ventilation, and duct sizing.",
-      image: "/images/hvac.jpg",
       icon: Fan,
+      color: "rose",
     },
     {
       name: "Plumbing",
       full: "Plumbing Systems",
       desc: "Water supply, drainage, piping design, and pressure calculations.",
-      image: "/images/plumbing.jpg",
       icon: Wrench,
+      color: "rose",
     },
     {
       name: "Fire",
       full: "Fire Fighting Systems",
       desc: "Fire alarms, sprinklers, hydrants, and safety system design.",
-      image: "/images/fire.jpg",
       icon: Flame,
+      color: "rose",
     },
     {
       name: "ELV",
       full: "Extra Low Voltage Systems",
       desc: "CCTV, access control, data networks, intercoms, and security systems.",
-      image: "/images/elv.jpg",
       icon: Zap,
+      color: "rose",
     },
     {
       name: "BMS",
       full: "Building Management System",
       desc: "Automation for HVAC, lighting, energy monitoring, and smart controls.",
-      image: "/images/bms.jpg",
       icon: Cog,
+      color: "rose",
     },
   ];
 
+  // Tailwind needs full class names statically present somewhere in the
+  // bundle to generate them — this map keeps every variant explicit.
+  const colorClasses = {
+    rose: {
+      iconBg: "bg-rose-100 dark:bg-rose-700/20",
+      iconText: "text-rose-600 dark:text-rose-400",
+      chipBg: "bg-rose-50 dark:bg-rose-700/30",
+      chipText: "text-rose-700 dark:text-rose-300",
+      chipHover: "hover:bg-rose-100 dark:hover:bg-rose-700/50",
+    },
+  };
+
+  const scroll = (direction) => {
+    if (!scrollRef.current) return;
+    const amount = 320;
+    scrollRef.current.scrollBy({
+      left: direction === "left" ? -amount : amount,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <section className="bg-gray-50 dark:bg-gray-900 py-20 px-6 text-center">
-      {/* Heading */}
-      <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        className="text-4xl font-extrabold text-orange-600 mb-2 tracking-wide"
-      >
-      SERVICES WE PROVIDE✍(◔◡◔)
-      </motion.h2>
+    <section className="relative bg-orange-50 dark:bg-gray-900 py-16 px-6">
+      <div className="max-w-6xl mx-auto">
+        {/* Header row */}
+        <div className="flex items-center justify-between mb-8">
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0 w-12 h-12 rounded-full bg-white dark:bg-gray-800 shadow flex items-center justify-center">
+              <Building2 className="w-6 h-6 text-orange-600 dark:text-orange-400" />
+            </div>
+            <div>
+              <motion.h2
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="flex items-center gap-2 text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white"
+              >
+                Services We Provide
+                <ArrowRight className="w-6 h-6 text-gray-900 dark:text-white" />
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}
+                className="text-gray-600 dark:text-gray-300 mt-1"
+              >
+                Browse all our MEP & BIM engineering services
+              </motion.p>
+            </div>
+          </div>
 
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3 }}
-        className="text-gray-600 dark:text-gray-300 mb-12 uppercase tracking-wide"
-      >
-        BIM • HVAC • Plumbing • Fire • ELV • BMS
-      </motion.p>
-
-      {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
-        {services.map((item, index) => {
-          const Icon = item.icon;
-          return (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl bg-white dark:bg-gray-800 transition"
+          {/* Nav arrows (desktop) */}
+          <div className="hidden sm:flex items-center gap-2">
+            <button
+              onClick={() => scroll("left")}
+              aria-label="Scroll left"
+              className="w-10 h-10 rounded-full bg-orange-600 hover:bg-orange-700 text-white flex items-center justify-center transition"
             >
-              {/* Image */}
-              <div className="relative">
-                <Image
-                  src={item.image}
-                  alt={item.name}
-                  width={500}
-                  height={300}
-                  className="w-full h-56 object-cover grayscale group-hover:grayscale-0 
-                             transform group-hover:scale-110 transition duration-700"
-                />
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={() => scroll("right")}
+              aria-label="Scroll right"
+              className="w-10 h-10 rounded-full bg-orange-600 hover:bg-orange-700 text-white flex items-center justify-center transition"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
 
-                {/* Hover Overlay with Full Form */}
-                <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center text-center 
-                                opacity-0 group-hover:opacity-100 transition duration-500 px-4">
-                  <span className="text-white text-xl font-bold mb-1">{item.name}</span>
-                  <span className="text-gray-200 text-sm">{item.full}</span>
-                </div>
-              </div>
-
-              {/* Content Box */}
-              <div className="p-6 text-left">
-                {/* Icon + Title */}
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="p-2 rounded-full bg-orange-100 dark:bg-orange-700/20">
-                    <Icon className="w-6 h-6 text-orange-600 dark:text-orange-400" />
+        {/* Scrollable pill row */}
+        <div className="relative">
+          <div
+            ref={scrollRef}
+            className="flex gap-4 overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']"
+          >
+            {services.map((item, index) => {
+              const Icon = item.icon;
+              const c = colorClasses[item.color];
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.08 }}
+                  className="group snap-start flex-shrink-0 flex items-center gap-3 bg-white dark:bg-gray-800 rounded-full shadow-md hover:shadow-lg pl-3 pr-2 py-2 transition cursor-pointer"
+                  title={item.desc}
+                >
+                  <div className={`w-9 h-9 rounded-full ${c.iconBg} flex items-center justify-center flex-shrink-0`}>
+                    <Icon className={`w-5 h-5 ${c.iconText}`} />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-800 dark:text-white">
-                    {item.name}
-                  </h3>
-                </div>
 
-                {/* Description */}
-                <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
-            </motion.div>
-          );
-        })}
+                  <span className="text-gray-900 dark:text-white font-semibold whitespace-nowrap">
+                    {item.name}
+                  </span>
+
+                  <button
+                    className={`ml-1 flex-shrink-0 rounded-full ${c.chipBg} ${c.chipText} text-sm font-semibold px-4 py-1.5 ${c.chipHover} transition whitespace-nowrap`}
+                  >
+                    + Learn more
+                  </button>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </section>
   );
